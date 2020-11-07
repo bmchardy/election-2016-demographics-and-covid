@@ -115,3 +115,86 @@ data_counties <- data_counties %>%
 data_counties
 ```
 
+```{r viz_scatter_cases_maskcompliance, message=FALSE, warning=FALSE}
+fit <- lm(norm_cases_avg ~ mask_pct_compliance, data_counties)
+data_counties %>%
+    ggplot(., aes(x=mask_pct_compliance, y=norm_cases_avg)) +
+    geom_point() +
+    geom_smooth(method=lm) +
+    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
+               x=0.35, y=0.175, label.size = 0.35, color = "black", fill="white") +
+    ggtitle("COVID-19 Cases by Mask Compliance") +
+    xlim(0.3, 1.0) +
+    ylim(0.0, 0.2)
+rm(fit)
+```
+
+```{r viz_scatter_cases_demographics, message=FALSE, warning=FALSE}
+fit <- lm(norm_cases_avg ~ white_pct_2016, data_counties)
+data_counties %>%
+    ggplot(., aes(x=white_pct_2016, y=norm_cases_avg)) +
+    geom_point() +
+    geom_smooth(method=lm) +
+    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
+               x=0.125, y=0.175, label.size = 0.35, color = "black", fill="white") +
+    ggtitle("COVID-19 Cases by Demographics") +
+    xlim(0.0, 1.0) +
+    ylim(0.0, 0.2)
+rm(fit)
+```
+
+```{r viz_scatter_cases_affiliation, message=FALSE, warning=FALSE}
+fit <- lm(norm_cases_avg ~ republican_pct_2016, data_counties)
+data_counties %>%
+    ggplot(., aes(x=republican_pct_2016, y=norm_cases_avg)) +
+    geom_point() +
+    geom_smooth(method=lm) +
+    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
+               x=0.125, y=0.175, label.size = 0.35, color = "black", fill="white") +
+    ggtitle("COVID-19 Cases by Political Affiliation") +
+    xlim(0.0, 1.0) +
+    ylim(0.0, 0.2)
+rm(fit)
+```
+
+```{r viz_scatter_maskcompliance_demographics, message=FALSE, warning=FALSE}
+fit <- lm(mask_pct_compliance ~ white_pct_2016, data_counties)
+data_counties %>%
+    ggplot(., aes(x=white_pct_2016, y=mask_pct_compliance)) +
+    geom_point() +
+    geom_smooth(method=lm) +
+    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
+               x=0.35, y=0.3, label.size = 0.35, color = "black", fill="white") +
+    ggtitle("COVID-19 Mask Compliance by Demographics") +
+    xlim(0.0, 1.0) +
+    ylim(0.25, 1.0)
+rm(fit)
+```
+
+```{r viz_scatter_maskcompliance_affiliation, message=FALSE, warning=FALSE}
+fit <- lm(mask_pct_compliance ~ republican_pct_2016, data_counties)
+data_counties %>%
+    ggplot(., aes(x=republican_pct_2016, y=mask_pct_compliance)) +
+    geom_point() +
+    geom_smooth(method=lm) +
+    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
+               x=0.35, y=0.3, label.size = 0.35, color = "black", fill="white") +
+    ggtitle("COVID-19 Mask Compliance by Affiliation") +
+    xlim(0.0, 1.0) +
+    ylim(0.25, 1.0)
+rm(fit)
+```
+
+```{r viz_scatter_affiliation_demographics, message=FALSE, warning=FALSE}
+fit <- lm(republican_pct_2016 ~ white_pct_2016, data_counties)
+data_counties %>%
+    ggplot(., aes(x=white_pct_2016, y=republican_pct_2016)) +
+    geom_point() +
+    geom_smooth(method=lm) +
+    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
+               x=0.25, y=0.75, label.size = 0.35, color = "black", fill="white") +
+    ggtitle("Affiliation by Demographics") +
+    xlim(0.0, 1.0) +
+    ylim(0.0, 1.0)
+rm(fit)
+```
