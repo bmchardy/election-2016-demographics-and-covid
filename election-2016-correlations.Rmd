@@ -36,9 +36,9 @@ All data is by State and County, so we'll join all datasets together and select 
 
 ## Loading in the data
 
-We will now load in all required `.csv` data files.
+We will now load in all required `.csv` data files, starting with the COVID-19 dataset. We only select the week leading up to Election 2020 and we compute average new cases and deaths by county.
 
-```{r dataload, warning=FALSE}
+```{r dataload_covid, warning=FALSE}
 # set working directory
 setwd("data")
 
@@ -49,22 +49,32 @@ data_counties <- as_tibble(read.csv("us-counties.csv")) %>%
   group_by(state, county, fips) %>%
   dplyr::summarize(cases_avg = mean(cases), deaths_avg = mean(deaths)) %>%
   select(state, county, fips, cases_avg, deaths_avg)
+```
 
+Load the Mask Use dataset and calculate a compsite measure. This dataset contains responses, by county, for percentages of people who report wearing masks "Always", "Frequently", "Sometimes", "Rarely", and "Never" We define
+
+$$MaskPercentCompliance = ALWAYS + \frac{3}{4}FREQUENTLY + \frac{1}{2}SOMETIMES + \frac{1}{4}RARELY$$
+
+to be the weighted average of these responses. Let's join this dataset to our COVID-19 data.
+
+```{r dataload_masks, warning=FALSE}
+setwd("data")
 # join mask attitudes data
 data_counties <- join(data_counties,
-                      as_tibble(read.csv("mask-use/mask-use-by-county.csv")) %>%
+                      as_tibble(read.csv("./mask-use/mask-use-by-county.csv")) %>%
                         rename(fips = COUNTYFP) %>%
-                        rename(mask_never = NEVER) %>%
-                        rename(mask_rarely = RARELY) %>%
-                        rename(mask_sometimes = SOMETIMES) %>%
-                        rename(mask_frequently = FREQUENTLY) %>%
-                        rename(mask_always = ALWAYS),
+                        mutate(mask_pct_compliance = (ALWAYS + 0.75*FREQUENTLY + 0.5*SOMETIMES + 0.25*RARELY)),
                       by = "fips",
                       type = "left")
+```
 
+We now load demographics data for each county in the United States in 2016 so that we can temporally compare to the elections data that we'll load in next. Once again, we'll join this to our county table.
+
+```{r dataload_demographics_2016, warning=FALSE}
+setwd("data")
 # join 2016 demographics data
 data_counties <- join(data_counties,
-                      as_tibble(read.csv("us-counties-2016-census-data/cc-est2019-alldata-2016subset.csv")) %>%
+                      as_tibble(read.csv("./us-counties-2016-census-data/cc-est2019-alldata-2016subset.csv")) %>%
                         mutate(white_pct_2016 = (WA_MALE + WA_FEMALE) / TOT_POP) %>%
                         rename(state = STNAME) %>%
                         mutate(county = str_replace(CTYNAME, " County", "")) %>%
@@ -72,10 +82,18 @@ data_counties <- join(data_counties,
                         select(state, county, population, white_pct_2016),
                       by = c("state", "county"),
                       type = "left")
+```
 
+Lastly, we load in data for the 2016 Presidential Election by county. We create a new composite measure
+
+$$RepublicanPercent2016 = \frac{CandidateVotes_{Republican}}{TotalVotes}$$
+of the percentage of votes in that county that were Republican (Trump) in 2016.
+
+```{r dataload_elections_2016, warning=FALSE}
+setwd("data")
 # join 2016 presidential elections data
 data_counties <- join(data_counties,
-                      as_tibble(read.csv("us-counties-2016-election/countypres_2000-2016.csv")) %>%
+                      as_tibble(read.csv("./us-counties-2016-election/countypres_2000-2016.csv")) %>%
                         filter(year == '2016') %>%
                         filter(party == "republican") %>%
                         rename(fips = FIPS) %>%
@@ -83,12 +101,16 @@ data_counties <- join(data_counties,
                         select(fips, republican_pct_2016),
                       by = "fips",
                       type = "left")
+```
 
+We select only the attributes of interest. Let's have a look at our data!
+
+```{r dataload_org, warning=FALSE}
 data_counties <- data_counties %>%
   mutate(norm_cases_avg = cases_avg / population) %>%
   mutate(norm_deaths_avg = deaths_avg / population) %>%
-  select(state, county, norm_cases_avg, norm_deaths_avg, mask_never, mask_rarely, mask_sometimes,
-         mask_frequently, mask_always, white_pct_2016, republican_pct_2016)
+  select(state, county, norm_cases_avg, norm_deaths_avg, mask_pct_compliance,
+         white_pct_2016, republican_pct_2016)
 
 data_counties
 ```
