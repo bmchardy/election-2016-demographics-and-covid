@@ -1,0 +1,95 @@
+---
+title: 'A look at demographics, COVID-19, and elections data'
+author: "Bobby McHardy"
+date: "November 6, 2020"
+output:
+  html_document:
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 3
+    number_sections: true
+---
+
+
+# Introduction!
+
+We're going to explore relationships between political affiliation, demographics, and COVID-19 statistics. To do this, I've pulled together subsets of data from the New York Times' [COVID-19 dataset](https://github.com/nytimes/covid-19-data), the MIT Election Data and Science Lab's [County Presidential Election Returns 2000-2016 dataset](https://doi.org/10.7910/DVN/VOQCHQ), and 2016 [data from the US Census](https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/asrh/).
+
+```{r preppack, include=FALSE}
+library("tibble")
+library(plyr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(gridExtra)
+library(corrplot)
+library(stringr)
+options(scipen = 999)
+rm(list = ls())
+```
+
+# Data Preparation
+
+All data is by State and County, so we'll join all datasets together and select only the columns of interest.
+
+## Loading in the data
+
+We will now load in all required `.csv` data files.
+
+```{r dataload, warning=FALSE}
+# set working directory
+setwd("data")
+
+# COVID-19 average cases and deaths by state and county in week leading up to 2020 election
+data_counties <- as_tibble(read.csv("us-counties.csv")) %>%
+  filter(date >= '2020-10-28') %>%
+  filter(date <= '2020-11-03') %>%
+  group_by(state, county, fips) %>%
+  dplyr::summarize(cases_avg = mean(cases), deaths_avg = mean(deaths)) %>%
+  select(state, county, fips, cases_avg, deaths_avg)
+
+# join mask attitudes data
+data_counties <- join(data_counties,
+                      as_tibble(read.csv("mask-use/mask-use-by-county.csv")) %>%
+                        rename(fips = COUNTYFP) %>%
+                        rename(mask_never = NEVER) %>%
+                        rename(mask_rarely = RARELY) %>%
+                        rename(mask_sometimes = SOMETIMES) %>%
+                        rename(mask_frequently = FREQUENTLY) %>%
+                        rename(mask_always = ALWAYS),
+                      by = "fips",
+                      type = "left")
+
+# join 2016 demographics data
+data_counties <- join(data_counties,
+                      as_tibble(read.csv("us-counties-2016-census-data/cc-est2019-alldata-2016subset.csv")) %>%
+                        mutate(white_pct_2016 = (WA_MALE + WA_FEMALE) / TOT_POP) %>%
+                        rename(state = STNAME) %>%
+                        mutate(county = str_replace(CTYNAME, " County", "")) %>%
+                        rename(population = TOT_POP) %>%
+                        select(state, county, population, white_pct_2016),
+                      by = c("state", "county"),
+                      type = "left")
+
+# join 2016 presidential elections data
+data_counties <- join(data_counties,
+                      as_tibble(read.csv("us-counties-2016-election/countypres_2000-2016.csv")) %>%
+                        filter(year == '2016') %>%
+                        filter(party == "republican") %>%
+                        rename(fips = FIPS) %>%
+                        mutate(republican_pct_2016 = candidatevotes / totalvotes) %>%
+                        select(fips, republican_pct_2016),
+                      by = "fips",
+                      type = "left")
+
+data_counties <- data_counties %>%
+  mutate(norm_cases_avg = cases_avg / population) %>%
+  mutate(norm_deaths_avg = deaths_avg / population) %>%
+  select(state, county, norm_cases_avg, norm_deaths_avg, mask_never, mask_rarely, mask_sometimes,
+         mask_frequently, mask_always, white_pct_2016, republican_pct_2016)
+
+data_counties
+```
+
