@@ -1,0 +1,1329 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head id="j_idt22"><!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-61753334-1"></script>
+<script>
+  //<![CDATA[
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'UA-61753334-1');
+
+  window.addEventListener("load", enableAnalyticsEventCapture, false);
+
+  function enableAnalyticsEventCapture() {
+    // Download button
+    $(document).on("click", ".btn-download, .btn-download.dropdown-toggle + ul.dropdown-menu li a", function() {
+      var category = stripSize($(this).text());
+      var label = getFileId($(this));
+      gtag('event', 'Download',{'event_category' : category,
+                                'event_label' : label});
+    });
+
+    // Request Access button
+    $(document).on("click", ".btn-request", function() {
+      var category = $(this).text();
+      var label = getFileId($(this));
+      gtag('event', 'Request Access', {'event_category' : category,
+                                     'event_label' : label});
+    });
+
+    // Explore button
+    $(document).on("click", ".btn-explore, .btn-explore.dropdown-toggle + ul.dropdown-menu li a", function() {
+      var category = $(this).text();
+      var label = getFileId($(this));
+      gtag('event', 'Explore', {'event_category' : category,
+                                'event_label' : label});
+    });
+
+    // Compute button
+    $(document).on("click", ".btn-compute, .btn-compute.dropdown-toggle + ul.dropdown-menu li a", function() {
+      var category = $(this).text();
+      var label = getFileId($(this));
+      gtag('event', 'Compute', {'event_category' : category,
+                                'event_label' : label});
+    });
+
+    // Preview button
+    $(document).on("click", ".btn-preview, .btn-preview.dropdown-toggle + ul.dropdown-menu li a", function() {
+      var category = $(this).text();
+      var label = getFileId($(this));
+      gtag('event', 'Preview', {'event_category' : category,
+                                'event_label' : label});
+    });
+
+    // Cite button
+    $(document).on("click", ".downloadCitation + ul.dropdown-menu li a", function() {
+      var category = $(this).text();
+      var label = 'Unknown';
+      if($('#fileForm').length > 0) {
+        label = stripId($('#fileForm').attr('action'));
+      } else if($('#datasetForm').length > 0) {
+        label = stripId($('#datasetForm').attr('action'));
+      }
+      gtag('event', 'Download Citation', {'event_category' : category,
+                                        'event_label' : label});
+    });
+
+    // Export Metadata button
+    $(document).on("click", ".btn-export + ul.dropdown-menu li a", function() {
+      var category = $(this).text();
+      var label = 'Unknown';
+      if($('#fileForm').length > 0) {
+        label = stripId($('#fileForm').attr('action'));
+      } else if($('#datasetForm').length > 0) {
+        label = stripId($('#datasetForm').attr('action'));
+      }
+      gtag('event', 'Export Metadata', {'event_category' : category,
+                                        'event_label' : label});
+    });
+
+    // Contact button
+    $(document).on("click", ".btn-contact", function() {
+      var category = $(this).text();
+      var label = 'Unknown';
+      if($('#fileForm').length > 0) {
+        label = stripId($('#fileForm').attr('action'));
+      } else if($('#datasetForm').length > 0) {
+        label = stripId($('#datasetForm').attr('action'));
+      } else if($('#dataverseForm').length > 0) {
+        label = stripAlias($('#dataverseForm').attr('action'));
+      }
+      gtag('event', 'Contact', {'event_category' : category,
+                                'event_label' : label});
+    });
+
+    // Share button
+    $(document).on("click", 'div[id$="shareDialog"] a[class^="sharrre"]', function() {
+      var sharrreVal = $(this).attr('class');
+      var category = sharrreVal.substring(sharrreVal.indexOf('-') + 1) ;
+      var label = 'Unknown';
+      if($('#fileForm').length > 0) {
+        label = stripId($('#fileForm').attr('action'));
+      } else if($('#datasetForm').length > 0) {
+        label = stripId($('#datasetForm').attr('action'));
+      } else if($('#dataverseForm').length > 0) {
+        label = stripAlias($('#dataverseForm').attr('action'));
+      }
+      gtag('event', 'Share', {'event_category' : category,
+                              'event_label' : label});
+    });
+  }
+
+  function getFileId(target) {
+    var label = 'Unknown';
+    if(target.parents('th, #actionButtonBlock .btn-access-dataset + ul.dropdown-menu').length>0) {
+      //Special case - the Download button that downloads all selected files in the dataset
+      label = 'file(s) from ' + stripId($('#datasetForm').attr('action'));
+    } else {
+      var row = target.parents('tr')[0];
+      if(row != null) {
+        //finds the file id/DOI in the Dataset page
+        label = $(row).find('div.file-metadata-block > a').attr('href');
+      } else {
+        //finds the file id/DOI in the file page
+        label = $('#fileForm').attr('action');
+      }
+      label = stripId(label);
+    }
+    return label;
+  }
+
+  function stripId(label) {
+    var index = label.indexOf('&');
+    if(index == -1) index = label.length;
+    if(label.indexOf('persistentId=') >= 0) {
+      label = label.substring(label.indexOf('persistentId=') + 13, index);
+    }
+    if(label.indexOf('fileId=') >= 0) {
+      label = label.substring(label.indexOf('fileId=') + 7, index);
+    }
+    return(label);
+  }
+
+  function stripAlias(label) {
+    var index = label.length;
+    label = label.substring(label.indexOf('/dataverse/') + 11, index).split(/[?#]/)[0];
+    return(label);
+  }
+
+  function stripSize(category) {
+    var index = category.indexOf('ZIP (');
+    if(index >= 0) {
+      category = category.substring(0, index + 3);
+    }
+    return(category);
+  }
+  //]]>
+</script>
+
+            <title>County Presidential Election Returns 2000-2016 - U.S. Presidential Elections </title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="description" content="This dataset contains county-level returns for presidential elections from 2000 to 2016." />
+	    <meta name="DC.identifier" content="doi:10.7910/DVN/VOQCHQ" />
+	    <meta name="DC.type" content="Dataset" />
+	    <meta name="DC.title" content="County Presidential Election Returns 2000-2016" />
+            <meta name="DC.date" content="2019-12-04" />
+	    <meta name="DC.publisher" content="Harvard Dataverse" />
+            <meta name="DC.description" content="This dataset contains county-level returns for presidential elections from 2000 to 2016." />
+            <meta name="DC.creator" content="MIT Election Data and Science Lab" />
+            <meta name="DC.subject" content="Social Sciences" />
+                <meta property="og:title" content="County Presidential Election Returns 2000-2016" />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ" />
+                <meta property="og:image" content="https://dataverse.harvard.edu/javax.faces.resource/images/dataverse-icon-1200.png.xhtml;jsessionid=0954018282f9a663c9cac604bd96" />
+                <meta property="og:site_name" content="Harvard Dataverse" />
+                <meta property="og:description" content="This dataset contains county-level returns for presidential elections from 2000 to 2016." />
+                    <meta property="article:author" content="MIT Election Data and Science Lab" />
+                <meta property="article:published_time" content="2019-12-04" />
+                <script type="application/ld+json">{"@context":"http://schema.org","@type":"Dataset","@id":"https://doi.org/10.7910/DVN/VOQCHQ","identifier":"https://doi.org/10.7910/DVN/VOQCHQ","name":"County Presidential Election Returns 2000-2016","creator":[{"name":"MIT Election Data and Science Lab","affiliation":"Massachusetts Institute of Technology"}],"author":[{"name":"MIT Election Data and Science Lab","affiliation":"Massachusetts Institute of Technology"}],"datePublished":"2018-10-11","dateModified":"2019-12-04","version":"6","description":["This dataset contains county-level returns for presidential elections from 2000 to 2016."],"keywords":["Social Sciences"],"license":{"@type":"Dataset","text":"CC0","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"includedInDataCatalog":{"@type":"DataCatalog","name":"Harvard Dataverse","url":"https://dataverse.harvard.edu"},"publisher":{"@type":"Organization","name":"Harvard Dataverse"},"provider":{"@type":"Organization","name":"Harvard Dataverse"},"distribution":[{"@type":"DataDownload","name":"countypres_2000-2016.tab","fileFormat":"text/tab-separated-values","contentSize":4568734,"@id":"https://doi.org/10.7910/DVN/VOQCHQ/HEIJCQ","identifier":"https://doi.org/10.7910/DVN/VOQCHQ/HEIJCQ","contentUrl":"https://dataverse.harvard.edu/api/access/datafile/3641280"},{"@type":"DataDownload","name":"County Presidential Returns 2000-2016.md","fileFormat":"text/x-markdown","contentSize":1301,"@id":"https://doi.org/10.7910/DVN/VOQCHQ/GG18M2","identifier":"https://doi.org/10.7910/DVN/VOQCHQ/GG18M2","contentUrl":"https://dataverse.harvard.edu/api/access/datafile/3475077"}]}
+
+                </script><link type="text/css" rel="stylesheet" href="/javax.faces.resource/theme.css.xhtml?ln=primefaces-bootstrap" /><script type="text/javascript" src="/javax.faces.resource/jquery/jquery.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="/javax.faces.resource/jquery/jquery-plugins.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="/javax.faces.resource/core.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="/javax.faces.resource/components.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0"></script><link type="text/css" rel="stylesheet" href="/javax.faces.resource/components.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0" /><script type="text/javascript" src="/javax.faces.resource/watermark/watermark.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0"></script><link type="text/css" rel="stylesheet" href="/javax.faces.resource/fileupload/fileupload.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0" /><script type="text/javascript" src="/javax.faces.resource/fileupload/fileupload.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="/javax.faces.resource/touch/touchswipe.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=primefaces&amp;v=8.0"></script><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='en';}</script>
+        <link rel="apple-touch-icon" sizes="180x180" href="/javax.faces.resource/images/fav/apple-touch-icon.png.xhtml;jsessionid=0954018282f9a663c9cac604bd96" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/javax.faces.resource/images/fav/favicon-16x16.png.xhtml;jsessionid=0954018282f9a663c9cac604bd96" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/javax.faces.resource/images/fav/favicon-32x32.png.xhtml;jsessionid=0954018282f9a663c9cac604bd96" />
+        <link rel="manifest" href="/javax.faces.resource/images/fav/site.webmanifest.xhtml;jsessionid=0954018282f9a663c9cac604bd96" />
+        <link rel="mask-icon" href="/javax.faces.resource/images/fav/safari-pinned-tab.svg.xhtml;jsessionid=0954018282f9a663c9cac604bd96" color="#da532c" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+        <link type="image/png" rel="image_src" href="/javax.faces.resource/images/dataverseproject.png.xhtml;jsessionid=0954018282f9a663c9cac604bd96" />
+        <link type="text/css" rel="stylesheet" href="/javax.faces.resource/bs/css/bootstrap.min.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1" />
+        <link type="text/css" rel="stylesheet" href="/javax.faces.resource/bs/css/bootstrap-theme.min.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1" />
+        <link type="text/css" rel="stylesheet" href="/javax.faces.resource/css/ie-compat.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1" />
+        <link type="text/css" rel="stylesheet" href="/javax.faces.resource/css/owl.carousel.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1" />
+        <link type="text/css" rel="stylesheet" href="/javax.faces.resource/css/fontcustom.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1" />
+        <link type="text/css" rel="stylesheet" href="/javax.faces.resource/css/socicon.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1" />
+        <link type="text/css" rel="stylesheet" href="/javax.faces.resource/css/structure.css.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1" />
+            <script>
+                // Break out of iframe
+                if (window !== top) top.location = window.location;
+            </script>
+            <style>
+                /* Custom CSS */
+                #navbarFixed div.navbar-header img.navbar-brand.custom-logo {height:50px !important;}
+#dataverseDesc span > span > span > h3 {font-weight: 300 !important;}
+
+nav.navbar.navbar-default {background: #ececec !important;}
+/* #footer {background: #ececec !important; padding-top:1.25em;} */
+
+            </style></head><body>
+	<a href="#content" class="sr-only">Skip to main content</a>
+
+    <div id="dataverse-header-block"><nav id="navbarFixed" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar" aria-pressed="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/"><img src="/logos/navbar/logo.png;jsessionid=0954018282f9a663c9cac604bd96" alt="Harvard Dataverse homepage" class="navbar-brand custom-logo" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="topNavBar">
+                    <ul class="nav navbar-nav navbar-right"><li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add Data <b class="caret"></b></a>
+                            <ul class="dropdown-menu"><li><a href="/dataverse.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ownerId=1">New Dataverse</a></li><li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ownerId=1">New Dataset</a></li>
+                            </ul></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <b class="caret"></b></a>
+                            <ul class="dropdown-menu navbar-search">
+                                <form class="form-inline" role="search">
+                                    <label id="searchNavLabel" class="sr-only" for="navbarsearch">Search</label>
+                                    <div class="input-group">
+                                        <input id="navbarsearch" type="text" class="form-control" size="28" value="" placeholder="Search all dataverses..." aria-labelledby="searchNavLabel" />
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-default" onclick="window.location='/dataverse/harvard?q=' + document.getElementById('navbarsearch').value;return false;">
+                                                <span class="glyphicon glyphicon-search"></span> Find
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </ul>
+                        </li><li><a href="https://support.dataverse.harvard.edu/" rel="noopener" target="_blank">About</a></li>
+                        <li><a href="http://guides.dataverse.org/en/5.1.1/user" rel="noopener" target="_blank">User Guide</a>
+                        </li>
+<form id="j_idt78" name="j_idt78" method="post" action="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi:10.7910/DVN/VOQCHQ" class="navbar-form navbar-left navbar-form-link">
+<input type="hidden" name="j_idt78" value="j_idt78" />
+<a id="j_idt78:headerSupportLink" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt78:headerSupportLink&quot;,f:&quot;j_idt78&quot;,u:&quot;contactDialog&quot;,onco:function(xhr,status,args,data){PF('contactForm').show();}});return false;">Support</a><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="-1030845693246836277:-5354101167419624832" autocomplete="off" />
+</form>
+                            <li><a href="/dataverseuser.xhtml;jsessionid=0954018282f9a663c9cac604bd96?editMode=CREATE&amp;redirectPage=%2Fdataset.xhtml%3FpersistentId%3Ddoi%3A10.7910%2FDVN%2FVOQCHQ">
+                                    Sign Up
+                                </a>
+                            </li>
+                            <li><a href="/loginpage.xhtml;jsessionid=0954018282f9a663c9cac604bd96?redirectPage=%2Fdataset.xhtml%3FpersistentId%3Ddoi%3A10.7910%2FDVN%2FVOQCHQ">
+                                    Log In
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div></nav>
+        
+        <noscript>
+            <div id="noscript-alert" class="bg-danger">
+                <div class="alert container text-danger no-margin-bottom">Please enable JavaScript in your browser. It is required to use most of the features of Dataverse.
+                </div>
+            </div>
+        </noscript>
+<form id="j_idt131" name="j_idt131" method="post" action="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi:10.7910/DVN/VOQCHQ" class="form-inline">
+<input type="hidden" name="j_idt131" value="j_idt131" />
+<input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1" value="-1030845693246836277:-5354101167419624832" autocomplete="off" />
+</form><div style="background:#ffffff;" id="dataverseHeader" class="container bg-muted"><div style="text-align:CENTER;background:#ffffff;" class="dataverseHeaderLogo">
+                <img src="/logos/3031940/MEDSL_horizontal_RGB.png" alt="U.S. Presidential Elections  logo" /></div>
+            <div class="dataverseHeaderBlock"><div class="dataverseHeaderCell dataverseHeaderName">
+                    <a href="/dataverse/medsl_president" class="dataverseHeaderDataverseName" style="color:#3791ff;">U.S. Presidential Elections </a><span style="color:#525971;"> (Massachusetts Institute of Technology)</span></div><div class="dataverseHeaderCell dataverseHeaderLink"><a href="http://electionlab.mit.edu" rel="noopener" style="color:#3791ff;" target="_blank">This Dataverse is maintained by the MIT Election Data and Science Lab (MEDSL). </a></div>
+            </div></div><div id="breadCrumbPanel"><div id="breadcrumbNavBlock" class="container">
+                <div class="breadcrumbBlock">
+                            <a id="breadcrumbLnk0" href="/dataverse/harvard">Harvard Dataverse
+                            </a>
+                </div><span class="breadcrumbCarrot"> &gt; </span>
+                <div class="breadcrumbBlock">
+                            <a id="breadcrumbLnk1" href="/dataverse/medsl">MEDSL Dataverse
+                            </a>
+                </div><span class="breadcrumbCarrot"> &gt; </span>
+                <div class="breadcrumbBlock">
+                            <a id="breadcrumbLnk2" href="/dataverse/medsl_election_returns">MEDSL Election Returns Dataverse
+                            </a>
+                </div><span class="breadcrumbCarrot"> &gt; </span>
+                <div class="breadcrumbBlock">
+                            <a id="breadcrumbLnk3" href="/dataverse/medsl_president">U.S. Presidential Elections 
+                            </a>
+                </div><span class="breadcrumbCarrot"> &gt; </span>
+                <div class="breadcrumbBlock">
+                </div></div></div><div id="messagePanel">
+            <div class="container messagePanel">
+            </div></div>
+    </div>
+        <div class="container" id="content">
+<form id="datasetForm" name="datasetForm" method="post" action="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi:10.7910/DVN/VOQCHQ" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="datasetForm" value="datasetForm" />
+<div id="datasetForm:topDatasetBlockFragment"><div class="row">
+                        <div class="col-xs-12">
+                            <div id="datasetVersionBlock" class="row"><div id="title-block" class="col-xs-12 margin-bottom-half">
+                                    <span id="title">County Presidential Election Returns 2000-2016</span>
+                                    <div id="title-label-block" class="margin-top-half"><span class="label label-default">Version 6.0</span>
+                                    </div></div>
+                            </div>
+
+                            
+                            <div id="datasetCitationActionSummaryBlock" class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
+    <div class="citation-block">
+        <div class="clearfix alert alert-info bg-citation">
+            <div class="citation margin-bottom">
+                <div class="pull-left preview-icon-block"><span class="icon-dataset"></span>
+                </div>
+                <span class="citation-select" onclick="if (event.target) { selectText(event.target); } else{ selectText(this); }">MIT Election Data and Science Lab, 2018, "County Presidential Election Returns 2000-2016", <a href="https://doi.org/10.7910/DVN/VOQCHQ" target="_blank">https://doi.org/10.7910/DVN/VOQCHQ</a>, Harvard Dataverse, V6, UNF:6:ZZe1xuZ5H2l4NUiSRcRf8Q== [fileUNF]
+                </span>
+            </div>
+            <div class="pull-left row col-sm-8 padding-none"><div class="col-sm-3 col-md-4 col-lg-3 btn-group margin-bottom citation-download">
+                    <button type="button" class="btn btn-link dropdown-toggle padding-none downloadCitation" data-toggle="dropdown">
+                        Cite Dataset <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><script type="text/javascript" src="/javax.faces.resource/jsf.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?ln=javax.faces"></script><a id="datasetForm:endNoteLink" href="#" onclick="mojarra.jsfcljs(document.getElementById('datasetForm'),{'datasetForm:endNoteLink':'datasetForm:endNoteLink'},'');return false">
+                                EndNote XML
+                            </a>
+                        </li>
+                        <li><a id="datasetForm:risLink" href="#" onclick="mojarra.jsfcljs(document.getElementById('datasetForm'),{'datasetForm:risLink':'datasetForm:risLink'},'');return false">
+                                RIS
+                            </a>
+                        </li>
+                        <li><a id="datasetForm:bibLink" href="#" onclick="mojarra.jsfcljs(document.getElementById('datasetForm'),{'datasetForm:bibLink':'datasetForm:bibLink'},'_blank');return false" target="_blank">
+                                BibTeX
+                            </a>
+                        </li>
+                    </ul></div><div class="col-sm-9 col-md-8 col-lg-9 text-muted margin-bottom citation-standards">Learn about <a href="https://dataverse.org/best-practices/data-citation" title="Data Citation - Dataverse.org" target="_blank">Data Citation Standards</a>.</div>
+            </div>
+        </div>
+    </div>
+                                    
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 pull-right margin-bottom"><div id="actionButtonBlock"><div class="btn-group btn-group-justified">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-primary btn-access-dataset dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Access Dataset <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right text-left">
+                                                        <li class="dropdown-header">Download Options <span class="glyphicon glyphicon-download-alt"></span></li><li><a id="datasetForm:j_idt263" href="#" class="ui-commandlink ui-widget btn-download" onclick="PrimeFaces.ab({s:&quot;datasetForm:j_idt263&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm&quot;,fi:&quot;datasetForm:topDatasetBlockFragment&quot;});return false;">
+                                                                Original Format
+                                                                ZIP (3.8 MB)</a></li><li><a id="datasetForm:j_idt268" href="#" class="ui-commandlink ui-widget btn-download" onclick="PrimeFaces.ab({s:&quot;datasetForm:j_idt268&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm&quot;,fi:&quot;datasetForm:topDatasetBlockFragment&quot;});return false;">
+                                                                Archival Format (.tab)
+                                                                ZIP (4.4 MB)</a></li>
+                                                    
+                                                </ul>
+                                            </div></div>
+                                        
+
+                                        
+                                        <div class="btn-group btn-group-justified"><a id="datasetForm:j_idt364" href="#" class="ui-commandlink ui-widget btn btn-default btn-xs btn-contact" aria-label="Contact Dataset Owner" onclick="PrimeFaces.ab({s:&quot;datasetForm:j_idt364&quot;,f:&quot;datasetForm&quot;,u:&quot;contactDialog&quot;,onco:function(xhr,status,args,data){PF('contactForm').show();},fi:&quot;datasetForm:topDatasetBlockFragment&quot;});return false;" title="Contact Dataset Owner">
+                                                Contact Owner
+                                            </a><a id="datasetForm:j_idt366" href="#" class="ui-commandlink ui-widget btn btn-default btn-xs btn-share" aria-label="Share Dataset" onclick="PrimeFaces.ab({s:&quot;datasetForm:j_idt366&quot;,f:&quot;datasetForm&quot;,onco:function(xhr,status,args,data){PF('shareDialog').show();sharrre();;},fi:&quot;datasetForm:topDatasetBlockFragment&quot;});return false;" title="Share Dataset">
+                                                Share
+                                            </a>
+                                        </div></div>
+                                    
+                                </div><div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 pull-right margin-bottom">
+                                    
+                                    <div id="metrics-block">
+                                        <div id="metrics-heading">
+                                            Dataset Metrics
+                                            
+                                                <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto top" data-trigger="hover" data-original-title="Aggregated metrics for this dataset."></span>
+                                        </div>
+                                        <div id="metrics-body"><div class="metrics-count-block">25,486 Downloads
+                                                <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto top" data-original-title="Total aggregated downloads of files in this dataset."></span></div>
+                                        </div>
+                                    </div></div>
+
+                                
+                                <div id="dataset-colorder-block" class="visible-md-block visible-lg-block col-md-8 col-lg-9"></div><div id="dataset-summary-metadata" class="col-xs-12 col-sm-12 col-md-8 col-lg-9 metadata-container padding-none margin-bottom">
+                                    <table class="metadata">
+                                        <tbody><tr id="dsDescription">
+                                                    <th scope="row">
+                                                        Description
+                                                        <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="A summary describing the purpose, nature, and scope of the Dataset."></span>
+                                                    </th>
+                                                    <td>
+                                                                <div>This dataset contains county-level returns for presidential elections from 2000 to 2016. (2018-10-11)
+                                                                </div>
+                                                    </td></tr><tr id="subject">
+                                                    <th scope="row">
+                                                        Subject
+                                                        <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="Domain-specific Subject Categories that are topically relevant to the Dataset."></span>
+                                                    </th>
+                                                    <td>Social Sciences
+                                                    </td></tr>
+                                        </tbody>
+                                    </table></div>
+                                
+                            </div>
+                            
+                        </div></div></div><div id="contentTabs"><div id="datasetForm:pageRefreshFragment"><input id="datasetForm:datasetLockedForAnyReasonVariable" type="hidden" name="datasetForm:datasetLockedForAnyReasonVariable" value="false" /><input id="datasetForm:datasetStateChangedVariable" type="hidden" name="datasetForm:datasetStateChangedVariable" value="false" /><script id="datasetForm:j_idt570" type="text/javascript">refreshAllLocksCommand = function() {PrimeFaces.ab({s:"datasetForm:j_idt570",f:"datasetForm",p:"datasetForm:j_idt570",u:"datasetForm:pageRefreshFragment messagePanel",pa:arguments[0],fi:"datasetForm:pageRefreshFragment"});}</script><script id="datasetForm:j_idt571" type="text/javascript">refreshAllCommand = function() {PrimeFaces.ab({s:"datasetForm:j_idt571",f:"datasetForm",p:"datasetForm:j_idt571",u:"datasetForm:topDatasetBlockFragment datasetForm:tabView:filesTable messagePanel",pa:arguments[0],fi:"datasetForm:pageRefreshFragment"});}</script><button id="datasetForm:refreshButton" name="datasetForm:refreshButton" class="" onclick="PrimeFaces.ab({s:&quot;datasetForm:refreshButton&quot;,f:&quot;datasetForm&quot;,p:&quot;datasetForm:refreshButton&quot;,u:&quot;datasetForm:topDatasetBlockFragment datasetForm:tabView:filesTable&quot;,fi:&quot;datasetForm:pageRefreshFragment&quot;});return false;" style="display:none" type="submit"><span class="ui-button-text ui-c">ui-button</span></button><script id="datasetForm:refreshButton_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","refreshButton",{id:"datasetForm:refreshButton"});});</script>
+                            <script>
+                                //<![CDATA[
+                                // javascript for refreshing page when locks
+                                $(this).ready(function () {
+                                    refreshIfStillLocked();
+                                });
+                                function refreshIfStillLocked() {
+                                    if ($('input[id$="datasetLockedForAnyReasonVariable"]').val() === 'true') {
+                                        // if dataset is locked, instruct the page to
+                                        // wait and check again:
+                                        waitAndCheckLockAgain();
+                                    } else {
+                                        // if not locked, has it just been unlocked?
+                                        if ($('input[id$="datasetStateChangedVariable"]').val() === 'true') {
+                                            // For whatever unknown PrimeFaces reason
+                                            // the page needs to be refreshed twice, for all
+                                            // the pull down menus to update properly:
+                                            refreshAllCommand();
+                                            // You can't just run 2 refreshAllCommand()s in a row
+                                            // either; because the command has an "update=@all" on it,
+                                            // so I guess if you try to execute the 2nd one right after
+                                            // the first one, this fragment is still going to be loading -
+                                            // so there would not yet be a command to run! (it needs to
+                                            // be rendered, before you can execute it, that is)
+                                            setTimeout(function () {
+                                                // this button doesn't do anything, but it has an update="@all"
+                                                // attribute:
+                                                $('button[id$="refreshButton"]').trigger('click');
+                                                //refreshAllCommand();
+                                            }, 1500);
+                                        }
+                                    }
+                                }
+                                function waitAndCheckLockAgain() {
+                                    setTimeout(function () {
+                                        // refresh the lock in the
+                                        // backing bean; i.e., check, if the ingest has
+                                        // already completed in the background:
+                                        //$('button[id$="refreshButton"]').trigger('click');
+                                        //refreshLockCommand();
+                                        refreshAllLocksCommand();
+                                    }, 10000);
+                                }
+                                //]]>
+                            </script></div><div id="datasetForm:tabView" class="ui-tabs ui-widget ui-widget-content ui-corner-all ui-hidden-container ui-tabs-top" data-widget="content"><ul class="ui-tabs-nav ui-helper-reset ui-widget-header ui-corner-all" role="tablist"><li class="ui-tabs-header ui-state-default ui-tabs-selected ui-state-active ui-corner-top" role="tab" aria-expanded="true" aria-selected="true" data-index="0"><a href="#datasetForm:tabView:dataFilesTab" tabindex="-1">Files</a></li><li class="ui-tabs-header ui-state-default ui-corner-top" role="tab" aria-expanded="false" aria-selected="false" data-index="1"><a href="#datasetForm:tabView:metadataMapTab" tabindex="-1">Metadata</a></li><li class="ui-tabs-header ui-state-default ui-corner-top" role="tab" aria-expanded="false" aria-selected="false" data-index="2"><a href="#datasetForm:tabView:termsTab" tabindex="-1">Terms</a></li><li class="ui-tabs-header ui-state-default ui-corner-top" role="tab" aria-expanded="false" aria-selected="false" data-index="3"><a href="#datasetForm:tabView:versionsTab" tabindex="-1">Versions</a></li></ul><div class="ui-tabs-panels"><div id="datasetForm:tabView:dataFilesTab" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" data-index="0"><script id="datasetForm:tabView:j_idt947" type="text/javascript">refreshPaginator = function() {PrimeFaces.ab({s:"datasetForm:tabView:j_idt947",f:"datasetForm",p:"datasetForm:tabView:j_idt947",u:"datasetForm",pa:arguments[0]});}</script><script id="datasetForm:tabView:j_idt952" type="text/javascript">rebindCommand = function() {PrimeFaces.ab({s:"datasetForm:tabView:j_idt952",f:"datasetForm",p:"datasetForm:tabView:j_idt952",u:"datasetForm:tabView:filesTable",onco:function(xhr,status,args,data){javascript:bind_bsui_components();;},pa:arguments[0]});}</script><div id="datasetForm:tabView:filesTable" class="ui-datatable ui-widget" style="margin-right:1px;"><div class="ui-datatable-header ui-widget-header ui-corner-top"><div id="datasetForm:tabView:filesTable:filesHeaderBlock" class="row">
+                <div class="col-xs-5"><div class="input-group"><label for="datasetForm:tabView:filesTable:searchFiles" id="searchLabel" class="sr-only">Search</label><input id="datasetForm:tabView:filesTable:searchFiles" name="datasetForm:tabView:filesTable:searchFiles" type="text" value="" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all form-control" title="Search" onkeypress="if (event.keyCode == 13) { submitsearch(); return false; }" aria-labelledby="searchLabel" /><script id="datasetForm:tabView:filesTable:searchFiles_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","inputSearchTerm",{id:"datasetForm:tabView:filesTable:searchFiles",maxlength:-2147483648});});</script><script id="datasetForm:tabView:filesTable:j_idt963_s" type="text/javascript">$(function(){PrimeFaces.cw("Watermark","widget_datasetForm_tabView_filesTable_j_idt963",{id:"datasetForm:tabView:filesTable:j_idt963",value:"Search this dataset...",target:"datasetForm:tabView:filesTable:searchFiles"});});</script><input id="datasetForm:tabView:filesTable:showAccessPopup" type="hidden" name="datasetForm:tabView:filesTable:showAccessPopup" value="false" /><script id="datasetForm:tabView:filesTable:j_idt964" type="text/javascript">submitsearch = function() {PrimeFaces.ab({s:"datasetForm:tabView:filesTable:j_idt964",f:"datasetForm",p:"datasetForm:tabView:filesTable:j_idt964 @widgetVar(inputSearchTerm)",u:"datasetForm",ps:true,pa:arguments[0]});}</script>
+                        
+                        <span class="input-group-btn"><a id="datasetForm:tabView:filesTable:j_idt966" href="#" class="ui-commandlink ui-widget btn btn-default" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:j_idt966&quot;,f:&quot;datasetForm&quot;,p:&quot;datasetForm:tabView:filesTable:j_idt966 @widgetVar(inputSearchTerm)&quot;,u:&quot;datasetForm&quot;,ps:true});return false;">
+                                <span class="glyphicon glyphicon-search"></span> Find
+                            </a>
+                        </span></div>
+                </div>
+                <div class="col-xs-7 text-right"><div id="datasetForm:tabView:filesTable:filesButtons" class="ui-outputpanel ui-widget"><div id="datasetForm:tabView:filesTable:uploadComputeBlock" class="button-block pull-right no-margin-top"></div></div>
+                </div></div><div style="margin-bottom:10px;" class="row"><div class="col-xs-9 text-left"><div style="font-weight:normal;" class="text-muted small">Filter by</div><div style="margin-right:20px;" class="btn-group">
+                        <button type="button" class="btn btn-link dropdown-toggle" style="padding:0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            File Type: <span class="">All</span> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileAccess=&amp;fileTag=&amp;fileSortField=&amp;fileSortOrder="><span class="highlightBold">All</span></a></li>
+                            <li role="separator" class="divider"></li>
+                                <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=%22Tabular+Data%22&amp;fileAccess=&amp;fileTag=&amp;fileSortField=&amp;fileSortOrder="><span class="">Tabular Data (1)</span></a></li>
+                                <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=%22Text%22&amp;fileAccess=&amp;fileTag=&amp;fileSortField=&amp;fileSortOrder="><span class="">Text (1)</span></a></li>
+                        </ul></div><div style="margin-right:20px;" class="btn-group">
+                        <button type="button" class="btn btn-link dropdown-toggle" style="padding:0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Access: <span class="">All</span> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=&amp;fileTag=&amp;fileSortField=&amp;fileSortOrder="><span class="highlightBold">All</span></a></li>
+                            <li role="separator" class="divider"></li>
+                                <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=&amp;fileAccess=Public&amp;fileTag=&amp;fileSortField=&amp;fileSortOrder="><span class="">Public (2)</span></a></li>
+                        </ul></div></div>
+                
+                <div class="col-xs-3 text-right ">
+                    
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-sort"></span> Sort <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right text-left">
+                            <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=&amp;fileAccess="><span class="highlightBold">Name (A-Z)</span></a></li>
+                            <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=&amp;fileAccess=&amp;fileSortField=name&amp;fileSortOrder=desc"><span class="">Name (Z-A)</span></a></li>
+                            <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=&amp;fileAccess=&amp;fileSortField=date"><span class="">Newest</span></a></li>
+                            <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=&amp;fileAccess=&amp;fileSortField=date&amp;fileSortOrder=desc"><span class="">Oldest</span></a></li>
+                            <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=&amp;fileAccess=&amp;fileSortField=size"><span class="">Size</span></a></li>
+                            <li><a href="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi%3A10.7910%2FDVN%2FVOQCHQ&amp;version=&amp;q=&amp;fileTypeGroupFacet=&amp;fileAccess=&amp;fileSortField=type"><span class="">Type</span></a></li>
+                        </ul>
+                    </div>
+                </div></div></div><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="datasetForm:tabView:filesTable_head"><tr role="row"><th id="datasetForm:tabView:filesTable:j_idt1160" class="ui-state-default ui-selection-column text-center" role="columnheader" aria-label="Select Files" scope="col"><span class="ui-column-title"></span><div class="ui-chkbox ui-chkbox-all ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="datasetForm:tabView:filesTable_checkbox" aria-label="Select All" aria-checked="false" /></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div></th><th id="datasetForm:tabView:filesTable:j_idt1161" class="ui-state-default col-file-metadata" role="columnheader" scope="col" aria-label="File Count"><span class="ui-column-title"><div id="datasetForm:tabView:filesTable:filesHeaderCount"><span class="highlightBold">1 to 2 of 2 Files</span></div></span></th><th id="datasetForm:tabView:filesTable:j_idt1200" class="ui-state-default col-file-action button-block text-right " role="columnheader" aria-label="File Actions" scope="col"><span class="ui-column-title"><div id="datasetForm:tabView:filesTable:downloadButtonBlockTabular" class="btn-group">
+                        <button type="button" class="btn btn-default btn-download dropdown-toggle" data-toggle="dropdown">  
+                            <span class="glyphicon glyphicon-download-alt"></span> Download <span class="caret"></span>
+                        </button><ul id="datasetForm:tabView:filesTable:downloadDropdownOptions" role="menu" class="dropdown-menu multi-level pull-right text-left">
+                            <li><a id="datasetForm:tabView:filesTable:j_idt1233" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:j_idt1233&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm&quot;});return false;">
+                                    Original Format
+                                </a>
+                            </li>
+                            <li><a id="datasetForm:tabView:filesTable:j_idt1241" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:j_idt1241&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm&quot;});return false;">
+                                    Archival Format (.tab)
+                                </a>
+                            </li></ul></div>
+                
+                <script type="text/javascript">
+                    function downloadFiles(url, filelist) {
+                      filelist=filelist + ','; //Prevents last file from being dropped on server
+                      var form = $('<form></form>').attr('action', url).attr('method', 'post').attr('enctype','text/plain');
+                      form.append($("<input />").attr('type', 'hidden').attr('name', 'fileIds').attr('value', filelist));
+                      //Submit and then remove form
+                      form.appendTo('body').submit().remove();
+                    }
+                </script></span></th></tr></thead><tbody id="datasetForm:tabView:filesTable_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" data-rk="s3://dvn-cloud:16c1aa4b707-901c60037024" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell" class="ui-selection-column text-center"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="datasetForm:tabView:filesTable_checkbox" aria-checked="false" /></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div></td><td role="gridcell" class="col-file-metadata">
+            <div class="col-file-flexbox">
+                <div class="col-file-thumb pull-left">
+                    <div class="thumbnail-block text-center"><span class="icon-document file-thumbnail-icon text-muted"></span>
+                    </div>
+                </div>
+
+                <div class="file-metadata-block">
+                        
+                        <a href="/file.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ/GG18M2&amp;version=6.0">
+                            County Presidential Returns 2000-2016.md
+                        </a>
+
+                    
+                    <div class="text-muted small"><span id="datasetForm:tabView:filesTable:0:fileTypeOutputRegular">Markdown Text</span><span id="datasetForm:tabView:filesTable:0:fileSize"> - 1.3 KB</span><span id="datasetForm:tabView:filesTable:0:fileCreatePublishDate"> - Jul 22, 2019</span><span id="datasetForm:tabView:filesTable:0:fileDownloadCount"> - 6,252 Downloads</span><div style="word-break: break-all;" class="checksum-block"><span id="datasetForm:tabView:filesTable:0:file-checksum">MD5: e5bec2e8e1dcdd254a282d70e41db4ef</span></div>
+                    </div>
+                </div>
+            </div></td><td role="gridcell" class="col-file-action button-block text-right ">
+            
+            
+            
+            <div class="btn-group" role="group" aria-label="File Actions"><a id="datasetForm:tabView:filesTable:0:j_idt1374" href="#" class="ui-commandlink ui-widget btn-download btn btn-link bootstrap-button-tooltip" aria-label="Download" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:0:j_idt1374&quot;,f:&quot;datasetForm&quot;,p:&quot;datasetForm:tabView:filesTable:0:j_idt1374&quot;});return false;" title="Download">
+            
+            
+            <span class="glyphicon glyphicon-download-alt"></span><span class="sr-only">Download</span></a>
+            
+            </div></td></tr><tr data-ri="1" data-rk="s3://dvn-cloud:16ed2b472db-fb0444065a2c" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell" class="ui-selection-column text-center"><div class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="datasetForm:tabView:filesTable_checkbox" aria-checked="false" /></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div></td><td role="gridcell" class="col-file-metadata">
+            <div class="col-file-flexbox">
+                <div class="col-file-thumb pull-left">
+                    <div class="thumbnail-block text-center"><span class="icon-tabular file-thumbnail-icon text-muted"></span>
+                    </div>
+                </div>
+
+                <div class="file-metadata-block">
+                        
+                        <a href="/file.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ/HEIJCQ&amp;version=6.0">
+                            countypres_2000-2016.tab
+                        </a>
+
+                    
+                    <div class="text-muted small"><span id="datasetForm:tabView:filesTable:1:fileTypeOutputTabular">Tabular Data</span><span id="datasetForm:tabView:filesTable:1:fileSize"> - 4.4 MB</span><span id="datasetForm:tabView:filesTable:1:fileCreatePublishDate"> - Dec 4, 2019</span><span id="datasetForm:tabView:filesTable:1:fileDownloadCount"> - 12,274 Downloads</span>
+                    </div><div style="word-break: break-all;" class="text-muted small"><span id="datasetForm:tabView:filesTable:1:fileNumVars">11 Variables, </span><span id="datasetForm:tabView:filesTable:1:fileNumObs">50524 Observations  - </span><span id="datasetForm:tabView:filesTable:1:fileUNF">UNF:6:ZZe1xuZ5H2l4NUiSRcRf8Q==</span></div>
+                </div>
+            </div></td><td role="gridcell" class="col-file-action button-block text-right ">
+            
+            
+            
+            <div class="btn-group" role="group" aria-label="File Actions"><div class="btn-group">
+            
+            <a type="button" class="btn-download btn btn-link bootstrap-button-tooltip dropdown-toggle" title="Download" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-download-alt"></span><span class="sr-only">Download</span><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu multi-level pull-right text-left">
+                
+                <li><a id="datasetForm:tabView:filesTable:1:j_idt1380" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:1:j_idt1380&quot;,f:&quot;datasetForm&quot;,p:&quot;datasetForm:tabView:filesTable:1:j_idt1380&quot;});return false;">Original File Format (Comma Separated Values)</a>
+                </li>
+                <li><a id="datasetForm:tabView:filesTable:1:j_idt1387" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:1:j_idt1387&quot;,f:&quot;datasetForm&quot;,p:&quot;datasetForm:tabView:filesTable:1:j_idt1387&quot;});return false;">
+                        Tab-Delimited
+                    </a>
+                </li>
+                    <li><a id="datasetForm:tabView:filesTable:1:j_idt1395" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:1:j_idt1395&quot;,f:&quot;datasetForm&quot;,p:&quot;datasetForm:tabView:filesTable:1:j_idt1395&quot;});return false;">
+                            RData Format
+                        </a>
+                    </li>
+                <li><a id="datasetForm:tabView:filesTable:1:j_idt1402" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:1:j_idt1402&quot;,f:&quot;datasetForm&quot;,p:&quot;datasetForm:tabView:filesTable:1:j_idt1402&quot;});return false;">
+                        Variable Metadata
+                    </a>
+                </li>
+                <li class="dropdown-submenu pull-left">
+                    <a tabindex="-1" href="javascript:void(0);">Data File Citation</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('datasetForm'),{'datasetForm:tabView:filesTable:1:j_idt1408':'datasetForm:tabView:filesTable:1:j_idt1408'},'');return false">RIS</a>
+                        </li>
+                        <li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('datasetForm'),{'datasetForm:tabView:filesTable:1:j_idt1411':'datasetForm:tabView:filesTable:1:j_idt1411'},'');return false">EndNote XML</a>
+                        </li>
+                        <li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('datasetForm'),{'datasetForm:tabView:filesTable:1:j_idt1415':'datasetForm:tabView:filesTable:1:j_idt1415'},'');return false">BibTeX</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul></div><div class="btn-group">
+                <a class="btn-explore btn btn-link bootstrap-button-tooltip dropdown-toggle" title="Explore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-equalizer"></span><span class="sr-only">Explore</span><span class="caret"></span>
+                </a>
+            <ul class="dropdown-menu multi-level pull-right text-left">
+                    <li><a id="datasetForm:tabView:filesTable:1:j_idt1454:0:j_idt1456" href="#" class="ui-commandlink ui-widget " onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:1:j_idt1454:0:j_idt1456&quot;,f:&quot;datasetForm&quot;});return false;">
+                            Data Explorer
+                        </a>
+                    </li>
+                    <li><a id="datasetForm:tabView:filesTable:1:j_idt1454:1:j_idt1456" href="#" class="ui-commandlink ui-widget " onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:filesTable:1:j_idt1454:1:j_idt1456&quot;,f:&quot;datasetForm&quot;});return false;">
+                            View Data
+                        </a>
+                    </li>
+            </ul></div>
+            
+            </div></td></tr></tbody></table></div><input type="hidden" id="datasetForm:tabView:filesTable_selection" name="datasetForm:tabView:filesTable_selection" autocomplete="off" value="" /></div><script id="datasetForm:tabView:filesTable_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","filesTable",{id:"datasetForm:tabView:filesTable",selectionMode:"checkbox",groupColumnIndexes:[],disableContextMenuIfEmpty:false,behaviors:{rowUnselect:function(ext,event) {PrimeFaces.ab({s:"datasetForm:tabView:filesTable",e:"rowUnselect",f:"datasetForm",p:"datasetForm:tabView:filesTable",u:"datasetForm:tabView:filesTable",onco:function(xhr,status,args,data){rebindCommand();}},ext);},rowUnselectCheckbox:function(ext,event) {PrimeFaces.ab({s:"datasetForm:tabView:filesTable",e:"rowUnselectCheckbox",f:"datasetForm",p:"datasetForm:tabView:filesTable",u:"datasetForm:tabView:filesTable",onco:function(xhr,status,args,data){rebindCommand();}},ext);},rowDblselect:function(ext,event) {PrimeFaces.ab({s:"datasetForm:tabView:filesTable",e:"rowDblselect",f:"datasetForm",p:"datasetForm:tabView:filesTable",u:"datasetForm:tabView:filesTable",onco:function(xhr,status,args,data){rebindCommand();}},ext);},page:function(ext,event) {PrimeFaces.ab({s:"datasetForm:tabView:filesTable",e:"page",f:"datasetForm",p:"datasetForm:tabView:filesTable",u:"datasetForm:tabView:filesTable",onco:function(xhr,status,args,data){refreshPaginator(),rebindCommand();}},ext);},rowSelect:function(ext,event) {PrimeFaces.ab({s:"datasetForm:tabView:filesTable",e:"rowSelect",f:"datasetForm",p:"datasetForm:tabView:filesTable",u:"datasetForm:tabView:filesTable",onco:function(xhr,status,args,data){rebindCommand();}},ext);},toggleSelect:function(ext,event) {PrimeFaces.ab({s:"datasetForm:tabView:filesTable",e:"toggleSelect",f:"datasetForm",p:"datasetForm:tabView:filesTable",u:"datasetForm:tabView:filesTable",onco:function(xhr,status,args,data){rebindCommand();}},ext);},rowSelectCheckbox:function(ext,event) {PrimeFaces.ab({s:"datasetForm:tabView:filesTable",e:"rowSelectCheckbox",f:"datasetForm",p:"datasetForm:tabView:filesTable",u:"datasetForm:tabView:filesTable",onco:function(xhr,status,args,data){rebindCommand();}},ext);}}});});</script></div><div id="datasetForm:tabView:metadataMapTab" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-helper-hidden" role="tabpanel" aria-hidden="true" data-index="1"><div class="button-block tab-header margin-bottom text-right"><div class="btn-group">
+                                        <button class="btn btn-default btn-export dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-export"></span> Export Metadata <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right text-left">
+                                                <li><a href="https://dataverse.harvard.edu/api/datasets/export;jsessionid=0954018282f9a663c9cac604bd96?exporter=dcterms&amp;persistentId=doi%3A10.7910/DVN/VOQCHQ" target="_blank">Dublin Core</a>
+                                                </li>
+                                                <li><a href="https://dataverse.harvard.edu/api/datasets/export;jsessionid=0954018282f9a663c9cac604bd96?exporter=ddi&amp;persistentId=doi%3A10.7910/DVN/VOQCHQ" target="_blank">DDI</a>
+                                                </li>
+                                                <li><a href="https://dataverse.harvard.edu/api/datasets/export;jsessionid=0954018282f9a663c9cac604bd96?exporter=Datacite&amp;persistentId=doi%3A10.7910/DVN/VOQCHQ" target="_blank">DataCite</a>
+                                                </li>
+                                                <li><a href="https://dataverse.harvard.edu/api/datasets/export;jsessionid=0954018282f9a663c9cac604bd96?exporter=html&amp;persistentId=doi%3A10.7910/DVN/VOQCHQ" target="_blank">DDI HTML Codebook</a>
+                                                </li>
+                                                <li><a href="https://dataverse.harvard.edu/api/datasets/export;jsessionid=0954018282f9a663c9cac604bd96?exporter=dataverse_json&amp;persistentId=doi%3A10.7910/DVN/VOQCHQ" target="_blank">JSON</a>
+                                                </li>
+                                                <li><a href="https://dataverse.harvard.edu/api/datasets/export;jsessionid=0954018282f9a663c9cac604bd96?exporter=OAI_ORE&amp;persistentId=doi%3A10.7910/DVN/VOQCHQ" target="_blank">OAI_ORE</a>
+                                                </li>
+                                                <li><a href="https://dataverse.harvard.edu/api/datasets/export;jsessionid=0954018282f9a663c9cac604bd96?exporter=oai_datacite&amp;persistentId=doi%3A10.7910/DVN/VOQCHQ" target="_blank">OpenAIRE</a>
+                                                </li>
+                                                <li><a href="https://dataverse.harvard.edu/api/datasets/export;jsessionid=0954018282f9a663c9cac604bd96?exporter=schema.org&amp;persistentId=doi%3A10.7910/DVN/VOQCHQ" target="_blank">Schema.org JSON-LD</a>
+                                                </li>
+                                        </ul></div></div><div class="panel-group">
+            <div class="panel panel-default">
+                <div data-toggle="collapse" data-target="#panelCollapse0" class="panel-heading text-info">
+                    Citation Metadata  <span class="glyphicon glyphicon-chevron-up"></span>
+                </div>
+                <div id="panelCollapse0" class="collapse in">
+                    <div class="panel-body metadata-container">
+                        <table class="metadata">
+                            <tbody>
+                                    <tr id="metadata_persistentId">
+                                        <th scope="row">
+                                            Dataset Persistent ID
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="The unique persistent identifier for a dataset, which can be a Handle or DOI in Dataverse."></span>
+                                        </th>
+                                        <td>doi:10.7910/DVN/VOQCHQ</td>
+                                    </tr><tr id="metadata_publicationDate">
+                                        <th scope="row">
+                                            Publication Date
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="The publication date of a dataset."></span>
+                                        </th>
+                                        <td>2018-10-11</td></tr>
+                                    <tr id="metadata_title">
+                                        <th scope="row">
+                                            Title
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="Full title by which the Dataset is known."></span>
+                                        </th>
+                                        <td>County Presidential Election Returns 2000-2016
+                                        </td>
+                                    </tr>
+                                    <tr id="metadata_author">
+                                        <th scope="row">
+                                            Author
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="The person(s), corporate body(ies), or agency(ies) responsible for creating the work."></span>
+                                        </th>
+                                        <td>MIT Election Data and Science Lab (Massachusetts Institute of Technology)
+                                                    <br />
+                                        </td>
+                                    </tr>
+                                    <tr id="metadata_datasetContact">
+                                        <th scope="row">
+                                            Contact
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="The contact(s) for this Dataset."></span>
+                                        </th>
+                                        <td>
+                                                    <p class="help-block">Use email button above to contact.
+                                                    </p>Wimpy, Cameron (Massachusetts Institute of Technology) 
+                                                    <br />
+                                        </td>
+                                    </tr>
+                                    <tr id="metadata_dsDescription">
+                                        <th scope="row">
+                                            Description
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="A summary describing the purpose, nature, and scope of the Dataset."></span>
+                                        </th>
+                                        <td>This dataset contains county-level returns for presidential elections from 2000 to 2016. (2018-10-11)
+                                                    <br />
+                                        </td>
+                                    </tr>
+                                    <tr id="metadata_subject">
+                                        <th scope="row">
+                                            Subject
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="Domain-specific Subject Categories that are topically relevant to the Dataset."></span>
+                                        </th>
+                                        <td>Social Sciences
+                                        </td>
+                                    </tr>
+                                    <tr id="metadata_depositor">
+                                        <th scope="row">
+                                            Depositor
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="The person (Family Name, Given Name) or the name of the organization that deposited this Dataset to the repository."></span>
+                                        </th>
+                                        <td>Agadjanian, Alexander
+                                        </td>
+                                    </tr>
+                                    <tr id="metadata_dateOfDeposit">
+                                        <th scope="row">
+                                            Deposit Date
+                                            <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="Date that the Dataset was deposited into the repository."></span>
+                                        </th>
+                                        <td>2018-10-11
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div></div></div><div id="datasetForm:tabView:termsTab" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-helper-hidden" role="tabpanel" aria-hidden="true" data-index="2">
+    <div class="panel-group">
+       <div class="panel panel-default">
+           <div data-toggle="collapse" data-target="#panelCollapseTOU" class="panel-heading text-info">
+               Terms of Use  <span class="glyphicon glyphicon-chevron-up"></span>
+           </div>
+           <div id="panelCollapseTOU" class="collapse in"><div id="datasetForm:tabView:touFragment">
+                   <div class="panel-body">
+                       <div class="form-group">
+                           <label for="metadata_Terms" class="col-sm-3 control-label">
+                               Waiver
+                               <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="The waiver informs data downloaders how they can use this dataset."></span>
+                           </label>
+                           <div class="col-sm-9">
+                                   <p class="help-block">Our <a href="https://dataverse.org/best-practices/dataverse-community-norms" title="Dataverse Community Norms - Dataverse.org" target="_blank">Community Norms</a> as well as good scientific practices expect that proper credit is given via citation. Please use the data citation above, generated by the Dataverse.
+                                   </p>
+                                   <p>CC0 - "Public Domain Dedication" <img src="/resources/images/cc0.png" alt="Creative Commons CC0 1.0 Public Domain Dedication icon" class="waiver-CC0-inline" /></p>
+                           </div>
+                       </div>
+                       
+                   </div></div>
+           </div>
+       </div><div class="panel panel-default">
+           <div data-toggle="collapse" data-target="#panelCollapseGuestbook" class="panel-heading text-info">
+               Guestbook  <span class="glyphicon glyphicon-chevron-up"></span>
+           </div>
+           <div id="panelCollapseGuestbook" class="collapse in">
+               <div class="panel-body">
+                   <div class="form-group">
+                       <label for="metadata_Guestbook" class="col-sm-3 control-label">
+                           Guestbook
+                           <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="User information (i.e., name, email, institution, and position) will be collected when files are downloaded."></span>
+                       </label>
+                       <div class="col-sm-9">
+                                   <p>No guestbook is assigned to this dataset, you will not be prompted to provide any information on file download.</p>
+                       </div>
+                   </div>
+               </div>
+           </div></div> 
+    </div></div><div id="datasetForm:tabView:versionsTab" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-helper-hidden" role="tabpanel" aria-hidden="true" data-index="3">
+
+   <script>
+       //<![CDATA[
+       // Version tab: Retrieve data after page load
+        $(document).ready(function () {
+            preload_message = "(Loading versions...)";
+            $('#datasetForm\\:tabView\\:versionsTable_data tr.ui-datatable-empty-message td').text(preload_message);
+            postLoadVersionTabList();
+       });
+       //]]>
+   </script><script id="datasetForm:tabView:j_idt1860" type="text/javascript">postLoadVersionTabList = function() {PrimeFaces.ab({s:"datasetForm:tabView:j_idt1860",f:"datasetForm",p:"datasetForm:tabView:j_idt1860",u:"datasetForm:tabView:versionsTable",pa:arguments[0]});}</script>
+    <div class="text-right margin-bottom">
+            <button type="button" class="btn btn-default" onclick="testCheckBoxes();">
+                <span class="glyphicon glyphicon-transfer"></span> View Differences
+            </button><button id="datasetForm:tabView:compareVersions" name="datasetForm:tabView:compareVersions" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({s:&quot;datasetForm:tabView:compareVersions&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm&quot;,onco:function(xhr,status,args,data){PF('detailsBlocks').show();post_differences();;}});return false;" style="display:none" type="submit"><span class="ui-button-text ui-c">Direct</span></button><script id="datasetForm:tabView:compareVersions_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_tabView_compareVersions",{id:"datasetForm:tabView:compareVersions"});});</script>
+    </div><div id="datasetForm:tabView:versionsTable" class="ui-datatable ui-widget"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="datasetForm:tabView:versionsTable_head"><tr role="row"><th id="datasetForm:tabView:versionsTable:j_idt1865" class="ui-state-default ui-selection-column col-select-width text-center" role="columnheader" scope="col"><span class="ui-column-title"></span><div class="ui-chkbox ui-chkbox-all ui-widget"><div class="ui-helper-hidden-accessible"><input type="checkbox" name="datasetForm:tabView:versionsTable_checkbox" aria-label="Select All" aria-checked="false" /></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div></div></th><th id="datasetForm:tabView:versionsTable:j_idt1866" class="ui-state-default col-sm-1 text-center" role="columnheader" aria-label="Dataset" scope="col"><span class="ui-column-title">Dataset</span></th><th id="datasetForm:tabView:versionsTable:j_idt1878" class="ui-state-default" role="columnheader" aria-label="Summary" scope="col"><span class="ui-column-title">Summary</span></th><th id="datasetForm:tabView:versionsTable:j_idt1925" class="ui-state-default col-sm-3" role="columnheader" aria-label="Contributors" scope="col"><span class="ui-column-title">Contributors</span></th><th id="datasetForm:tabView:versionsTable:j_idt1928" class="ui-state-default col-sm-2" role="columnheader" aria-label="Published" scope="col"><span class="ui-column-title">Published</span></th></tr></thead><tbody id="datasetForm:tabView:versionsTable_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="5">No records found.</td></tr></tbody></table></div><input type="hidden" id="datasetForm:tabView:versionsTable_selection" name="datasetForm:tabView:versionsTable_selection" autocomplete="off" value="" /></div><script id="datasetForm:tabView:versionsTable_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","versionsTable",{id:"datasetForm:tabView:versionsTable",selectionMode:"checkbox",groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script></div></div><input type="hidden" id="datasetForm:tabView_activeIndex" name="datasetForm:tabView_activeIndex" value="0" autocomplete="off" /></div><script id="datasetForm:tabView_s" type="text/javascript">$(function(){PrimeFaces.cw("TabView","content",{id:"datasetForm:tabView",effectDuration:"normal",scrollable:false,behaviors:{tabChange:function(ext,event) {PrimeFaces.ab({s:"datasetForm:tabView",e:"tabChange",f:"datasetForm",p:"datasetForm:tabView",u:"datasetForm:tabView",onco:function(xhr,status,args,data){bind_bsui_components();;}},ext);}}});});</script></div><div id="datasetForm:j_idt1936" class="ui-blockui-content ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow"></div><script id="datasetForm:j_idt1936_s" type="text/javascript">$(function(){PrimeFaces.cw("BlockUI","blockDatasetForm",{id:"datasetForm:j_idt1936",block:"datasetForm"});});</script><div id="datasetForm:shareDialog" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:shareDialog_title" class="ui-dialog-title">Share Dataset</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:shareDialog_content">
+                        <p class="help-block">Share this dataset on your favorite social media networks.</p>
+                        <div id="sharrre-widget" data-url="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ" data-text="View this dataset."></div>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('shareDialog').hide()" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:shareDialog_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","shareDialog",{id:"datasetForm:shareDialog",modal:true});});</script><div id="datasetForm:citationsDialog" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:citationsDialog_title" class="ui-dialog-title">Dataset Citations</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:citationsDialog_content">
+                        <p class="help-block">Citations for this dataset are retrieved from Crossref via DataCite using Make Data Count standards. For more information about dataset metrics, please refer to the <a href="http://guides.dataverse.org/en/5.1.1/user/dataset-management.html#dataset-metrics-and-make-data-count" title="Dataset Metrics and Make Data Count - Dataverse User Guide" target="_blank">User Guide</a>.
+                        </p>
+                        <div id="citations-list-block"><div>
+                                Sorry, no citations were found.
+                            </div>
+                        </div>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('citationsDialog').hide()" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:citationsDialog_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","citationsDialog",{id:"datasetForm:citationsDialog",modal:true});});</script><div id="datasetForm:downloadInvalid" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:downloadInvalid_title" class="ui-dialog-title">Restricted Files Selected</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:downloadInvalid_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> The restricted file(s) selected may not be downloaded because you have not been granted access.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('downloadInvalid').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:downloadInvalid_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","downloadInvalid",{id:"datasetForm:downloadInvalid",modal:true});});</script><div id="datasetForm:downloadMixed" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:downloadMixed_title" class="ui-dialog-title">Restricted Files Selected</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:downloadMixed_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> The restricted file(s) selected may not be downloaded because you have not been granted access.</p>
+                        <table>
+                        </table>
+                        <div class="button-block">
+                            <p class="help-block">Click Continue to download the files you have access to download.</p><button id="datasetForm:j_idt1959" name="datasetForm:j_idt1959" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('downloadMixed').hide()},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt1959&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Continue</span></button><script id="datasetForm:j_idt1959_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt1959",{id:"datasetForm:j_idt1959"});});</script>
+                            <button class="btn btn-link" onclick="PF('downloadMixed').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:downloadMixed_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","downloadMixed",{id:"datasetForm:downloadMixed",modal:true});});</script><div id="datasetForm:downloadAllMixed" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:downloadAllMixed_title" class="ui-dialog-title">Restricted Files Selected</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:downloadAllMixed_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> The restricted file(s) selected may not be downloaded because you have not been granted access.</p>
+                        <table>
+                        </table>
+                        <div class="button-block">
+                            <p class="help-block">Click Continue to download the files you have access to download.</p><button id="datasetForm:j_idt1966" name="datasetForm:j_idt1966" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('downloadAllMixed').hide()},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt1966&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Continue</span></button><script id="datasetForm:j_idt1966_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt1966",{id:"datasetForm:j_idt1966"});});</script>
+                            <button class="btn btn-link" onclick="PF('downloadAllMixed').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:downloadAllMixed_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","downloadAllMixed",{id:"datasetForm:downloadAllMixed",modal:true});});</script><div id="datasetForm:deleteConfirmation" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:deleteConfirmation_title" class="ui-dialog-title">Delete Dataset</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:deleteConfirmation_content">
+                        <p class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this dataset and all of its files? You cannot undelete this dataset.</p>
+                        <div class="button-block"><button id="datasetForm:j_idt1970" name="datasetForm:j_idt1970" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('deleteConfirmation').hide()},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt1970&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Continue</span></button><script id="datasetForm:j_idt1970_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt1970",{id:"datasetForm:j_idt1970"});});</script>
+                            <button class="btn btn-link" onclick="PF('deleteConfirmation').hide();PF('blockDatasetForm').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:deleteConfirmation_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","deleteConfirmation",{id:"datasetForm:deleteConfirmation",modal:true});});</script><div id="datasetForm:deleteVersionConfirmation" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:deleteVersionConfirmation_title" class="ui-dialog-title">Delete Draft Version</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:deleteVersionConfirmation_content">
+                        <p class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this draft version? Files will be reverted to the most recently published version. You cannot undelete this draft.</p>
+                        <div class="button-block"><button id="datasetForm:j_idt1973" name="datasetForm:j_idt1973" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('deleteVersionConfirmation').hide()},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt1973&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Continue</span></button><script id="datasetForm:j_idt1973_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt1973",{id:"datasetForm:j_idt1973"});});</script>
+                            <button class="btn btn-link" onclick="PF('deleteVersionConfirmation').hide();PF('blockDatasetForm').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:deleteVersionConfirmation_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","deleteVersionConfirmation",{id:"datasetForm:deleteVersionConfirmation",modal:true});});</script><div id="datasetForm:privateUrlId" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:privateUrlId_title" class="ui-dialog-title">Unpublished Dataset Private URL</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:privateUrlId_content"><div id="datasetForm:privateUrlPanelCannotCreate">
+                            <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Private URL can only be used with unpublished versions of datasets.</p>
+                            <div class="button-block">
+                                <button class="btn btn-link" onclick="PF('privateUrlConfirmation').hide();PF('blockDatasetForm').hide();" type="button">
+                                    Cancel
+                                </button>
+                            </div></div></div></div><script id="datasetForm:privateUrlId_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","privateUrlConfirmation",{id:"datasetForm:privateUrlId",modal:true});});</script><div id="datasetForm:disablePrivateUrlConfirmation" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:disablePrivateUrlConfirmation_title" class="ui-dialog-title">Unpublished Dataset Private URL</span></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:disablePrivateUrlConfirmation_content">
+                        <p class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to disable the Private URL? If you have shared the Private URL with others they will no longer be able to use it to access your unpublished dataset.</p>
+                        <div class="button-block"><button id="datasetForm:j_idt1992" name="datasetForm:j_idt1992" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('disablePrivateUrlConfirmation').hide();},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt1992&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm:privateUrlPanel messagePanel&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Yes, Disable Private URL</span></button><script id="datasetForm:j_idt1992_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt1992",{id:"datasetForm:j_idt1992"});});</script>
+                            <button class="btn btn-link" onclick="PF('disablePrivateUrlConfirmation').hide();PF('privateUrlConfirmation').show();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:disablePrivateUrlConfirmation_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","disablePrivateUrlConfirmation",{id:"datasetForm:disablePrivateUrlConfirmation",modal:true});});</script><div id="datasetForm:deleteSelectedFileConfirmation" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:deleteSelectedFileConfirmation_title" class="ui-dialog-title">Delete Files</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:deleteSelectedFileConfirmation_content">
+                        <p class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> The file(s) will be deleted after you click on the Delete button.</p>
+                            <p class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> Files will not be removed from previously published versions of the dataset.</p>
+                        <div class="button-block"><button id="datasetForm:j_idt1998" name="datasetForm:j_idt1998" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('deleteSelectedFileConfirmation').hide()},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt1998&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Delete</span></button><script id="datasetForm:j_idt1998_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt1998",{id:"datasetForm:j_idt1998"});});</script>
+                            <button class="btn btn-link" onclick="PF('deleteSelectedFileConfirmation').hide();PF('blockDatasetForm').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:deleteSelectedFileConfirmation_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","deleteSelectedFileConfirmation",{id:"datasetForm:deleteSelectedFileConfirmation",modal:true});});</script><div id="datasetForm:computeInvalid" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:computeInvalid_title" class="ui-dialog-title">Compute</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:computeInvalid_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> This dataset contains restricted files you may not compute on because you have not been granted access.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('computeInvalid').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:computeInvalid_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","computeInvalid",{id:"datasetForm:computeInvalid",modal:true});});</script><div id="datasetForm:j_idt2001"><div id="datasetForm:j_idt2002" class="ui-outputpanel ui-widget"></div></div><div id="datasetForm:deaccessionConfirmation" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:deaccessionConfirmation_title" class="ui-dialog-title">Deaccession Dataset</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:deaccessionConfirmation_content">
+                        <p class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to deaccession? The selected version(s) will no longer be viewable by the public.</p>
+                        <div class="button-block"><input type="submit" name="datasetForm:j_idt2039" value="Yes" class="btn btn-default" onclick="PF('deaccessionConfirmation').hide();                                     PF('deaccessionBlock').hide()" />
+                            <button class="btn btn-link" onclick="PF('deaccessionConfirmation').hide();" type="button">
+                                No
+                            </button>
+                        </div></div></div><script id="datasetForm:deaccessionConfirmation_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","deaccessionConfirmation",{id:"datasetForm:deaccessionConfirmation",modal:true});});</script><div id="datasetForm:deaccessionAllConfirmation" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:deaccessionAllConfirmation_title" class="ui-dialog-title">Deaccession Dataset</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:deaccessionAllConfirmation_content">
+                        <p class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to deaccession this dataset? It will no longer be viewable by the public.</p>
+                        <div class="button-block"><input type="submit" name="datasetForm:j_idt2042" value="Yes" class="btn btn-default" onclick="PF('deaccessionAllConfirmation').hide();PF('deaccessionBlock').hide();PF('blockDatasetForm').hide();" />
+                            <button class="btn btn-link" onclick="PF('deaccessionAllConfirmation').hide();PF('blockDatasetForm').hide();" type="button">
+                                No
+                            </button>
+                        </div></div></div><script id="datasetForm:deaccessionAllConfirmation_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","deaccessionAllConfirmation",{id:"datasetForm:deaccessionAllConfirmation",modal:true});});</script><input id="datasetForm:hiddenReasonInput" name="datasetForm:hiddenReasonInput" type="text" style="display:none" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" /><script id="datasetForm:hiddenReasonInput_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","hiddenReasonInput",{id:"datasetForm:hiddenReasonInput",maxlength:-2147483648});});</script><div id="datasetForm:compareTwo" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:compareTwo_title" class="ui-dialog-title">Version Differences Details</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:compareTwo_content">
+                        <p class="help-block"><span class="glyphicon glyphicon-exclamation-sign text-danger"></span> <span class="text-danger">Please select two versions to view the differences.</span></p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('compareTwo').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:compareTwo_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","compareTwo",{id:"datasetForm:compareTwo",modal:true});});</script><div id="datasetForm:detailsBlocks" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container largePopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:detailsBlocks_title" class="ui-dialog-title">Version Differences Details</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:detailsBlocks_content">
+                        <div id="version-title" class="margin-bottom-half"></div>
+                        <div id="version-details-block" class=" clearfix margin-bottom-half">
+                            <div class="pull-left">
+                                 
+                            </div>
+                            <div class="pull-left">
+                                Version: <br />
+                                Last Updated: 
+                            </div>
+                            <div class="pull-left">
+                                Version: <br />
+                                Last Updated: 
+                            </div>
+                        </div>
+                        <div class="button-block margin-bottom">
+                            <button class="btn btn-default" onclick="PF('detailsBlocks').hide();PF('blockDatasetForm').hide();" type="button">
+                                Done
+                            </button>
+                        </div></div></div><script id="datasetForm:detailsBlocks_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","detailsBlocks",{id:"datasetForm:detailsBlocks",modal:true});});</script><div id="datasetForm:selectFilesForDownload" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:selectFilesForDownload_title" class="ui-dialog-title">Select File(s)</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:selectFilesForDownload_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Please select a file or files to be downloaded.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('selectFilesForDownload').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:selectFilesForDownload_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","selectFilesForDownload",{id:"datasetForm:selectFilesForDownload",modal:true});});</script><div id="datasetForm:selectFilesForRequestAccess" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:selectFilesForRequestAccess_title" class="ui-dialog-title">Select File(s)</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:selectFilesForRequestAccess_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Please select a file or files for access request.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('selectFilesForRequestAccess').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:selectFilesForRequestAccess_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","selectFilesForRequestAccess",{id:"datasetForm:selectFilesForRequestAccess",modal:true});});</script><div id="datasetForm:selectFilesForDelete" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:selectFilesForDelete_title" class="ui-dialog-title">Select File(s)</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:selectFilesForDelete_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Please select a file or files to be deleted.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('selectFilesForDelete').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:selectFilesForDelete_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","selectFilesForDelete",{id:"datasetForm:selectFilesForDelete",modal:true});});</script><div id="datasetForm:selectFilesForRestrict" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:selectFilesForRestrict_title" class="ui-dialog-title">Select File(s)</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:selectFilesForRestrict_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Please select unrestricted file(s) to be restricted.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('selectFilesForRestrict').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:selectFilesForRestrict_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","selectFilesForRestrict",{id:"datasetForm:selectFilesForRestrict",modal:true});});</script><div id="datasetForm:selectFilesForUnRestrict" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:selectFilesForUnRestrict_title" class="ui-dialog-title">Select File(s)</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:selectFilesForUnRestrict_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Please select restricted file(s) to be unrestricted.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('selectFilesForUnRestrict').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:selectFilesForUnRestrict_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","selectFilesForUnRestrict",{id:"datasetForm:selectFilesForUnRestrict",modal:true});});</script><div id="datasetForm:selectFilesForEditMetadata" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:selectFilesForEditMetadata_title" class="ui-dialog-title">Select File(s)</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:selectFilesForEditMetadata_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Please select a file or files to be edited.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('selectFilesForEditMetadata').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:selectFilesForEditMetadata_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","selectFilesForEditMetadata",{id:"datasetForm:selectFilesForEditMetadata",modal:true});});</script><div id="datasetForm:selectFilesForEditTags" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:selectFilesForEditTags_title" class="ui-dialog-title">Select File(s)</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:selectFilesForEditTags_content">
+                        <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Please select a file or files to be edited.</p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('selectFilesForEditTags').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:selectFilesForEditTags_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","selectFilesForEditTags",{id:"datasetForm:selectFilesForEditTags",modal:true});});</script><script id="datasetForm:j_idt2142" type="text/javascript">refreshTagsCommand = function() {PrimeFaces.ab({s:"datasetForm:j_idt2142",f:"datasetForm",u:"datasetForm:fileTagsPopup",onco:function(xhr,status,args,data){PF('fileTagsPopup').show();;},pa:arguments[0]});}</script><div id="datasetForm:fileTagsPopup" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:fileTagsPopup_title" class="ui-dialog-title">Edit Tags</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:fileTagsPopup_content"><span id="datasetForm:j_idt2143"></span><script type="text/javascript">$(function(){PrimeFaces.focus('datasetForm:fileTagsMenuDS');});</script>
+                        <p class="help-block">Select existing file tags or create new tags to describe your files. Each file can have more than one tag.</p>
+                        <div class="button-block"><button id="datasetForm:fileTagsPopupSaveButton" name="datasetForm:fileTagsPopupSaveButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.ab({s:&quot;datasetForm:fileTagsPopupSaveButton&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm:tabView:filesTable datasetForm&quot;,onco:function(xhr,status,args,data){PF('fileTagsPopup').hide();}});return false;" type="submit"><span class="ui-button-text ui-c">Save Changes</span></button><script id="datasetForm:fileTagsPopupSaveButton_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_fileTagsPopupSaveButton",{id:"datasetForm:fileTagsPopupSaveButton"});});</script><button id="datasetForm:fileTagsPopupCancelButton" name="datasetForm:fileTagsPopupCancelButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-link" onclick="PrimeFaces.bcn(this,event,[function(event){PF('fileTagsPopup').hide();PF('blockDatasetForm').hide();},function(event){PrimeFaces.ab({s:&quot;datasetForm:fileTagsPopupCancelButton&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Cancel</span></button><script id="datasetForm:fileTagsPopupCancelButton_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_fileTagsPopupCancelButton",{id:"datasetForm:fileTagsPopupCancelButton"});});</script>
+                        </div></div></div><script id="datasetForm:fileTagsPopup_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","fileTagsPopup",{id:"datasetForm:fileTagsPopup",modal:true});});</script><div id="datasetForm:accessSignUpLogIn" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:accessSignUpLogIn_title" class="ui-dialog-title">Request Access</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:accessSignUpLogIn_content">
+                        <p class="help-block">
+                            <span class="glyphicon glyphicon-warning-sign text-danger"></span> 
+                            <span class="text-danger">You need to <a href="/dataverseuser.xhtml?editMode=CREATE&redirectPage=%2Fdataset.xhtml%3FpersistentId%3Ddoi%3A10.7910%2FDVN%2FVOQCHQ" target="_self" title="Sign Up for a Dataverse Account">Sign Up</a> or <a href="/loginpage.xhtml?redirectPage=%2Fdataset.xhtml%3FpersistentId%3Ddoi%3A10.7910%2FDVN%2FVOQCHQ" target="_self" title="Log into your Dataverse Account">Log In</a> to request access to this file.</span>
+                        </p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('accessSignUpLogIn_popup').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:accessSignUpLogIn_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","accessSignUpLogIn_popup",{id:"datasetForm:accessSignUpLogIn",modal:true});});</script><div id="datasetForm:mapDataDialog" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:mapDataDialog_title" class="ui-dialog-title">Data Not Published</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:mapDataDialog_content">
+                        <p class="help-block">
+                            <span class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> In order to map your data with WorldMap, your data must be published. Please publish this dataset, then retry the Map Data feature.</span>
+                        </p>
+                        <div class="button-block">
+                            <button type="button" class="btn btn-default" onclick="PF('mapDataDialog').hide();PF('blockDatasetForm').hide();">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:mapDataDialog_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","mapDataDialog",{id:"datasetForm:mapDataDialog",modal:true});});</script><div id="datasetForm:configureToolPopup" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:configureToolPopup_title" class="ui-dialog-title"></span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:configureToolPopup_content">
+
+        <p class="help-block"><span class="text-left"> <br/></span>
+        </p>
+        
+        <div class="button-block"><button id="datasetForm:j_idt2182" name="datasetForm:j_idt2182" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('configureToolPopup').hide();},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt2182&quot;,f:&quot;datasetForm&quot;,u:&quot;messagePanel&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Continue</span></button><script id="datasetForm:j_idt2182_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt2182",{id:"datasetForm:j_idt2182"});});</script>
+            <button class="btn btn-link" onclick="PF('configureToolPopup').hide();PF('blockDatasetForm').hide();" type="button">
+                Cancel
+            </button>
+        </div></div></div><script id="datasetForm:configureToolPopup_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","configureToolPopup",{id:"datasetForm:configureToolPopup",modal:true});});</script><div id="datasetForm:downloadPopup" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container largePopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:downloadPopup_title" class="ui-dialog-title">Dataset Terms</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:downloadPopup_content"><span id="datasetForm:j_idt2186"></span><script type="text/javascript">$(function(){PrimeFaces.focus(null, 'datasetForm:downloadPopup');});</script>
+        <p class="help-block">
+            Please confirm and/or complete the information needed below in order to continue.
+        </p><div id="datasetForm:guestbookMessages">
+            <div class="container messagePanel">
+            </div></div>
+        
+        <div class="form-horizontal">
+        </div>
+        <div class="button-block"><button id="datasetForm:j_idt2302" name="datasetForm:j_idt2302" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.ab({s:&quot;datasetForm:j_idt2302&quot;,f:&quot;datasetForm&quot;,p:&quot;datasetForm:j_idt2302&quot;,u:&quot;datasetForm:guestbookUIFragment&quot;,pa:[{name:&quot;DO_GB_VALIDATION&quot;,value:&quot;true&quot;}]});return false;" type="submit"><span class="ui-button-text ui-c">Accept</span></button><script id="datasetForm:j_idt2302_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt2302",{id:"datasetForm:j_idt2302"});});</script>
+            <button class="btn btn-link" onclick="PF('downloadPopup').hide();PF('blockDatasetForm').hide();" type="button">
+                Cancel
+            </button>
+        </div></div></div><script id="datasetForm:downloadPopup_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","downloadPopup",{id:"datasetForm:downloadPopup",modal:true});});</script><div id="datasetForm:previewGuestbook" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container largePopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:previewGuestbook_title" class="ui-dialog-title">Preview Guestbook</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:previewGuestbook_content">
+    
+        <div class="form-horizontal">
+            <p class="help-block">
+                Upon downloading files the guestbook asks for the following information.
+            </p>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">
+                    Guestbook Name
+                </label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">
+                    Collected Data
+                    <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="User data collected by the guestbook."></span>
+                </label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">Account Information
+                        <ul>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="button-block">
+            <button class="btn btn-default" onclick="PF('viewGuestbook').hide()" type="button">
+                Close
+            </button>
+        </div></div></div><script id="datasetForm:previewGuestbook_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","viewGuestbook",{id:"datasetForm:previewGuestbook",modal:true});});</script><div id="datasetForm:downloadPackagePopup" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container smallPopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:downloadPackagePopup_title" class="ui-dialog-title">Package File Download</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:downloadPackagePopup_content"><div id="datasetForm:packagePopupDownloadInfo">
+        <div class="col-sm-12">
+            <p class="help-block no-margin-top">Use the Download URL in a Wget command or a download manager to download this package file. Download via web browser is not recommended. <a href="http://guides.dataverse.org/en/5.1.1/user/find-use-data.html#downloading-a-dataverse-package-via-url" title="User Guide - Downloading a Dataverse Package via URL" target="_blank">User Guide - Downloading a Dataverse Package via URL</a>
+            </p>
+        </div>
+        <div class="col-sm-12 margin-bottom"><div id="datasetForm:j_idt2385" class="ui-outputpanel ui-widget">
+        <div id="fileInfoInclude-filesTable" class="col-sm-12 row">
+            <div class="pull-left col-file-thumb">
+                <div class="thumbnail-block text-center"><span class="icon-other file-thumbnail-icon text-muted"></span>
+                </div>
+            </div>
+            <div class="col-sm-10 col-file-metadata">
+                <div class="fileNameOriginal">
+                    <span></span>
+                </div>
+                <div class="text-muted small">
+                    <span id="static:fileTypeOutputRegular"></span>
+                    <span id="static:fileSize"> - </span>
+                    <span id="static:fileCreatePublishDate"> - </span>
+                    <div class="checksum-block"><span id="static:file-checksum">: </span></div>
+                </div>
+            </div>
+        </div></div>
+        </div>
+        <div class="col-sm-12">
+            <label>Download URL</label> 
+            <p><code>https://dataverse.harvard.edu/api/access/datafile/</code></p>
+        </div>
+        <div class="col-sm-12 button-block margin-top"><button id="datasetForm:downloadPackagePopupCancelButton" name="datasetForm:downloadPackagePopupCancelButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('downloadPackagePopup').hide();},function(event){PrimeFaces.ab({s:&quot;datasetForm:downloadPackagePopupCancelButton&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm:downloadPackagePopup&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Close</span></button><script id="datasetForm:downloadPackagePopupCancelButton_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_downloadPackagePopupCancelButton",{id:"datasetForm:downloadPackagePopupCancelButton"});});</script>
+        </div></div></div></div><script id="datasetForm:downloadPackagePopup_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","downloadPackagePopup",{id:"datasetForm:downloadPackagePopup",modal:true});});</script><div id="datasetForm:requestAccessPopup" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container largePopUp"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:requestAccessPopup_title" class="ui-dialog-title">Request Access</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:requestAccessPopup_content">
+        <p class="help-block">
+            Please confirm and/or complete the information needed below in order to request access to files in this dataset.
+        </p>
+        
+        <div class="form-horizontal">
+        </div>
+        <div class="button-block"><button id="datasetForm:j_idt2436" name="datasetForm:j_idt2436" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.ab({s:&quot;datasetForm:j_idt2436&quot;,f:&quot;datasetForm&quot;,u:&quot;@([id$=requestAccessPopupButton])&quot;,onco:function(xhr,status,args,data){PF('requestAccessPopup').hide();;}});return false;" type="submit"><span class="ui-button-text ui-c">Accept</span></button><script id="datasetForm:j_idt2436_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt2436",{id:"datasetForm:j_idt2436"});});</script>
+            <button class="btn btn-link" onclick="PF('requestAccessPopup').hide();PF('blockDatasetForm').hide();" type="button">
+                Cancel
+            </button>
+        </div></div></div><script id="datasetForm:requestAccessPopup_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","requestAccessPopup",{id:"datasetForm:requestAccessPopup",modal:true});});</script><script id="datasetForm:j_idt2464" type="text/javascript">linkDatasetCommand = function() {PrimeFaces.ab({s:"datasetForm:j_idt2464",f:"datasetForm",u:"messagePanel @([id$=Messages])",onco:function(xhr,status,args,data){PF('linkDatasetForm').hide();;},pa:arguments[0]});}</script><div id="datasetForm:computeBatchListPopup" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:computeBatchListPopup_title" class="ui-dialog-title">Compute Batch</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:computeBatchListPopup_content">
+                        <div class="text-right">
+                                <span class="glyphicon glyphicon-remove"></span>Clear Batch<button id="datasetForm:j_idt2467" name="datasetForm:j_idt2467" class=" btn btn-default" onclick="PrimeFaces.ab({s:&quot;datasetForm:j_idt2467&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm messagePanel&quot;});return false;" type="submit"><span class="ui-button-text ui-c">ui-button</span></button><script id="datasetForm:j_idt2467_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt2467",{id:"datasetForm:j_idt2467"});});</script>
+                        </div><table id="datasetForm:computeBatch" class="table table-striped">
+<thead>
+<tr>
+<th scope="col">Dataset</th>
+<th scope="col">Dataset Persistent ID</th>
+<th scope="col"></th>
+</tr>
+</thead>
+<tbody>
+<tr><td></td><td></td><td></td></tr></tbody>
+</table>
+
+                        <div class="button-block"><a href="https://dataverse.harvard.edu/;jsessionid=0954018282f9a663c9cac604bd96" onclick="PF('computeBatchListPopup').hide()" target="_blank" class="btn btn-default">Compute Batch</a>
+                            <button class="btn btn-link" onclick="PF('computeBatchListPopup').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:computeBatchListPopup_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","computeBatchListPopup",{id:"datasetForm:computeBatchListPopup",modal:true});});</script><div id="datasetForm:accessPopup" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:accessPopup_title" class="ui-dialog-title">File Restrictions</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:accessPopup_content"><span id="datasetForm:j_idt2498"></span><script type="text/javascript">$(function(){PrimeFaces.focus('datasetForm:termsAccessInput');});</script>
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="termsAccessInput" class="col-sm-3 control-label">
+                                        Terms of Access
+                                        <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="Information on how and if users can gain access to the restricted files in this dataset."></span>
+                                    </label>
+                                    <div class="col-sm-9"><textarea id="datasetForm:termsAccessInput" name="datasetForm:termsAccessInput" class="ui-inputfield ui-inputtextarea ui-widget ui-state-default ui-corner-all form-control" cols="20" rows="5" title="Terms of Access" maxlength="2147483647"></textarea><script id="datasetForm:termsAccessInput_s" type="text/javascript">$(function(){PrimeFaces.cw("InputTextarea","inputtoa",{id:"datasetForm:termsAccessInput",autoResize:false});});</script>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="requestAccess" class="col-sm-3 control-label">
+                                        Request Access
+                                        <span class="glyphicon glyphicon-question-sign tooltip-icon" data-toggle="tooltip" data-placement="auto right" data-original-title="If checked, users can request access to the restricted files in this dataset."></span>
+                                    </label>
+                                    <div class="col-sm-9"><div id="datasetForm:requestAccess" class="ui-selectbooleancheckbox ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input id="datasetForm:requestAccess_input" name="datasetForm:requestAccess_input" type="checkbox" autocomplete="off" aria-label="Enable access request" aria-checked="false" /></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"><span class="ui-chkbox-icon ui-icon ui-icon-blank ui-c"></span></div><span class="ui-chkbox-label">Enable access request</span></div><script id="datasetForm:requestAccess_s" type="text/javascript">$(function(){PrimeFaces.cw("SelectBooleanCheckbox","inputfar",{id:"datasetForm:requestAccess"});});</script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-block"><button id="datasetForm:j_idt2505" name="datasetForm:j_idt2505" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('accessPopup').hide()},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt2505&quot;,f:&quot;datasetForm&quot;,u:&quot;datasetForm messagePanel&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Continue</span></button><script id="datasetForm:j_idt2505_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt2505",{id:"datasetForm:j_idt2505"});});</script>
+                                <button class="btn btn-link" onclick="PF('accessPopup').hide();PF('blockDatasetForm').hide();" type="button">
+                                    Cancel
+                                </button>
+                            </div></div></div><script id="datasetForm:accessPopup_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","accessPopup",{id:"datasetForm:accessPopup",modal:true});});</script><div id="datasetForm:inreview" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:inreview_title" class="ui-dialog-title">Submit for Review</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:inreview_content">
+                        <p class="text-warning">
+                            <span class="glyphicon glyphicon-warning-sign"></span> You will not be able to make changes to this dataset while it is in review.
+                        </p>
+                        <div class="button-block"><button id="datasetForm:j_idt2511" name="datasetForm:j_idt2511" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('inreview').hide();PF('blockDatasetForm').hide();},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt2511&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Submit</span></button><script id="datasetForm:j_idt2511_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt2511",{id:"datasetForm:j_idt2511"});});</script>
+                            <button class="btn btn-link" onclick="PF('inreview').hide();PF('blockDatasetForm').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:inreview_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","inreview",{id:"datasetForm:inreview",modal:true});});</script><div id="datasetForm:publishDataset" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:publishDataset_title" class="ui-dialog-title">Publish Dataset</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:publishDataset_content"><span id="datasetForm:j_idt2527"></span><script type="text/javascript">$(function(){PrimeFaces.focus('datasetForm:options');});</script>
+                            <p class="text-warning">
+                                <span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to republish this dataset?
+                            </p><div class="well terms-agreement-block">By default datasets are published with the CC0-“Public Domain Dedication” waiver. Learn more about the CC0 waiver <a target=_blank href='http://creativecommons.org/choose/zero/'>here</a>. <br><br> To publish with custom Terms of Use, click the Cancel button and go to the Terms tab for this dataset.</div>
+                                <p class="help-block">
+                                Select if this is a minor or major version update.
+                                </p><table id="datasetForm:options" role="presentation" class="ui-selectoneradio ui-widget"><tr><td><div class="ui-radiobutton ui-widget"><div class="ui-helper-hidden-accessible"><input id="datasetForm:options:0" name="datasetForm:options" type="radio" value="1" checked="checked" /></div><div class="ui-radiobutton-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-radiobutton-icon ui-icon ui-icon-bullet ui-c"></span></div></div><label for="datasetForm:options:0">Minor Release (6.1)</label></td><td><div class="ui-radiobutton ui-widget"><div class="ui-helper-hidden-accessible"><input id="datasetForm:options:1" name="datasetForm:options" type="radio" value="2" /></div><div class="ui-radiobutton-box ui-widget ui-corner-all ui-state-default"><span class="ui-radiobutton-icon ui-icon ui-icon-blank ui-c"></span></div></div><label for="datasetForm:options:1">Major Release (7.0)</label></td></tr></table><script id="datasetForm:options_s" type="text/javascript">$(function(){PrimeFaces.cw("SelectOneRadio","widget_datasetForm_options",{id:"datasetForm:options",unselectable:false});});</script>
+                            <p>
+                            </p>
+                        <div class="button-block"><button id="datasetForm:j_idt2553" name="datasetForm:j_idt2553" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('publishDataset').hide();PF('blockDatasetForm').hide();},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt2553&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Continue</span></button><script id="datasetForm:j_idt2553_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt2553",{id:"datasetForm:j_idt2553"});});</script>
+                            <button class="btn btn-link" onclick="PF('publishDataset').hide();PF('blockDatasetForm').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:publishDataset_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","publishDataset",{id:"datasetForm:publishDataset",modal:true,width:"70%"});});</script><div id="datasetForm:mayNotRelease" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:mayNotRelease_title" class="ui-dialog-title">Publish Dataset</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:mayNotRelease_content">
+                        <p class="text-danger">
+                            <span class="glyphicon glyphicon-exclamation-sign"></span>This dataset cannot be published until 
+                                    <a href="/dataverse.xhtml?alias=medsl_president" title="U.S. Presidential Elections ">U.S. Presidential Elections 
+                                    </a>  is published by its administrator.
+                        </p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('mayNotRelease').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:mayNotRelease_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","mayNotRelease",{id:"datasetForm:mayNotRelease",modal:true});});</script><div id="datasetForm:maynotPublishParent" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:maynotPublishParent_title" class="ui-dialog-title">Publish Dataset</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:maynotPublishParent_content">
+                        <p class="text-danger">
+                            <span class="glyphicon glyphicon-exclamation-sign"></span>This dataset cannot be published until 
+                                    <a href="/dataverse/medsl_president" title="U.S. Presidential Elections ">U.S. Presidential Elections 
+                                    </a> and 
+                                    <a href="/dataverse/medsl_election_returns" title="MEDSL Election Returns Dataverse">MEDSL Election Returns Dataverse
+                                    </a>  are published.
+                        </p>
+                        <div class="button-block">
+                            <button class="btn btn-default" onclick="PF('maynotPublishParent').hide();PF('blockDatasetForm').hide();" type="button">
+                                Close
+                            </button>
+                        </div></div></div><script id="datasetForm:maynotPublishParent_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","maynotPublishParent",{id:"datasetForm:maynotPublishParent",modal:true});});</script><div id="datasetForm:sendBackToContributor" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="datasetForm:sendBackToContributor_title" class="ui-dialog-title">Return to Author</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="datasetForm:sendBackToContributor_content">
+                        <p class="text-warning">
+                            <span class="glyphicon glyphicon-warning-sign"></span> Return this dataset to contributor for modification.
+                        </p>
+                        
+                        <div class="button-block"><button id="datasetForm:j_idt2575" name="datasetForm:j_idt2575" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.bcn(this,event,[function(event){PF('sendBackToContributor').hide()},function(event){PrimeFaces.ab({s:&quot;datasetForm:j_idt2575&quot;,f:&quot;datasetForm&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Continue</span></button><script id="datasetForm:j_idt2575_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_datasetForm_j_idt2575",{id:"datasetForm:j_idt2575"});});</script>
+                            <button class="btn btn-link" onclick="PF('sendBackToContributor').hide();PF('blockDatasetForm').hide();" type="button">
+                                Cancel
+                            </button>
+                        </div></div></div><script id="datasetForm:sendBackToContributor_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","sendBackToContributor",{id:"datasetForm:sendBackToContributor",modal:true});});</script><script id="datasetForm:j_idt2577" type="text/javascript">returnToAuthorCommand = function() {PrimeFaces.ab({s:"datasetForm:j_idt2577",f:"datasetForm",pa:arguments[0]});}</script><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="-1030845693246836277:-5354101167419624832" autocomplete="off" />
+</form>
+                <script>
+                    //<![CDATA[
+                    $(document).ready(function () {
+                        popoverHTML('Allowed HTML Tags','&lt;a&gt;, &lt;b&gt;, &lt;blockquote&gt;, &lt;br&gt;, &lt;code&gt;, &lt;del&gt;, &lt;dd&gt;, &lt;dl&gt;, &lt;dt&gt;, &lt;em&gt;, &lt;hr&gt;, &lt;h1&gt;-&lt;h3&gt;, &lt;i&gt;, &lt;img&gt;, &lt;kbd&gt;, &lt;li&gt;, &lt;ol&gt;, &lt;p&gt;, &lt;pre&gt;, &lt;s&gt;, &lt;sup&gt;, &lt;sub&gt;, &lt;strong&gt;, &lt;strike&gt;, &lt;u&gt;, &lt;ul&gt;');
+                    });
+                    function openDialog() {
+                        PF('details').show();
+                    }
+                    function openCompareTwo() {
+                        PF('compareTwo').show();
+                    }
+                    function testCheckBoxes() {
+                        var count = PF('versionsTable').getSelectedRowsCount();
+                        if (count !== 2) {
+                            PF('compareTwo').show();
+                        } else {
+                            $('button[id$="compareVersions"]').trigger('click');
+                        }
+                    }
+                    function testFilesSelectedForRestriction() {
+                        var count = PF('filesTable').getSelectedRowsCount();
+                        if (count === 0) {
+                            PF('selectFilesForRestrict').show();
+                        } else {
+                            PF('accessPopup').show();
+                        }
+                    }
+                    function testFilesSelectedForTags() {
+                        var count = PF('filesTable').getSelectedRowsCount();
+                        if (count === 0) {
+                            PF('selectFilesForEditTags').show();
+                        } else {
+                            refreshTagsCommand();
+                        }
+                    }
+                    function testFilesSelectedForDelete() {
+                        var count = PF('filesTable').getSelectedRowsCount();
+                        if (count === 0) {
+                            PF('selectFilesForDelete').show();
+                        } else {
+                            PF('deleteSelectedFileConfirmation').show();
+                        }
+                    }
+                    function testFilesSelectedForEditMetadata() {
+                        var count = PF('filesTable').getSelectedRowsCount();
+                        if (count === 0) {
+                            PF('selectFilesForEditMetadata').show();
+                        } //else {
+                        // I commented out the code below; if there's
+                        // 1 or more file selected, I don't want this
+                        // method to activate the p:remoteCommand that
+                        // issues the redirect to the edit page (or
+                        // do anything else for that matter). Doing
+                        // it this way was, for some reason, causing
+                        // this page to still try to render (??), in
+                        // some partial, half-baked state - with no
+                        // workingVersion present, etc. - that resulted
+                        // in some NULL pointers in the logs... So,
+                        // instead, the redirect will be done by the
+                        // direct action= attribute in the original
+                        // commandButton. -- L.A. 4.2.1
+                        //openEditFilesPageCommand();
+                        //}
+                    }
+                    function updateTemplate() {
+                        $('button[id$="updateTemplate"]').trigger('click');
+                    }
+                    function checkNewlyRestricted() {
+                        if ($('input[id$="showAccessPopup"]').val() === 'true') {
+                            PF('accessPopup').show();
+                        } else {
+                            $('button[id$="datasetSave"]').trigger('click');
+                        }
+                    }
+                    function updateHiddenReason(textArea) {
+                        $('input[id$="hiddenReasonInput"]').val(textArea.value);
+                    }
+                    function updateOwnerDataverse() {
+                        $('button[id$="updateOwnerDataverse"]').trigger('click');
+                    } 
+                    //]]>
+                </script>
+        </div>
+    <div id="footer">
+        <div class="container">
+            <div class="row"><div class="col-sm-8 small">
+                    <p>Copyright &#169; 2020, The President &#38; Fellows of Harvard College |  <a href="http://best-practices.dataverse.org/harvard-policies/harvard-privacy-policy.html" rel="noopener" target="_blank">Privacy Policy</a>
+                    </p></div>
+                <div class="col-sm-4 text-right">
+                    <div class="poweredbylogo">
+                        <span>Powered by</span>
+                        <a href="http://dataverse.org/" title="The Dataverse Project" target="_blank" rel="noopener"><img src="/resources/images/dataverse_project_logo.svg" width="118" height="40" onerror="this.src='/resources/images/dataverseproject_logo.png'" alt="The Dataverse Project logo" /></a><span class="version">v. 5.1.1 build 221-1b59dac</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><script>
+  //<![CDATA[
+  $(document).ready(function () {
+    $("#footer > div.container > div.row > div.col-sm-8.small > p").append("&#160;|&#160; <a href=\"https://www.harvard.edu/copyright-issue\" target=\"_blank\" rel=\"noopener\">Report Copyright Infringement</a> &#160;|&#160; <a href=\"https://accessibility.huit.harvard.edu/digital-accessibility-policy\" target=\"_blank\" rel=\"noopener\">Accessibility</a>");
+  });
+  //]]>
+</script>
+
+<style>
+#feedbackTab {position:fixed; bottom:0; right:50px;}
+#feedbackTab a.btn-feedback {border-bottom-right-radius:0; border-bottom-left-radius:0;}
+.btn-feedback {background-color:#C55B28; border-color:#C55B28; color:#fff;}
+.btn-feedback:hover, .btn-feedback:focus,
+.btn-feedback:active, .btn-feedback.active {background-color:#b05124; border-color: #9b471f; color:#fff;}
+</style>
+
+<div id="feedbackTab">
+    <a class="btn btn-feedback bootstrap-button-tooltip" href="https://goo.gl/forms/p7uu3GfiWYSlJrsi1" role="button" target="_blank" rel="noopener"  aria-label="Help improve Dataverse!" data-original-title="Help improve Dataverse!">
+        Feedback
+    </a>
+</div>
+<div id="ajaxStatusPanel"><div id="ajaxStatusPanel_start" style="display:none"><img src="/resources/images/ajax-loading.gif;jsessionid=0954018282f9a663c9cac604bd96" alt="Loading..." /></div></div><script id="ajaxStatusPanel_s" type="text/javascript">$(function(){PrimeFaces.cw("AjaxStatus","widget_ajaxStatusPanel",{id:"ajaxStatusPanel",delay:0});});</script><div id="contactDialog" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="contactDialog_title" class="ui-dialog-title">Contact Harvard Dataverse Support</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="contactDialog_content"><div id="j_idt2605">
+<form id="emailForm" name="emailForm" method="post" action="/dataset.xhtml;jsessionid=0954018282f9a663c9cac604bd96?persistentId=doi:10.7910/DVN/VOQCHQ" class="form-horizontal" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="emailForm" value="emailForm" />
+<span id="emailForm:j_idt2606"></span><script type="text/javascript">$(function(){PrimeFaces.focus(null, 'contactDialog');});</script>
+                
+                <div class="form-group">
+                    <label for="messageTo" class="col-sm-3 control-label">To</label>
+                    <div class="col-sm-9">
+                        <p id="messageTo" class="form-control-static">Harvard Dataverse Support</p>
+                    </div>
+                </div>
+                
+                    <div class="form-group"><label for="emailForm:userEmail" class="col-sm-3 control-label">From <span class="glyphicon glyphicon-asterisk text-danger" title="Required field"></span></label>
+                        <div class="col-sm-9"><input id="emailForm:userEmail" name="emailForm:userEmail" type="text" value="" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all form-control" size="30" /><script id="emailForm:userEmail_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","widget_emailForm_userEmail",{id:"emailForm:userEmail",maxlength:-2147483648});});</script>
+                        </div>
+                    </div>
+                
+                <div class="form-group"><label for="emailForm:messageSubject" class="col-sm-3 control-label">Subject <span class="glyphicon glyphicon-asterisk text-danger" title="Required field"></span></label>
+                    <div class="col-sm-9"><input id="emailForm:messageSubject" name="emailForm:messageSubject" type="text" value="" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all form-control" /><script id="emailForm:messageSubject_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","widget_emailForm_messageSubject",{id:"emailForm:messageSubject",maxlength:-2147483648});});</script>
+                    </div>
+                </div>   
+                
+                <div class="form-group"><label for="emailForm:userMessage" class="col-sm-3 control-label">Message <span class="glyphicon glyphicon-asterisk text-danger" title="Required field"></span></label>
+                    <div class="col-sm-9"><textarea id="emailForm:userMessage" name="emailForm:userMessage" class="ui-inputfield ui-inputtextarea ui-widget ui-state-default ui-corner-all form-control" cols="20" rows="10" title="Message" maxlength="2147483647"></textarea><script id="emailForm:userMessage_s" type="text/javascript">$(function(){PrimeFaces.cw("InputTextarea","widget_emailForm_userMessage",{id:"emailForm:userMessage",autoResize:false});});</script>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <p><span class="highlightBold">Please fill this out to prove you are not a robot.</span> <span class="glyphicon glyphicon-asterisk text-danger" title="Required field"></span>
+                        </p> +  = <input id="emailForm:messageSum" name="emailForm:messageSum" type="text" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" size="4" /><script id="emailForm:messageSum_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","widget_emailForm_messageSum",{id:"emailForm:messageSum",maxlength:-2147483648});});</script>
+                    </div>
+                </div>
+                
+                <div class="button-block"><button id="emailForm:j_idt2633" name="emailForm:j_idt2633" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default" onclick="PrimeFaces.ab({s:&quot;emailForm:j_idt2633&quot;,f:&quot;emailForm&quot;,u:&quot;emailForm&quot;,onco:function(xhr,status,args,data){if (args &amp;&amp; !args.validationFailed) PF('contactForm').hide();;},pa:[{name:&quot;DO_VALIDATION&quot;,value:&quot;true&quot;}],fi:&quot;j_idt2605&quot;});return false;" type="submit"><span class="ui-button-text ui-c">Send Message</span></button><script id="emailForm:j_idt2633_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_emailForm_j_idt2633",{id:"emailForm:j_idt2633"});});</script>
+                    <button class="btn btn-link" onclick="PF('contactForm').hide()" type="button">
+                        Cancel
+                    </button>
+                </div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:3" value="-1030845693246836277:-5354101167419624832" autocomplete="off" />
+</form></div></div></div><script id="contactDialog_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","contactForm",{id:"contactDialog",modal:true});});</script>
+        <script defer="defer" src="/javax.faces.resource/bs/js/bootstrap.min.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1"></script>
+        <script defer="defer" src="/javax.faces.resource/js/ie-compat.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1"></script>
+        <script defer="defer" src="/javax.faces.resource/js/dv_rebind_bootstrap_ui.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1"></script>
+        <script defer="defer" src="/javax.faces.resource/js/owl.carousel.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1"></script>
+        <script defer="defer" src="/javax.faces.resource/js/jquery.matchHeight.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1"></script>
+        <script defer="defer" src="/javax.faces.resource/js/jquery.sharrre.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1"></script>  
+        <script defer="defer" src="/javax.faces.resource/js/clipboard.min.js.xhtml;jsessionid=0954018282f9a663c9cac604bd96?version=5.1.1"></script>
+        <script>
+            //<![CDATA[
+            $(document).ready(function () {
+                // Navbar Search Toggle
+                $(document).on('click', '#navbar-search-toggle', function (e) {
+                    $(this).parent("li").hide();
+                    $("form.navbar-form[role='search']").show();
+                });
+                $('body').click(function (e) {
+                    if (!$(e.target).closest("form.navbar-form[role='search']").length) {
+                        $("form.navbar-form[role='search']").hide();
+                        $("#navbar-search-toggle").parent("li").show();
+                    }
+                    ;
+                });
+
+                // Rebind bootstrap UI components
+                bind_bsui_components();
+            });            
+            function clickSupportLink() {
+                $("[id$='headerSupportLink']").click();
+            }            
+            //]]>
+        </script></body>
+</html>
