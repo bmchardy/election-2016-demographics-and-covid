@@ -17,6 +17,8 @@ output:
 
 We're going to explore relationships between political affiliation, demographics, and COVID-19 statistics. To do this, I've pulled together subsets of data from the New York Times' [COVID-19 dataset](https://github.com/nytimes/covid-19-data), the MIT Election Data and Science Lab's [County Presidential Election Returns 2000-2016 dataset](https://doi.org/10.7910/DVN/VOQCHQ), and 2016 [data from the US Census](https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/asrh/).
 
+We also add datasets compiled by [@evangambit](https://github.com/evangambit/JsonOfCounties), including CDC mortality statistics by county, unemployment by county, and preliminary 2020 Presidential election votes by county.
+
 ```{r preppack, include=FALSE}
 library("tibble")
 library(plyr)
@@ -26,6 +28,8 @@ library(ggplot2)
 library(gridExtra)
 library(corrplot)
 library(stringr)
+library(plotly)
+library(Hmisc)
 options(scipen = 999)
 rm(list = ls())
 ```
@@ -43,12 +47,12 @@ We will now load in all required `.csv` data files, starting with the COVID-19 d
 setwd("data")
 
 # COVID-19 average cases and deaths by state and county in week leading up to 2020 election
-data_counties <- as_tibble(read.csv("us-counties.csv")) %>%
+data_counties <- read.csv("us-counties.csv") %>%
   filter(date >= '2020-10-28') %>%
   filter(date <= '2020-11-03') %>%
   group_by(state, county, fips) %>%
-  dplyr::summarize(cases_avg = mean(cases), deaths_avg = mean(deaths)) %>%
-  select(state, county, fips, cases_avg, deaths_avg)
+  dplyr::summarize(cases_avg = mean(cases), deaths_covid_avg = mean(deaths)) %>%
+  select(state, county, fips, cases_avg, deaths_covid_avg)
 ```
 
 Load the Mask Use dataset and calculate a compsite measure. This dataset contains responses, by county, for percentages of people who report wearing masks "Always", "Frequently", "Sometimes", "Rarely", and "Never" We define
@@ -61,7 +65,7 @@ to be the weighted average of these responses. Let's join this dataset to our CO
 setwd("data")
 # join mask attitudes data
 data_counties <- join(data_counties,
-                      as_tibble(read.csv("./mask-use/mask-use-by-county.csv")) %>%
+                      read.csv("./mask-use/mask-use-by-county.csv") %>%
                         rename(fips = COUNTYFP) %>%
                         mutate(mask_pct_compliance = (ALWAYS + 0.75*FREQUENTLY + 0.5*SOMETIMES + 0.25*RARELY)),
                       by = "fips",
@@ -70,18 +74,128 @@ data_counties <- join(data_counties,
 
 We now load demographics data for each county in the United States in 2016 so that we can temporally compare to the elections data that we'll load in next. Once again, we'll join this to our county table.
 
-```{r dataload_demographics_2016, warning=FALSE}
+```{r dataload_demographics, warning=FALSE}
 setwd("data")
 # join 2016 demographics data
 data_counties <- join(data_counties,
-                      as_tibble(read.csv("./us-counties-2016-census-data/cc-est2019-alldata-2016subset.csv")) %>%
+                      read.csv("./us-counties-census-data/cc-est2019-alldata-2016-20subset.csv") %>%
+                        filter(YEAR == "2016") %>%
                         mutate(white_pct_2016 = (WA_MALE + WA_FEMALE) / TOT_POP) %>%
+                        mutate(hispanic_pct_2016 = (H_MALE + H_FEMALE) / TOT_POP) %>%
+                        mutate(afra_black_pct_2016 = (BAC_MALE + BAC_FEMALE) / TOT_POP) %>%
                         rename(state = STNAME) %>%
                         mutate(county = str_replace(CTYNAME, " County", "")) %>%
-                        rename(population = TOT_POP) %>%
-                        select(state, county, population, white_pct_2016),
+                        rename(population_2016 = TOT_POP) %>%
+                        select(state, county, population_2016, white_pct_2016,
+                               hispanic_pct_2016, afra_black_pct_2016),
                       by = c("state", "county"),
                       type = "left")
+# join 2019 demographics data
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-census-data/cc-est2019-alldata-2016-20subset.csv") %>%
+                        filter(YEAR == "2019") %>%
+                        mutate(white_pct_2019 = (WA_MALE + WA_FEMALE) / TOT_POP) %>%
+                        mutate(hispanic_pct_2019 = (H_MALE + H_FEMALE) / TOT_POP) %>%
+                        mutate(afra_black_pct_2019 = (BAC_MALE + BAC_FEMALE) / TOT_POP) %>%
+                        rename(state = STNAME) %>%
+                        mutate(county = str_replace(CTYNAME, " County", "")) %>%
+                        rename(population_2019 = TOT_POP) %>%
+                        select(state, county, population_2019, white_pct_2019,
+                               hispanic_pct_2019, afra_black_pct_2019),
+                      by = c("state", "county"),
+                      type = "left")
+```
+
+We'll also load some unemployment demographics.
+
+```{r dataload_demographics_employment, warning=FALSE}
+setwd("data")
+# join 2016 unemployment demographics data
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-2020-election-unemployment-mortality/unemployment/2016.csv") %>%
+                        rename(state = State) %>%
+                        rename(county = County) %>%
+                        rename(labour_force_2016 = LabourForce) %>%
+                        mutate(unemployment_2016 = Unemployed / labour_force_2016) %>%
+                        select(state, county, labour_force_2016, unemployment_2016),
+                      by = c("state", "county"),
+                      type = "left")
+# join 2019 unemployment demographics data
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-2020-election-unemployment-mortality/unemployment/2019.csv") %>%
+                        rename(state = State) %>%
+                        rename(county = County) %>%
+                        rename(labour_force_2019 = LabourForce) %>%
+                        mutate(unemployment_2019 = Unemployed / labour_force_2019) %>%
+                        select(state, county, labour_force_2019, unemployment_2019),
+                      by = c("state", "county"),
+                      type = "left")
+```
+
+And police shootings data.
+
+```{r dataload_police_shootings, warning=FALSE}
+setwd("data")
+# join 2017 police shootings data
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-2020-election-unemployment-mortality/police-shootings/police_shootings.csv") %>%
+                        filter(year == "2017") %>%
+                        filter(status == "armed") %>%
+                        mutate(police_shootings_armed_2017 = count) %>%
+                        mutate(county = tools::toTitleCase(str_replace(county, " county", ""))) %>%
+                        select(state, county, police_shootings_armed_2017),
+                      by = c("state", "county"),
+                      type = "left")
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-2020-election-unemployment-mortality/police-shootings/police_shootings.csv") %>%
+                        filter(year == "2017") %>%
+                        filter(status == "unarmed") %>%
+                        mutate(police_shootings_unarmed_2017 = count) %>%
+                        mutate(county = tools::toTitleCase(str_replace(county, " county", ""))) %>%
+                        select(state, county, police_shootings_unarmed_2017),
+                      by = c("state", "county"),
+                      type = "left")
+# join 2019 police shootings data
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-2020-election-unemployment-mortality/police-shootings/police_shootings.csv") %>%
+                        filter(year == "2019") %>%
+                        filter(status == "armed") %>%
+                        mutate(police_shootings_armed_2019 = count) %>%
+                        mutate(county = tools::toTitleCase(str_replace(county, " county", ""))) %>%
+                        select(state, county, police_shootings_armed_2019),
+                      by = c("state", "county"),
+                      type = "left")
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-2020-election-unemployment-mortality/police-shootings/police_shootings.csv") %>%
+                        filter(year == "2019") %>%
+                        filter(status == "unarmed") %>%
+                        mutate(police_shootings_unarmed_2019 = count) %>%
+                        mutate(county = tools::toTitleCase(str_replace(county, " county", ""))) %>%
+                        select(state, county, police_shootings_unarmed_2019),
+                      by = c("state", "county"),
+                      type = "left")
+```
+
+And deaths by assault and deaths by suicide. These statistics represent cumulative deaths by county between 1999 and 2016. We estimate a yearly rate by normalizing by current county population, then dividing by (2016-1999+1).
+
+```{r dataload_mortality, warning=FALSE}
+setwd("data")
+# join deaths by assault and suicide
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-2020-election-unemployment-mortality/mortality-cdc/mortality-1999-2016.csv") %>%
+                        rename(fips = FIPS) %>%
+                        replace(.=="Suppressed", NA) %>%
+                        rename(deaths_assault = DeathAssault) %>%
+                        rename(deaths_suicide = DeathSuicide) %>%
+                        select(fips, deaths_assault, deaths_suicide),
+                      by = "fips",
+                      type = "left")
+# refactor death statistics as numeric
+data_counties$deaths_assault <- as.numeric(data_counties$deaths_assault)
+data_counties$deaths_suicide <- as.numeric(data_counties$deaths_suicide)
+data_counties <- data_counties %>%
+  mutate(norm_deaths_assault_avg = deaths_assault / (18*population_2019)) %>%
+  mutate(norm_deaths_suicide_avg = deaths_suicide / (18*population_2019))
 ```
 
 Lastly, we load in data for the 2016 Presidential Election by county. We create a new composite measure
@@ -93,7 +207,7 @@ of the percentage of votes in that county that were Republican (Trump) in 2016.
 setwd("data")
 # join 2016 presidential elections data
 data_counties <- join(data_counties,
-                      as_tibble(read.csv("./us-counties-2016-election/countypres_2000-2016.csv")) %>%
+                      read.csv("./us-counties-2016-election/countypres_2000-2016.csv") %>%
                         filter(year == '2016') %>%
                         filter(party == "republican") %>%
                         rename(fips = FIPS) %>%
@@ -101,100 +215,181 @@ data_counties <- join(data_counties,
                         select(fips, republican_pct_2016),
                       by = "fips",
                       type = "left")
+# join 2020 presidential elections data
+data_counties <- join(data_counties,
+                      read.csv("./us-counties-2020-election-unemployment-mortality/election2020.csv") %>%
+                        mutate(republican_pct_2020 = votes_gop / votes_total) %>%
+                        mutate(county = tools::toTitleCase(str_replace(county, " county", ""))) %>%
+                        select(state, county, republican_pct_2020),
+                      by = c("state", "county"),
+                      type = "left")
 ```
 
 We select only the attributes of interest. Let's have a look at our data!
 
 ```{r dataload_org, warning=FALSE}
 data_counties <- data_counties %>%
-  mutate(norm_cases_avg = cases_avg / population) %>%
-  mutate(norm_deaths_avg = deaths_avg / population) %>%
-  select(state, county, norm_cases_avg, norm_deaths_avg, mask_pct_compliance,
-         white_pct_2016, republican_pct_2016)
-
+  mutate(norm_cases_avg = cases_avg / population_2019) %>%
+  mutate(norm_deaths_covid_avg = deaths_covid_avg / population_2019) %>%
+  select(state, county, mask_pct_compliance, norm_cases_avg, norm_deaths_covid_avg,
+         norm_deaths_assault_avg, norm_deaths_suicide_avg, population_2016,
+         population_2019, white_pct_2016, white_pct_2019, hispanic_pct_2016,
+         hispanic_pct_2019, afra_black_pct_2016, afra_black_pct_2019, republican_pct_2016,
+         republican_pct_2020, labour_force_2016, labour_force_2019, unemployment_2016,
+         unemployment_2019, police_shootings_armed_2017, police_shootings_armed_2019,
+         police_shootings_unarmed_2017, police_shootings_unarmed_2019)
 data_counties
 ```
 
+Let's check the zero-order correlations of our variables of interest :)
+
+```{r viz_corr_mtx_all, message=FALSE, warning=FALSE}
+cor(na.omit(data_counties[3:25]))
+```
+We're going to plot these correlations with a heat map to better visualize.
+
+```{r viz_corr_mtx_all_graphic, message=FALSE, warning=FALSE}
+#cor(na.omit(data_counties[3:25])) %>% add_histogram2d(colorscale = "Blues")
+```
+
+Anddd... Let's get into some plotting!
+
 ```{r viz_scatter_cases_maskcompliance, message=FALSE, warning=FALSE}
-fit <- lm(norm_cases_avg ~ mask_pct_compliance, data_counties)
-data_counties %>%
-    ggplot(., aes(x=mask_pct_compliance, y=norm_cases_avg)) +
-    geom_point() +
-    geom_smooth(method=lm) +
-    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
-               x=0.35, y=0.175, label.size = 0.35, color = "black", fill="white") +
-    ggtitle("COVID-19 Cases by Mask Compliance") +
-    xlim(0.3, 1.0) +
-    ylim(0.0, 0.2)
-rm(fit)
+# clean the counties data for this chart
+counties <- data_counties %>% filter(!is.na(norm_cases_avg)) %>% filter(!is.na(mask_pct_compliance)) %>% ungroup()
+# compute regressions and correlations
+regression <- lm(norm_cases_avg ~ mask_pct_compliance, data = counties)
+correlation <- rcorr(data_counties$mask_pct_compliance, data_counties$norm_cases_avg)
+
+# build chart
+counties %>%
+  plot_ly(x = ~mask_pct_compliance) %>% 
+  add_markers(y = ~norm_cases_avg) %>% 
+  add_lines(x = ~mask_pct_compliance, y = fitted(regression)) %>%
+  layout(title = paste0("COVID-19 Cases by Mask Compliance (r = ",
+                        round(correlation$r["x","y"], 3), ", p = ",
+                        round(correlation$P["x","y"], 3), ")"),
+         xaxis = list(title = "Mask Compliance %"),
+         yaxis = list(title = "Average Cases %"),
+         showlegend = FALSE)
+rm(counties)
+rm(regression)
+rm(correlation)
 ```
 
 ```{r viz_scatter_cases_demographics, message=FALSE, warning=FALSE}
-fit <- lm(norm_cases_avg ~ white_pct_2016, data_counties)
-data_counties %>%
-    ggplot(., aes(x=white_pct_2016, y=norm_cases_avg)) +
-    geom_point() +
-    geom_smooth(method=lm) +
-    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
-               x=0.125, y=0.175, label.size = 0.35, color = "black", fill="white") +
-    ggtitle("COVID-19 Cases by Demographics") +
-    xlim(0.0, 1.0) +
-    ylim(0.0, 0.2)
-rm(fit)
+# clean the counties data for this chart
+counties <- data_counties %>% filter(!is.na(norm_cases_avg)) %>% filter(!is.na(white_pct_2016))  %>% ungroup()
+# compute regressions and correlations
+regression <- lm(norm_cases_avg ~ white_pct_2016, data = counties)
+correlation <- rcorr(data_counties$white_pct_2016, data_counties$norm_cases_avg)
+
+# build chart
+counties %>%
+  plot_ly(x = ~white_pct_2016) %>% 
+  add_markers(y = ~norm_cases_avg) %>% 
+  add_lines(x = ~white_pct_2016, y = fitted(regression)) %>%
+  layout(title = paste0("COVID-19 Cases by Demographics (r = ",
+                        round(correlation$r["x","y"], 3), ", p = ",
+                        round(correlation$P["x","y"], 3), ")"),
+         xaxis = list(title = "White % (2016)"),
+         yaxis = list(title = "Average Cases %"),
+         showlegend = FALSE)
+rm(counties)
+rm(regression)
+rm(correlation)
 ```
 
 ```{r viz_scatter_cases_affiliation, message=FALSE, warning=FALSE}
-fit <- lm(norm_cases_avg ~ republican_pct_2016, data_counties)
-data_counties %>%
-    ggplot(., aes(x=republican_pct_2016, y=norm_cases_avg)) +
-    geom_point() +
-    geom_smooth(method=lm) +
-    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
-               x=0.125, y=0.175, label.size = 0.35, color = "black", fill="white") +
-    ggtitle("COVID-19 Cases by Political Affiliation") +
-    xlim(0.0, 1.0) +
-    ylim(0.0, 0.2)
-rm(fit)
+# clean the counties data for this chart
+counties <- data_counties %>% filter(!is.na(norm_cases_avg)) %>% filter(!is.na(republican_pct_2016)) %>% ungroup()
+# compute regressions and correlations
+regression <- lm(norm_cases_avg ~ republican_pct_2016, data = counties)
+correlation <- rcorr(data_counties$republican_pct_2016, data_counties$norm_cases_avg)
+
+# build chart
+counties %>%
+  plot_ly(x = ~republican_pct_2016) %>% 
+  add_markers(y = ~norm_cases_avg) %>% 
+  add_lines(x = ~republican_pct_2016, y = fitted(regression)) %>%
+  layout(title = paste0("COVID-19 Cases by Political Affiliation (r = ",
+                        round(correlation$r["x","y"], 3), ", p = ",
+                        round(correlation$P["x","y"], 3), ")"),
+         xaxis = list(title = "Republican Voters % (2016)"),
+         yaxis = list(title = "Average Cases %"),
+         showlegend = FALSE)
+rm(counties)
+rm(regression)
+rm(correlation)
 ```
 
 ```{r viz_scatter_maskcompliance_demographics, message=FALSE, warning=FALSE}
-fit <- lm(mask_pct_compliance ~ white_pct_2016, data_counties)
-data_counties %>%
-    ggplot(., aes(x=white_pct_2016, y=mask_pct_compliance)) +
-    geom_point() +
-    geom_smooth(method=lm) +
-    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
-               x=0.35, y=0.3, label.size = 0.35, color = "black", fill="white") +
-    ggtitle("COVID-19 Mask Compliance by Demographics") +
-    xlim(0.0, 1.0) +
-    ylim(0.25, 1.0)
-rm(fit)
+# clean the counties data for this chart
+counties <- data_counties %>% filter(!is.na(white_pct_2016)) %>% filter(!is.na(mask_pct_compliance)) %>% ungroup()
+# compute regressions and correlations
+regression <- lm(mask_pct_compliance ~ white_pct_2016, data = counties)
+correlation <- rcorr(data_counties$white_pct_2016, data_counties$mask_pct_compliance)
+
+# build chart
+counties %>%
+  plot_ly(x = ~white_pct_2016) %>% 
+  add_markers(y = ~mask_pct_compliance) %>% 
+  add_lines(x = ~white_pct_2016, y = fitted(regression)) %>%
+  layout(title = paste0("Mask Compliance by Demographics (r = ",
+                        round(correlation$r["x","y"], 3), ", p = ",
+                        round(correlation$P["x","y"], 3), ")"),
+         xaxis = list(title = "White % (2016)"),
+         yaxis = list(title = "Mask Compliance %"),
+         showlegend = FALSE)
+rm(counties)
+rm(regression)
+rm(correlation)
 ```
 
 ```{r viz_scatter_maskcompliance_affiliation, message=FALSE, warning=FALSE}
-fit <- lm(mask_pct_compliance ~ republican_pct_2016, data_counties)
-data_counties %>%
-    ggplot(., aes(x=republican_pct_2016, y=mask_pct_compliance)) +
-    geom_point() +
-    geom_smooth(method=lm) +
-    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
-               x=0.35, y=0.3, label.size = 0.35, color = "black", fill="white") +
-    ggtitle("COVID-19 Mask Compliance by Affiliation") +
-    xlim(0.0, 1.0) +
-    ylim(0.25, 1.0)
-rm(fit)
+# clean the counties data for this chart
+counties <- data_counties %>% filter(!is.na(republican_pct_2016)) %>%
+  filter(!is.na(mask_pct_compliance)) %>% ungroup()
+# compute regressions and correlations
+regression <- lm(mask_pct_compliance ~ republican_pct_2016, data = counties)
+correlation <- rcorr(data_counties$republican_pct_2016, data_counties$mask_pct_compliance)
+
+# build chart
+counties %>%
+  plot_ly(x = ~republican_pct_2016) %>% 
+  add_markers(y = ~mask_pct_compliance) %>% 
+  add_lines(x = ~republican_pct_2016, y = fitted(regression)) %>%
+  layout(title = paste0("Mask Compliance by Political Affiliation (r = ",
+                        round(correlation$r["x","y"], 3), ", p = ",
+                        round(correlation$P["x","y"], 3), ")"),
+         xaxis = list(title = "Republican Voters % (2016)"),
+         yaxis = list(title = "Mask Compliance %"),
+         showlegend = FALSE)
+rm(counties)
+rm(regression)
+rm(correlation)
 ```
 
 ```{r viz_scatter_affiliation_demographics, message=FALSE, warning=FALSE}
-fit <- lm(republican_pct_2016 ~ white_pct_2016, data_counties)
-data_counties %>%
-    ggplot(., aes(x=white_pct_2016, y=republican_pct_2016)) +
-    geom_point() +
-    geom_smooth(method=lm) +
-    geom_label(label = paste0("Adj. R = ", round((summary(fit)$adj.r.squared)^0.5, 3)),
-               x=0.25, y=0.75, label.size = 0.35, color = "black", fill="white") +
-    ggtitle("Affiliation by Demographics") +
-    xlim(0.0, 1.0) +
-    ylim(0.0, 1.0)
-rm(fit)
+# clean the counties data for this chart
+counties <- data_counties %>% filter(!is.na(white_pct_2016)) %>%
+  filter(!is.na(republican_pct_2016)) %>% ungroup()
+# compute regressions and correlations
+regression <- lm(republican_pct_2016 ~ white_pct_2016, data = counties)
+correlation <- rcorr(data_counties$white_pct_2016, data_counties$republican_pct_2016)
+
+# build chart
+counties %>%
+  plot_ly(x = ~white_pct_2016) %>% 
+  add_markers(y = ~republican_pct_2016) %>% 
+  add_lines(x = ~white_pct_2016, y = fitted(regression)) %>%
+  layout(title = paste0("Political Affiliation by Demographics (r = ",
+                        round(correlation$r["x","y"], 3), ", p = ",
+                        round(correlation$P["x","y"], 3), ")"),
+         xaxis = list(title = "White % (2016)"),
+         yaxis = list(title = "Republican Voters % (2016)"),
+         showlegend = FALSE)
+rm(counties)
+rm(regression)
+rm(correlation)
 ```

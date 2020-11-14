@@ -1,0 +1,2271 @@
+state,county,year,status,count
+Alaska,anchorage borough,2017,armed,2
+Alaska,anchorage borough,2017,unarmed,0
+Alaska,anchorage borough,2019,armed,2
+Alaska,anchorage borough,2019,unarmed,0
+Alaska,fairbanks north star borough,2017,armed,3
+Alaska,fairbanks north star borough,2017,unarmed,0
+Alaska,fairbanks north star borough,2019,armed,3
+Alaska,fairbanks north star borough,2019,unarmed,0
+Alaska,juneau borough,2019,armed,0
+Alaska,juneau borough,2019,unarmed,0
+Alaska,kenai peninsula borough,2017,armed,0
+Alaska,kenai peninsula borough,2017,unarmed,1
+Alaska,matanuska-susitna borough,2017,armed,2
+Alaska,matanuska-susitna borough,2017,unarmed,0
+Alabama,autauga county,2019,armed,0.000100352
+Alabama,autauga county,2019,unarmed,0
+Alabama,baldwin county,2017,armed,1
+Alabama,baldwin county,2017,unarmed,1
+Alabama,barbour county,2017,armed,0.226229015
+Alabama,barbour county,2017,unarmed,0
+Alabama,calhoun county,2017,armed,3
+Alabama,calhoun county,2017,unarmed,0
+Alabama,cherokee county,2017,armed,0
+Alabama,cherokee county,2017,unarmed,0
+Alabama,cleburne county,2019,armed,1
+Alabama,cleburne county,2019,unarmed,0
+Alabama,crenshaw county,2017,armed,0
+Alabama,crenshaw county,2017,unarmed,0
+Alabama,cullman county,2019,armed,1
+Alabama,cullman county,2019,unarmed,0
+Alabama,dale county,2017,armed,0.044342393
+Alabama,dale county,2017,unarmed,0
+Alabama,dale county,2019,armed,1
+Alabama,dale county,2019,unarmed,0
+Alabama,elmore county,2019,armed,1.999899648
+Alabama,elmore county,2019,unarmed,0
+Alabama,henry county,2017,armed,1
+Alabama,henry county,2017,unarmed,0
+Alabama,houston county,2019,armed,0
+Alabama,houston county,2019,unarmed,0
+Alabama,jackson county,2017,armed,0
+Alabama,jackson county,2017,unarmed,0
+Alabama,jefferson county,2017,armed,4.694527551
+Alabama,jefferson county,2017,unarmed,0
+Alabama,jefferson county,2019,armed,1.999871677
+Alabama,jefferson county,2019,unarmed,0
+Alabama,lee county,2017,armed,0
+Alabama,lee county,2017,unarmed,0
+Alabama,limestone county,2017,armed,0.000138531
+Alabama,limestone county,2017,unarmed,0
+Alabama,limestone county,2019,armed,0.007618473
+Alabama,limestone county,2019,unarmed,0
+Alabama,lowndes county,2019,armed,0
+Alabama,lowndes county,2019,unarmed,0
+Alabama,madison county,2017,armed,1.999861469
+Alabama,madison county,2017,unarmed,0
+Alabama,madison county,2019,armed,1.992381527
+Alabama,madison county,2019,unarmed,0
+Alabama,marion county,2017,armed,0
+Alabama,marion county,2017,unarmed,0
+Alabama,mobile county,2017,armed,0
+Alabama,mobile county,2017,unarmed,1
+Alabama,mobile county,2019,armed,1
+Alabama,mobile county,2019,unarmed,0
+Alabama,pickens county,2019,armed,0
+Alabama,pickens county,2019,unarmed,0
+Alabama,russell county,2017,armed,0
+Alabama,russell county,2017,unarmed,0
+Alabama,shelby county,2017,armed,0.000241019
+Alabama,shelby county,2017,unarmed,0
+Alabama,shelby county,2019,armed,0.000128323
+Alabama,shelby county,2019,unarmed,0
+Alabama,st. clair county,2017,armed,1.034660023
+Alabama,st. clair county,2017,unarmed,0
+Alabama,talladega county,2017,armed,0
+Alabama,talladega county,2017,unarmed,0
+Alabama,washington county,2017,armed,0
+Alabama,washington county,2017,unarmed,0
+Arkansas,benton county,2019,armed,2
+Arkansas,benton county,2019,unarmed,0
+Arkansas,bradley county,2019,armed,1
+Arkansas,bradley county,2019,unarmed,0
+Arkansas,craighead county,2019,armed,2
+Arkansas,craighead county,2019,unarmed,0
+Arkansas,crawford county,2017,armed,0
+Arkansas,crawford county,2017,unarmed,0
+Arkansas,crittenden county,2017,armed,1
+Arkansas,crittenden county,2017,unarmed,0
+Arkansas,crittenden county,2019,armed,0
+Arkansas,crittenden county,2019,unarmed,0
+Arkansas,grant county,2017,armed,0
+Arkansas,grant county,2017,unarmed,0
+Arkansas,independence county,2017,armed,1
+Arkansas,independence county,2017,unarmed,0
+Arkansas,jefferson county,2017,armed,1
+Arkansas,jefferson county,2017,unarmed,0
+Arkansas,jefferson county,2019,armed,1
+Arkansas,jefferson county,2019,unarmed,0
+Arkansas,johnson county,2017,armed,0
+Arkansas,johnson county,2017,unarmed,0
+Arkansas,marion county,2017,armed,2
+Arkansas,marion county,2017,unarmed,0
+Arkansas,mississippi county,2019,armed,0
+Arkansas,mississippi county,2019,unarmed,1
+Arkansas,phillips county,2019,armed,1
+Arkansas,phillips county,2019,unarmed,0
+Arkansas,pulaski county,2017,armed,1
+Arkansas,pulaski county,2017,unarmed,0
+Arkansas,pulaski county,2019,armed,1
+Arkansas,pulaski county,2019,unarmed,0
+Arkansas,saline county,2019,armed,1
+Arkansas,saline county,2019,unarmed,0
+Arkansas,st. francis county,2019,armed,1
+Arkansas,st. francis county,2019,unarmed,0
+Arkansas,stone county,2019,armed,1
+Arkansas,stone county,2019,unarmed,0
+Arkansas,van buren county,2019,armed,2
+Arkansas,van buren county,2019,unarmed,0
+Arkansas,washington county,2019,armed,1
+Arkansas,washington county,2019,unarmed,0
+Arkansas,white county,2017,armed,1
+Arkansas,white county,2017,unarmed,0
+Arizona,apache county,2017,armed,1
+Arizona,apache county,2017,unarmed,0
+Arizona,coconino county,2017,armed,1
+Arizona,coconino county,2017,unarmed,0
+Arizona,coconino county,2019,armed,2
+Arizona,coconino county,2019,unarmed,1
+Arizona,gila county,2017,armed,0.005211456
+Arizona,gila county,2017,unarmed,0
+Arizona,gila county,2019,armed,0.005211456
+Arizona,gila county,2019,unarmed,0
+Arizona,graham county,2017,armed,0.777777778
+Arizona,graham county,2017,unarmed,0
+Arizona,la paz county,2017,armed,1
+Arizona,la paz county,2017,unarmed,0
+Arizona,la paz county,2019,armed,0
+Arizona,la paz county,2019,unarmed,1
+Arizona,maricopa county,2017,armed,11.99485525
+Arizona,maricopa county,2017,unarmed,2
+Arizona,maricopa county,2019,armed,12.99478854
+Arizona,maricopa county,2019,unarmed,1
+Arizona,mohave county,2017,armed,3
+Arizona,mohave county,2017,unarmed,0
+Arizona,navajo county,2017,armed,1
+Arizona,navajo county,2017,unarmed,0
+Arizona,pima county,2017,armed,4.222222222
+Arizona,pima county,2017,unarmed,0
+Arizona,pima county,2019,armed,3
+Arizona,pima county,2019,unarmed,0
+Arizona,pinal county,2017,armed,0.999933299
+Arizona,pinal county,2017,unarmed,0
+Arizona,pinal county,2019,armed,0
+Arizona,pinal county,2019,unarmed,0
+Arizona,yavapai county,2017,armed,2
+Arizona,yavapai county,2017,unarmed,0
+Arizona,yuma county,2017,armed,0
+Arizona,yuma county,2017,unarmed,0
+California,alameda county,2017,armed,3
+California,alameda county,2017,unarmed,2
+California,alameda county,2019,armed,1
+California,alameda county,2019,unarmed,0
+California,butte county,2017,armed,1
+California,butte county,2017,unarmed,0
+California,butte county,2019,armed,1
+California,butte county,2019,unarmed,0
+California,contra costa county,2017,armed,2.010998298
+California,contra costa county,2017,unarmed,0
+California,contra costa county,2019,armed,0
+California,contra costa county,2019,unarmed,0
+California,fresno county,2017,armed,1
+California,fresno county,2017,unarmed,1
+California,fresno county,2019,armed,2
+California,fresno county,2019,unarmed,0
+California,humboldt county,2017,armed,1
+California,humboldt county,2017,unarmed,0
+California,imperial county,2019,armed,0
+California,imperial county,2019,unarmed,0
+California,kern county,2017,armed,4
+California,kern county,2017,unarmed,1
+California,kern county,2019,armed,0
+California,kern county,2019,unarmed,2
+California,kings county,2017,armed,1
+California,kings county,2017,unarmed,0
+California,kings county,2019,armed,1
+California,kings county,2019,unarmed,0
+California,lake county,2019,armed,0
+California,lake county,2019,unarmed,0
+California,los angeles county,2017,armed,20.9890017
+California,los angeles county,2017,unarmed,2
+California,los angeles county,2019,armed,18
+California,los angeles county,2019,unarmed,3
+California,madera county,2017,armed,0
+California,madera county,2017,unarmed,0
+California,madera county,2019,armed,0
+California,madera county,2019,unarmed,0
+California,merced county,2017,armed,2
+California,merced county,2017,unarmed,0
+California,monterey county,2017,armed,0
+California,monterey county,2017,unarmed,0
+California,monterey county,2019,armed,2
+California,monterey county,2019,unarmed,0
+California,napa county,2017,armed,1
+California,napa county,2017,unarmed,0
+California,napa county,2019,armed,1
+California,napa county,2019,unarmed,0
+California,orange county,2017,armed,2
+California,orange county,2017,unarmed,1
+California,orange county,2019,armed,2
+California,orange county,2019,unarmed,0
+California,placer county,2017,armed,1
+California,placer county,2017,unarmed,0
+California,placer county,2019,armed,1
+California,placer county,2019,unarmed,0
+California,riverside county,2017,armed,5
+California,riverside county,2017,unarmed,0.030233519
+California,riverside county,2019,armed,6
+California,riverside county,2019,unarmed,0
+California,sacramento county,2017,armed,3
+California,sacramento county,2017,unarmed,0
+California,sacramento county,2019,armed,3
+California,sacramento county,2019,unarmed,0
+California,san bernardino county,2017,armed,5
+California,san bernardino county,2017,unarmed,0
+California,san bernardino county,2019,armed,5
+California,san bernardino county,2019,unarmed,1
+California,san diego county,2017,armed,6
+California,san diego county,2017,unarmed,0.969766481
+California,san diego county,2019,armed,3
+California,san diego county,2019,unarmed,0
+California,san francisco county,2017,armed,2
+California,san francisco county,2017,unarmed,1
+California,san joaquin county,2017,armed,1
+California,san joaquin county,2017,unarmed,0
+California,san joaquin county,2019,armed,2
+California,san joaquin county,2019,unarmed,0
+California,san luis obispo county,2017,armed,1
+California,san luis obispo county,2017,unarmed,0
+California,san mateo county,2017,armed,2
+California,san mateo county,2017,unarmed,0
+California,santa barbara county,2017,armed,1
+California,santa barbara county,2017,unarmed,0
+California,santa barbara county,2019,armed,1
+California,santa barbara county,2019,unarmed,1
+California,santa clara county,2017,armed,1
+California,santa clara county,2017,unarmed,1
+California,santa clara county,2019,armed,3
+California,santa clara county,2019,unarmed,0
+California,shasta county,2017,armed,3
+California,shasta county,2017,unarmed,0
+California,shasta county,2019,armed,4
+California,shasta county,2019,unarmed,1
+California,solano county,2017,armed,0
+California,solano county,2017,unarmed,0
+California,solano county,2019,armed,1
+California,solano county,2019,unarmed,0
+California,sonoma county,2017,armed,0
+California,sonoma county,2017,unarmed,0
+California,stanislaus county,2017,armed,0
+California,stanislaus county,2017,unarmed,1
+California,stanislaus county,2019,armed,2
+California,stanislaus county,2019,unarmed,0
+California,sutter county,2017,armed,1
+California,sutter county,2017,unarmed,0
+California,tehama county,2017,armed,1
+California,tehama county,2017,unarmed,0
+California,tehama county,2019,armed,0
+California,tehama county,2019,unarmed,0
+California,trinity county,2017,armed,1
+California,trinity county,2017,unarmed,0
+California,tulare county,2017,armed,3
+California,tulare county,2017,unarmed,0
+California,tulare county,2019,armed,1
+California,tulare county,2019,unarmed,0
+California,ventura county,2017,armed,0
+California,ventura county,2017,unarmed,0
+California,ventura county,2019,armed,0
+California,ventura county,2019,unarmed,1
+California,yolo county,2019,armed,0
+California,yolo county,2019,unarmed,0
+California,yuba county,2017,armed,1
+California,yuba county,2017,unarmed,0
+California,yuba county,2019,armed,1
+California,yuba county,2019,unarmed,0
+Colorado,adams county,2017,armed,4.07738971
+Colorado,adams county,2017,unarmed,0
+Colorado,adams county,2019,armed,1.83471975
+Colorado,adams county,2019,unarmed,0
+Colorado,arapahoe county,2017,armed,3
+Colorado,arapahoe county,2017,unarmed,0
+Colorado,arapahoe county,2019,armed,1.857743487
+Colorado,arapahoe county,2019,unarmed,0
+Colorado,denver county,2017,armed,2
+Colorado,denver county,2017,unarmed,0
+Colorado,denver county,2019,armed,5
+Colorado,denver county,2019,unarmed,0
+Colorado,douglas county,2017,armed,2
+Colorado,douglas county,2017,unarmed,0
+Colorado,douglas county,2019,armed,1
+Colorado,douglas county,2019,unarmed,0
+Colorado,eagle county,2019,armed,0.904600142
+Colorado,eagle county,2019,unarmed,0
+Colorado,el paso county,2017,armed,2
+Colorado,el paso county,2017,unarmed,0
+Colorado,el paso county,2019,armed,3
+Colorado,el paso county,2019,unarmed,0
+Colorado,garfield county,2019,armed,1
+Colorado,garfield county,2019,unarmed,0
+Colorado,jefferson county,2017,armed,1.92261029
+Colorado,jefferson county,2017,unarmed,0
+Colorado,jefferson county,2019,armed,5.307536763
+Colorado,jefferson county,2019,unarmed,0
+Colorado,larimer county,2017,armed,2
+Colorado,larimer county,2017,unarmed,1
+Colorado,larimer county,2019,armed,1
+Colorado,larimer county,2019,unarmed,0
+Colorado,las animas county,2017,armed,0
+Colorado,las animas county,2017,unarmed,1
+Colorado,las animas county,2019,armed,1
+Colorado,las animas county,2019,unarmed,0
+Colorado,montezuma county,2017,armed,1
+Colorado,montezuma county,2017,unarmed,0
+Colorado,pueblo county,2017,armed,1
+Colorado,pueblo county,2017,unarmed,0
+Colorado,pueblo county,2019,armed,2.095399858
+Colorado,pueblo county,2019,unarmed,1
+Colorado,weld county,2017,armed,1
+Colorado,weld county,2017,unarmed,0
+Colorado,weld county,2019,armed,1
+Colorado,weld county,2019,unarmed,1
+Connecticut,fairfield county,2017,armed,0
+Connecticut,fairfield county,2017,unarmed,0
+Connecticut,hartford county,2017,armed,1
+Connecticut,hartford county,2017,unarmed,0
+Connecticut,hartford county,2019,armed,1
+Connecticut,hartford county,2019,unarmed,1
+Connecticut,litchfield county,2017,armed,1
+Connecticut,litchfield county,2017,unarmed,0
+Connecticut,new london county,2017,armed,1
+Connecticut,new london county,2017,unarmed,0
+Connecticut,new london county,2019,armed,1
+Connecticut,new london county,2019,unarmed,0
+District of Columbia,district of columbia county,2017,armed,2
+District of Columbia,district of columbia county,2017,unarmed,0
+District of Columbia,district of columbia county,2019,armed,1
+District of Columbia,district of columbia county,2019,unarmed,0
+Delaware,kent county,2017,armed,1
+Delaware,kent county,2017,unarmed,0
+Delaware,new castle county,2017,armed,3
+Delaware,new castle county,2017,unarmed,0
+Delaware,new castle county,2019,armed,1
+Delaware,new castle county,2019,unarmed,0
+Delaware,sussex county,2019,armed,1
+Delaware,sussex county,2019,unarmed,0
+Florida,alachua county,2017,armed,1
+Florida,alachua county,2017,unarmed,0
+Florida,bay county,2017,armed,1
+Florida,bay county,2017,unarmed,0
+Florida,bay county,2019,armed,2
+Florida,bay county,2019,unarmed,0
+Florida,brevard county,2017,armed,1
+Florida,brevard county,2017,unarmed,0
+Florida,brevard county,2019,armed,1
+Florida,brevard county,2019,unarmed,0
+Florida,broward county,2017,armed,2
+Florida,broward county,2017,unarmed,2
+Florida,broward county,2019,armed,2.904108841
+Florida,broward county,2019,unarmed,0
+Florida,charlotte county,2017,armed,0
+Florida,charlotte county,2017,unarmed,0
+Florida,charlotte county,2019,armed,0.358
+Florida,charlotte county,2019,unarmed,0
+Florida,citrus county,2017,armed,1
+Florida,citrus county,2017,unarmed,0
+Florida,clay county,2017,armed,1
+Florida,clay county,2017,unarmed,0
+Florida,clay county,2019,armed,2
+Florida,clay county,2019,unarmed,0
+Florida,duval county,2017,armed,5
+Florida,duval county,2017,unarmed,0
+Florida,duval county,2019,armed,1
+Florida,duval county,2019,unarmed,0
+Florida,escambia county,2017,armed,1
+Florida,escambia county,2017,unarmed,0
+Florida,escambia county,2019,armed,2
+Florida,escambia county,2019,unarmed,0
+Florida,gulf county,2019,armed,1
+Florida,gulf county,2019,unarmed,0
+Florida,hernando county,2017,armed,1
+Florida,hernando county,2017,unarmed,0
+Florida,hillsborough county,2017,armed,0
+Florida,hillsborough county,2017,unarmed,0
+Florida,hillsborough county,2019,armed,1
+Florida,hillsborough county,2019,unarmed,0
+Florida,indian river county,2017,armed,0
+Florida,indian river county,2017,unarmed,1
+Florida,indian river county,2019,armed,1
+Florida,indian river county,2019,unarmed,0
+Florida,jackson county,2019,armed,1
+Florida,jackson county,2019,unarmed,0
+Florida,lake county,2019,armed,2
+Florida,lake county,2019,unarmed,0
+Florida,lee county,2017,armed,1
+Florida,lee county,2017,unarmed,0
+Florida,leon county,2019,armed,1
+Florida,leon county,2019,unarmed,0
+Florida,manatee county,2017,armed,1.254850942
+Florida,manatee county,2017,unarmed,0
+Florida,marion county,2017,armed,1
+Florida,marion county,2017,unarmed,0
+Florida,marion county,2019,armed,1
+Florida,marion county,2019,unarmed,0
+Florida,martin county,2017,armed,0.011931362
+Florida,martin county,2017,unarmed,0
+Florida,miami-dade county,2017,armed,4.745149058
+Florida,miami-dade county,2017,unarmed,1
+Florida,miami-dade county,2019,armed,3
+Florida,miami-dade county,2019,unarmed,0
+Florida,nassau county,2017,armed,1
+Florida,nassau county,2017,unarmed,0
+Florida,okaloosa county,2019,armed,1
+Florida,okaloosa county,2019,unarmed,0
+Florida,orange county,2017,armed,1
+Florida,orange county,2017,unarmed,1
+Florida,orange county,2019,armed,1
+Florida,orange county,2019,unarmed,0
+Florida,palm beach county,2017,armed,0.988068638
+Florida,palm beach county,2017,unarmed,1
+Florida,palm beach county,2019,armed,3
+Florida,palm beach county,2019,unarmed,0
+Florida,pasco county,2017,armed,0
+Florida,pasco county,2017,unarmed,0
+Florida,pinellas county,2017,armed,3
+Florida,pinellas county,2017,unarmed,0
+Florida,pinellas county,2019,armed,3
+Florida,pinellas county,2019,unarmed,0
+Florida,polk county,2017,armed,2
+Florida,polk county,2017,unarmed,0
+Florida,polk county,2019,armed,2
+Florida,polk county,2019,unarmed,0
+Florida,putnam county,2017,armed,1
+Florida,putnam county,2017,unarmed,0
+Florida,santa rosa county,2019,armed,0
+Florida,santa rosa county,2019,unarmed,0
+Florida,sarasota county,2017,armed,0
+Florida,sarasota county,2017,unarmed,0
+Florida,sarasota county,2019,armed,1.642
+Florida,sarasota county,2019,unarmed,0
+Florida,st. lucie county,2019,armed,0
+Florida,st. lucie county,2019,unarmed,0
+Florida,sumter county,2019,armed,1
+Florida,sumter county,2019,unarmed,0
+Florida,volusia county,2017,armed,3
+Florida,volusia county,2017,unarmed,0
+Florida,volusia county,2019,armed,3
+Florida,volusia county,2019,unarmed,0
+Florida,walton county,2019,armed,0.095891159
+Florida,walton county,2019,unarmed,0
+Georgia,atkinson county,2019,armed,1
+Georgia,atkinson county,2019,unarmed,0
+Georgia,bibb county,2017,armed,0
+Georgia,bibb county,2017,unarmed,0
+Georgia,bulloch county,2017,armed,1
+Georgia,bulloch county,2017,unarmed,0
+Georgia,carroll county,2019,armed,0
+Georgia,carroll county,2019,unarmed,0
+Georgia,chatham county,2019,armed,1
+Georgia,chatham county,2019,unarmed,0
+Georgia,cherokee county,2017,armed,1
+Georgia,cherokee county,2017,unarmed,0
+Georgia,cherokee county,2019,armed,1
+Georgia,cherokee county,2019,unarmed,0
+Georgia,clarke county,2019,armed,2
+Georgia,clarke county,2019,unarmed,0
+Georgia,clayton county,2017,armed,1
+Georgia,clayton county,2017,unarmed,0
+Georgia,clayton county,2019,armed,1
+Georgia,clayton county,2019,unarmed,0
+Georgia,cobb county,2017,armed,1.999963518
+Georgia,cobb county,2017,unarmed,1
+Georgia,colquitt county,2017,armed,0
+Georgia,colquitt county,2017,unarmed,1
+Georgia,columbia county,2019,armed,1
+Georgia,columbia county,2019,unarmed,0
+Georgia,dekalb county,2017,armed,0.015628865
+Georgia,dekalb county,2017,unarmed,0
+Georgia,dekalb county,2019,armed,2.005209622
+Georgia,dekalb county,2019,unarmed,0.005209622
+Georgia,douglas county,2017,armed,3.65E-05
+Georgia,douglas county,2017,unarmed,0
+Georgia,effingham county,2017,armed,0
+Georgia,effingham county,2017,unarmed,0
+Georgia,fayette county,2017,armed,2
+Georgia,fayette county,2017,unarmed,0
+Georgia,floyd county,2019,armed,1
+Georgia,floyd county,2019,unarmed,0
+Georgia,forsyth county,2017,armed,0
+Georgia,forsyth county,2017,unarmed,0
+Georgia,fulton county,2017,armed,2.984371135
+Georgia,fulton county,2017,unarmed,0
+Georgia,fulton county,2019,armed,1.994790378
+Georgia,fulton county,2019,unarmed,0.994790378
+Georgia,greene county,2017,armed,0
+Georgia,greene county,2017,unarmed,1
+Georgia,gwinnett county,2019,armed,0.993058377
+Georgia,gwinnett county,2019,unarmed,0
+Georgia,habersham county,2017,armed,1
+Georgia,habersham county,2017,unarmed,0
+Georgia,hall county,2019,armed,2.006941623
+Georgia,hall county,2019,unarmed,0
+Georgia,henry county,2019,armed,1
+Georgia,henry county,2019,unarmed,0
+Georgia,houston county,2017,armed,1
+Georgia,houston county,2017,unarmed,0
+Georgia,jasper county,2017,armed,1
+Georgia,jasper county,2017,unarmed,0
+Georgia,lumpkin county,2019,armed,0
+Georgia,lumpkin county,2019,unarmed,0
+Georgia,mcintosh county,2019,armed,0
+Georgia,mcintosh county,2019,unarmed,0
+Georgia,muscogee county,2017,armed,0
+Georgia,muscogee county,2017,unarmed,0
+Georgia,newton county,2019,armed,1
+Georgia,newton county,2019,unarmed,0
+Georgia,paulding county,2017,armed,0
+Georgia,paulding county,2017,unarmed,1
+Georgia,polk county,2017,armed,0
+Georgia,polk county,2017,unarmed,0
+Georgia,richmond county,2019,armed,1
+Georgia,richmond county,2019,unarmed,0
+Georgia,rockdale county,2019,armed,1
+Georgia,rockdale county,2019,unarmed,0
+Georgia,spalding county,2017,armed,1
+Georgia,spalding county,2017,unarmed,0
+Georgia,stewart county,2017,armed,1
+Georgia,stewart county,2017,unarmed,0
+Georgia,tattnall county,2019,armed,0
+Georgia,tattnall county,2019,unarmed,1
+Georgia,thomas county,2017,armed,1
+Georgia,thomas county,2017,unarmed,0
+Georgia,troup county,2019,armed,1
+Georgia,troup county,2019,unarmed,0
+Georgia,walton county,2019,armed,0
+Georgia,walton county,2019,unarmed,0
+Georgia,wheeler county,2019,armed,0
+Georgia,wheeler county,2019,unarmed,1
+Georgia,whitfield county,2019,armed,0
+Georgia,whitfield county,2019,unarmed,0
+Hawaii,hawaii county,2017,armed,0
+Hawaii,hawaii county,2017,unarmed,0
+Hawaii,honolulu county,2017,armed,0
+Hawaii,honolulu county,2017,unarmed,0
+Hawaii,honolulu county,2019,armed,0
+Hawaii,honolulu county,2019,unarmed,2
+Hawaii,kauai county,2019,armed,1
+Hawaii,kauai county,2019,unarmed,0
+Iowa,chickasaw county,2019,armed,0
+Iowa,chickasaw county,2019,unarmed,0
+Iowa,dallas county,2019,armed,0
+Iowa,dallas county,2019,unarmed,0
+Iowa,des moines county,2017,armed,1
+Iowa,des moines county,2017,unarmed,0
+Iowa,des moines county,2019,armed,1
+Iowa,des moines county,2019,unarmed,0
+Iowa,floyd county,2019,armed,0
+Iowa,floyd county,2019,unarmed,0
+Iowa,humboldt county,2017,armed,1
+Iowa,humboldt county,2017,unarmed,0
+Iowa,iowa county,2017,armed,0.999920805
+Iowa,iowa county,2017,unarmed,0
+Iowa,keokuk county,2017,armed,7.92E-05
+Iowa,keokuk county,2017,unarmed,0
+Iowa,lee county,2019,armed,1
+Iowa,lee county,2019,unarmed,0
+Iowa,polk county,2017,armed,1
+Iowa,polk county,2017,unarmed,0
+Iowa,polk county,2019,armed,1
+Iowa,polk county,2019,unarmed,0
+Iowa,pottawattamie county,2019,armed,1
+Iowa,pottawattamie county,2019,unarmed,0
+Iowa,scott county,2017,armed,1
+Iowa,scott county,2017,unarmed,0
+Iowa,warren county,2017,armed,0
+Iowa,warren county,2017,unarmed,0
+Iowa,warren county,2019,armed,0
+Iowa,warren county,2019,unarmed,0
+Idaho,ada county,2017,armed,2
+Idaho,ada county,2017,unarmed,0
+Idaho,ada county,2019,armed,0
+Idaho,ada county,2019,unarmed,0
+Idaho,bannock county,2017,armed,1
+Idaho,bannock county,2017,unarmed,0
+Idaho,bonner county,2017,armed,1
+Idaho,bonner county,2017,unarmed,0
+Idaho,bonneville county,2019,armed,1
+Idaho,bonneville county,2019,unarmed,0
+Idaho,canyon county,2017,armed,1
+Idaho,canyon county,2017,unarmed,0
+Idaho,canyon county,2019,armed,1
+Idaho,canyon county,2019,unarmed,0
+Idaho,elmore county,2017,armed,0
+Idaho,elmore county,2017,unarmed,0
+Idaho,franklin county,2019,armed,0
+Idaho,franklin county,2019,unarmed,0
+Idaho,gooding county,2019,armed,1
+Idaho,gooding county,2019,unarmed,0
+Idaho,jefferson county,2019,armed,1
+Idaho,jefferson county,2019,unarmed,0
+Idaho,kootenai county,2019,armed,0
+Idaho,kootenai county,2019,unarmed,0
+Idaho,power county,2017,armed,0
+Idaho,power county,2017,unarmed,0
+Illinois,cook county,2017,armed,5.000086504
+Illinois,cook county,2017,unarmed,1
+Illinois,cook county,2019,armed,5
+Illinois,cook county,2019,unarmed,0
+Illinois,dupage county,2017,armed,0
+Illinois,dupage county,2017,unarmed,0
+Illinois,dupage county,2019,armed,0.123498146
+Illinois,dupage county,2019,unarmed,0
+Illinois,jersey county,2017,armed,1
+Illinois,jersey county,2017,unarmed,0
+Illinois,jo daviess county,2017,armed,1
+Illinois,jo daviess county,2017,unarmed,0
+Illinois,kane county,2019,armed,1.86804191
+Illinois,kane county,2019,unarmed,0
+Illinois,kendall county,2019,armed,0.006784618
+Illinois,kendall county,2019,unarmed,0
+Illinois,lake county,2017,armed,0.999913496
+Illinois,lake county,2017,unarmed,0
+Illinois,lake county,2019,armed,0
+Illinois,lake county,2019,unarmed,0
+Illinois,logan county,2017,armed,1
+Illinois,logan county,2017,unarmed,0
+Illinois,macoupin county,2019,armed,1
+Illinois,macoupin county,2019,unarmed,0
+Illinois,monroe county,2017,armed,0
+Illinois,monroe county,2017,unarmed,0
+Illinois,moultrie county,2017,armed,1
+Illinois,moultrie county,2017,unarmed,0
+Illinois,peoria county,2017,armed,0.999440866
+Illinois,peoria county,2017,unarmed,0
+Illinois,sangamon county,2017,armed,0
+Illinois,sangamon county,2017,unarmed,1
+Illinois,st. clair county,2017,armed,1
+Illinois,st. clair county,2017,unarmed,0
+Illinois,tazewell county,2017,armed,0
+Illinois,tazewell county,2017,unarmed,0
+Illinois,will county,2019,armed,1.001675326
+Illinois,will county,2019,unarmed,0
+Illinois,winnebago county,2017,armed,0
+Illinois,winnebago county,2017,unarmed,0
+Illinois,woodford county,2017,armed,0.000559134
+Illinois,woodford county,2017,unarmed,0
+Indiana,bartholomew county,2017,armed,1
+Indiana,bartholomew county,2017,unarmed,0
+Indiana,clark county,2019,armed,2
+Indiana,clark county,2019,unarmed,0
+Indiana,crawford county,2017,armed,0
+Indiana,crawford county,2017,unarmed,0
+Indiana,dearborn county,2017,armed,0.09877946
+Indiana,dearborn county,2017,unarmed,0
+Indiana,dearborn county,2019,armed,0
+Indiana,dearborn county,2019,unarmed,0
+Indiana,elkhart county,2017,armed,2
+Indiana,elkhart county,2017,unarmed,0
+Indiana,floyd county,2019,armed,1
+Indiana,floyd county,2019,unarmed,0
+Indiana,franklin county,2017,armed,1
+Indiana,franklin county,2017,unarmed,0
+Indiana,hamilton county,2017,armed,1
+Indiana,hamilton county,2017,unarmed,0
+Indiana,henry county,2017,armed,1
+Indiana,henry county,2017,unarmed,0
+Indiana,henry county,2019,armed,1
+Indiana,henry county,2019,unarmed,0
+Indiana,huntington county,2019,armed,1
+Indiana,huntington county,2019,unarmed,0
+Indiana,jackson county,2019,armed,1
+Indiana,jackson county,2019,unarmed,0
+Indiana,knox county,2017,armed,0
+Indiana,knox county,2017,unarmed,0
+Indiana,lake county,2017,armed,3
+Indiana,lake county,2017,unarmed,0
+Indiana,lake county,2019,armed,1
+Indiana,lake county,2019,unarmed,0
+Indiana,lawrence county,2019,armed,1
+Indiana,lawrence county,2019,unarmed,0
+Indiana,marion county,2017,armed,0.90122054
+Indiana,marion county,2017,unarmed,1
+Indiana,marion county,2019,armed,1
+Indiana,marion county,2019,unarmed,0
+Indiana,owen county,2017,armed,1
+Indiana,owen county,2017,unarmed,0
+Indiana,porter county,2017,armed,0
+Indiana,porter county,2017,unarmed,0
+Indiana,porter county,2019,armed,0
+Indiana,porter county,2019,unarmed,0
+Indiana,randolph county,2019,armed,1
+Indiana,randolph county,2019,unarmed,0
+Indiana,shelby county,2017,armed,1
+Indiana,shelby county,2017,unarmed,0
+Indiana,st. joseph county,2019,armed,0
+Indiana,st. joseph county,2019,unarmed,0
+Indiana,tippecanoe county,2017,armed,1
+Indiana,tippecanoe county,2017,unarmed,0
+Indiana,vanderburgh county,2017,armed,0
+Indiana,vanderburgh county,2017,unarmed,0
+Indiana,vanderburgh county,2019,armed,1
+Indiana,vanderburgh county,2019,unarmed,0
+Indiana,washington county,2019,armed,0
+Indiana,washington county,2019,unarmed,0
+Kansas,cowley county,2017,armed,1
+Kansas,cowley county,2017,unarmed,0
+Kansas,finney county,2017,armed,0
+Kansas,finney county,2017,unarmed,0
+Kansas,geary county,2017,armed,1
+Kansas,geary county,2017,unarmed,0
+Kansas,harvey county,2017,armed,1
+Kansas,harvey county,2017,unarmed,0
+Kansas,johnson county,2017,armed,1
+Kansas,johnson county,2017,unarmed,0
+Kansas,labette county,2019,armed,1
+Kansas,labette county,2019,unarmed,0
+Kansas,leavenworth county,2017,armed,0
+Kansas,leavenworth county,2017,unarmed,0
+Kansas,marion county,2017,armed,1
+Kansas,marion county,2017,unarmed,0
+Kansas,saline county,2019,armed,0
+Kansas,saline county,2019,unarmed,0
+Kansas,sedgwick county,2017,armed,1
+Kansas,sedgwick county,2017,unarmed,1
+Kansas,sedgwick county,2019,armed,2
+Kansas,sedgwick county,2019,unarmed,0
+Kansas,shawnee county,2017,armed,1
+Kansas,shawnee county,2017,unarmed,0
+Kansas,wyandotte county,2019,armed,2
+Kansas,wyandotte county,2019,unarmed,0
+Kentucky,anderson county,2017,armed,1
+Kentucky,anderson county,2017,unarmed,0
+Kentucky,bath county,2017,armed,0
+Kentucky,bath county,2017,unarmed,0
+Kentucky,bath county,2019,armed,0
+Kentucky,bath county,2019,unarmed,0
+Kentucky,calloway county,2019,armed,0
+Kentucky,calloway county,2019,unarmed,0
+Kentucky,carter county,2019,armed,0
+Kentucky,carter county,2019,unarmed,0
+Kentucky,fulton county,2017,armed,0
+Kentucky,fulton county,2017,unarmed,0
+Kentucky,garrard county,2017,armed,1
+Kentucky,garrard county,2017,unarmed,0
+Kentucky,grayson county,2019,armed,1
+Kentucky,grayson county,2019,unarmed,0
+Kentucky,greenup county,2017,armed,1
+Kentucky,greenup county,2017,unarmed,1
+Kentucky,jackson county,2019,armed,0
+Kentucky,jackson county,2019,unarmed,0
+Kentucky,jefferson county,2017,armed,1
+Kentucky,jefferson county,2017,unarmed,0
+Kentucky,jefferson county,2019,armed,3
+Kentucky,jefferson county,2019,unarmed,0
+Kentucky,jessamine county,2019,armed,0
+Kentucky,jessamine county,2019,unarmed,0
+Kentucky,knott county,2017,armed,0
+Kentucky,knott county,2017,unarmed,0
+Kentucky,knox county,2017,armed,1
+Kentucky,knox county,2017,unarmed,0
+Kentucky,laurel county,2017,armed,1
+Kentucky,laurel county,2017,unarmed,0
+Kentucky,madison county,2017,armed,0
+Kentucky,madison county,2017,unarmed,0
+Kentucky,nelson county,2017,armed,1
+Kentucky,nelson county,2017,unarmed,0
+Kentucky,oldham county,2019,armed,1
+Kentucky,oldham county,2019,unarmed,0
+Kentucky,owsley county,2017,armed,0
+Kentucky,owsley county,2017,unarmed,0
+Kentucky,perry county,2019,armed,1
+Kentucky,perry county,2019,unarmed,0
+Kentucky,shelby county,2017,armed,1
+Kentucky,shelby county,2017,unarmed,0
+Kentucky,todd county,2019,armed,1
+Kentucky,todd county,2019,unarmed,0
+Kentucky,warren county,2017,armed,0
+Kentucky,warren county,2017,unarmed,0
+Kentucky,wayne county,2017,armed,1
+Kentucky,wayne county,2017,unarmed,0
+Kentucky,wolfe county,2019,armed,1
+Kentucky,wolfe county,2019,unarmed,0
+Louisiana,acadia parish,2017,armed,1
+Louisiana,acadia parish,2017,unarmed,0
+Louisiana,beauregard parish,2019,armed,0
+Louisiana,beauregard parish,2019,unarmed,0
+Louisiana,bossier parish,2019,armed,0.000388023
+Louisiana,bossier parish,2019,unarmed,0
+Louisiana,caddo parish,2019,armed,1.999611977
+Louisiana,caddo parish,2019,unarmed,0
+Louisiana,calcasieu parish,2019,armed,1
+Louisiana,calcasieu parish,2019,unarmed,0
+Louisiana,claiborne parish,2017,armed,1
+Louisiana,claiborne parish,2017,unarmed,0
+Louisiana,east baton rouge parish,2017,armed,2
+Louisiana,east baton rouge parish,2017,unarmed,1
+Louisiana,east baton rouge parish,2019,armed,1
+Louisiana,east baton rouge parish,2019,unarmed,1
+Louisiana,east feliciana parish,2019,armed,1
+Louisiana,east feliciana parish,2019,unarmed,1
+Louisiana,evangeline parish,2017,armed,0
+Louisiana,evangeline parish,2017,unarmed,1
+Louisiana,iberia parish,2017,armed,0
+Louisiana,iberia parish,2017,unarmed,0
+Louisiana,jefferson parish,2017,armed,0
+Louisiana,jefferson parish,2017,unarmed,0
+Louisiana,jefferson parish,2019,armed,1
+Louisiana,jefferson parish,2019,unarmed,0
+Louisiana,lincoln parish,2017,armed,1
+Louisiana,lincoln parish,2017,unarmed,0
+Louisiana,morehouse parish,2019,armed,1
+Louisiana,morehouse parish,2019,unarmed,0
+Louisiana,orleans parish,2017,armed,1
+Louisiana,orleans parish,2017,unarmed,0
+Louisiana,orleans parish,2019,armed,3
+Louisiana,orleans parish,2019,unarmed,0
+Louisiana,ouachita parish,2017,armed,2
+Louisiana,ouachita parish,2017,unarmed,0
+Louisiana,red river parish,2017,armed,1
+Louisiana,red river parish,2017,unarmed,0
+Louisiana,sabine parish,2017,armed,0
+Louisiana,sabine parish,2017,unarmed,1
+Louisiana,st. helena parish,2019,armed,1
+Louisiana,st. helena parish,2019,unarmed,0
+Louisiana,st. martin parish,2017,armed,1
+Louisiana,st. martin parish,2017,unarmed,0
+Louisiana,st. tammany parish,2017,armed,1
+Louisiana,st. tammany parish,2017,unarmed,0
+Louisiana,st. tammany parish,2019,armed,1
+Louisiana,st. tammany parish,2019,unarmed,0
+Louisiana,terrebonne parish,2017,armed,2
+Louisiana,terrebonne parish,2017,unarmed,0
+Louisiana,union parish,2017,armed,0
+Louisiana,union parish,2017,unarmed,0
+Louisiana,vernon parish,2019,armed,0
+Louisiana,vernon parish,2019,unarmed,0
+Louisiana,west baton rouge parish,2019,armed,0
+Louisiana,west baton rouge parish,2019,unarmed,1
+Massachusetts,berkshire county,2017,armed,0
+Massachusetts,berkshire county,2017,unarmed,0
+Massachusetts,bristol county,2017,armed,0
+Massachusetts,bristol county,2017,unarmed,0
+Massachusetts,suffolk county,2019,armed,4
+Massachusetts,suffolk county,2019,unarmed,0
+Massachusetts,worcester county,2017,armed,0
+Massachusetts,worcester county,2017,unarmed,0
+Massachusetts,worcester county,2019,armed,1
+Massachusetts,worcester county,2019,unarmed,0
+Maryland,anne arundel county,2019,armed,1
+Maryland,anne arundel county,2019,unarmed,0
+Maryland,baltimore city county,2017,armed,1.977651265
+Maryland,baltimore city county,2017,unarmed,0
+Maryland,baltimore city county,2019,armed,1.977651265
+Maryland,baltimore city county,2019,unarmed,0.988825633
+Maryland,baltimore county,2017,armed,2.022348735
+Maryland,baltimore county,2017,unarmed,0
+Maryland,baltimore county,2019,armed,3.022348735
+Maryland,baltimore county,2019,unarmed,0.011174367
+Maryland,carroll county,2019,armed,0
+Maryland,carroll county,2019,unarmed,0
+Maryland,cecil county,2019,armed,1
+Maryland,cecil county,2019,unarmed,0
+Maryland,frederick county,2017,armed,0
+Maryland,frederick county,2017,unarmed,0
+Maryland,frederick county,2019,armed,1
+Maryland,frederick county,2019,unarmed,0
+Maryland,harford county,2019,armed,1
+Maryland,harford county,2019,unarmed,0
+Maryland,howard county,2017,armed,0
+Maryland,howard county,2017,unarmed,1
+Maryland,montgomery county,2017,armed,0
+Maryland,montgomery county,2017,unarmed,0
+Maryland,montgomery county,2019,armed,1
+Maryland,montgomery county,2019,unarmed,0
+Maryland,prince george's county,2017,armed,0
+Maryland,prince george's county,2017,unarmed,0
+Maryland,prince george's county,2019,armed,0
+Maryland,prince george's county,2019,unarmed,0
+Maine,androscoggin county,2019,armed,1
+Maine,androscoggin county,2019,unarmed,0
+Maine,aroostook county,2017,armed,0
+Maine,aroostook county,2017,unarmed,0
+Maine,cumberland county,2017,armed,0
+Maine,cumberland county,2017,unarmed,0
+Maine,cumberland county,2019,armed,0
+Maine,cumberland county,2019,unarmed,0
+Maine,kennebec county,2017,armed,1
+Maine,kennebec county,2017,unarmed,1
+Maine,lincoln county,2017,armed,1
+Maine,lincoln county,2017,unarmed,0
+Maine,penobscot county,2017,armed,1
+Maine,penobscot county,2017,unarmed,0
+Maine,somerset county,2017,armed,1
+Maine,somerset county,2017,unarmed,0
+Maine,york county,2017,armed,1
+Maine,york county,2017,unarmed,0
+Maine,york county,2019,armed,0
+Maine,york county,2019,unarmed,0
+Michigan,calhoun county,2019,armed,1
+Michigan,calhoun county,2019,unarmed,0
+Michigan,charlevoix county,2019,armed,1
+Michigan,charlevoix county,2019,unarmed,0
+Michigan,eaton county,2017,armed,0
+Michigan,eaton county,2017,unarmed,0
+Michigan,genesee county,2019,armed,1
+Michigan,genesee county,2019,unarmed,0
+Michigan,huron county,2019,armed,1
+Michigan,huron county,2019,unarmed,0
+Michigan,jackson county,2019,armed,1
+Michigan,jackson county,2019,unarmed,0
+Michigan,kalamazoo county,2019,armed,1
+Michigan,kalamazoo county,2019,unarmed,1
+Michigan,kalkaska county,2017,armed,0.068243041
+Michigan,kalkaska county,2017,unarmed,0
+Michigan,kent county,2017,armed,1
+Michigan,kent county,2017,unarmed,1
+Michigan,kent county,2019,armed,1
+Michigan,kent county,2019,unarmed,0
+Michigan,livingston county,2017,armed,0
+Michigan,livingston county,2017,unarmed,0
+Michigan,macomb county,2017,armed,1
+Michigan,macomb county,2017,unarmed,0
+Michigan,manistee county,2017,armed,0.931756959
+Michigan,manistee county,2017,unarmed,0
+Michigan,monroe county,2017,armed,0.002915012
+Michigan,monroe county,2017,unarmed,0.002915012
+Michigan,monroe county,2019,armed,0
+Michigan,monroe county,2019,unarmed,0.002915012
+Michigan,oakland county,2017,armed,1
+Michigan,oakland county,2017,unarmed,0
+Michigan,otsego county,2019,armed,0
+Michigan,otsego county,2019,unarmed,0
+Michigan,ottawa county,2017,armed,0
+Michigan,ottawa county,2017,unarmed,0
+Michigan,saginaw county,2017,armed,0
+Michigan,saginaw county,2017,unarmed,1
+Michigan,st. clair county,2017,armed,1
+Michigan,st. clair county,2017,unarmed,0
+Michigan,st. joseph county,2019,armed,0
+Michigan,st. joseph county,2019,unarmed,0
+Michigan,wayne county,2017,armed,1.997084988
+Michigan,wayne county,2017,unarmed,0.997084988
+Michigan,wayne county,2019,armed,1
+Michigan,wayne county,2019,unarmed,0.997084988
+Minnesota,anoka county,2019,armed,1
+Minnesota,anoka county,2019,unarmed,0
+Minnesota,chisago county,2017,armed,1
+Minnesota,chisago county,2017,unarmed,0
+Minnesota,dakota county,2019,armed,1
+Minnesota,dakota county,2019,unarmed,0
+Minnesota,douglas county,2019,armed,1
+Minnesota,douglas county,2019,unarmed,0
+Minnesota,freeborn county,2019,armed,0
+Minnesota,freeborn county,2019,unarmed,0
+Minnesota,hennepin county,2017,armed,1
+Minnesota,hennepin county,2017,unarmed,1
+Minnesota,hennepin county,2019,armed,2
+Minnesota,hennepin county,2019,unarmed,1
+Minnesota,mille lacs county,2017,armed,1
+Minnesota,mille lacs county,2017,unarmed,0
+Minnesota,mower county,2017,armed,0
+Minnesota,mower county,2017,unarmed,0
+Minnesota,ramsey county,2017,armed,2.963711011
+Minnesota,ramsey county,2017,unarmed,0
+Minnesota,ramsey county,2019,armed,0
+Minnesota,ramsey county,2019,unarmed,0
+Minnesota,st. louis county,2017,armed,1
+Minnesota,st. louis county,2017,unarmed,0
+Minnesota,st. louis county,2019,armed,1
+Minnesota,st. louis county,2019,unarmed,0
+Minnesota,washington county,2017,armed,0.036288989
+Minnesota,washington county,2017,unarmed,0
+Minnesota,washington county,2019,armed,0
+Minnesota,washington county,2019,unarmed,0
+Missouri,barry county,2017,armed,0
+Missouri,barry county,2017,unarmed,0
+Missouri,barton county,2019,armed,1
+Missouri,barton county,2019,unarmed,0
+Missouri,boone county,2017,armed,1
+Missouri,boone county,2017,unarmed,0
+Missouri,buchanan county,2017,armed,1
+Missouri,buchanan county,2017,unarmed,1
+Missouri,butler county,2017,armed,1
+Missouri,butler county,2017,unarmed,0
+Missouri,callaway county,2017,armed,0
+Missouri,callaway county,2017,unarmed,0
+Missouri,callaway county,2019,armed,0
+Missouri,callaway county,2019,unarmed,0
+Missouri,cape girardeau county,2017,armed,0
+Missouri,cape girardeau county,2017,unarmed,0
+Missouri,cass county,2017,armed,0
+Missouri,cass county,2017,unarmed,0
+Missouri,cass county,2019,armed,0
+Missouri,cass county,2019,unarmed,0
+Missouri,christian county,2017,armed,0
+Missouri,christian county,2017,unarmed,0
+Missouri,christian county,2019,armed,0
+Missouri,christian county,2019,unarmed,0
+Missouri,clay county,2017,armed,0.484647902
+Missouri,clay county,2017,unarmed,0
+Missouri,clay county,2019,armed,0.363485927
+Missouri,clay county,2019,unarmed,0
+Missouri,cole county,2017,armed,0
+Missouri,cole county,2017,unarmed,0
+Missouri,greene county,2017,armed,1
+Missouri,greene county,2017,unarmed,0
+Missouri,greene county,2019,armed,2
+Missouri,greene county,2019,unarmed,0
+Missouri,jackson county,2017,armed,4.443568479
+Missouri,jackson county,2017,unarmed,2
+Missouri,jackson county,2019,armed,2.582676359
+Missouri,jackson county,2019,unarmed,0
+Missouri,jasper county,2019,armed,0
+Missouri,jasper county,2019,unarmed,0.978468826
+Missouri,laclede county,2017,armed,1
+Missouri,laclede county,2017,unarmed,0
+Missouri,lawrence county,2017,armed,0
+Missouri,lawrence county,2017,unarmed,0
+Missouri,newton county,2017,armed,1
+Missouri,newton county,2017,unarmed,0
+Missouri,newton county,2019,armed,0
+Missouri,newton county,2019,unarmed,0.021531174
+Missouri,pemiscot county,2019,armed,0
+Missouri,pemiscot county,2019,unarmed,0
+Missouri,pettis county,2019,armed,1
+Missouri,pettis county,2019,unarmed,0
+Missouri,platte county,2017,armed,0.071783619
+Missouri,platte county,2017,unarmed,0
+Missouri,platte county,2019,armed,0.053837714
+Missouri,platte county,2019,unarmed,0
+Missouri,scott county,2017,armed,0
+Missouri,scott county,2017,unarmed,0
+Missouri,st. charles county,2019,armed,1
+Missouri,st. charles county,2019,unarmed,0
+Missouri,st. francois county,2019,armed,1
+Missouri,st. francois county,2019,unarmed,0
+Missouri,st. louis city county,2017,armed,9
+Missouri,st. louis city county,2017,unarmed,0
+Missouri,st. louis city county,2019,armed,8
+Missouri,st. louis city county,2019,unarmed,1
+Missouri,st. louis county,2017,armed,1
+Missouri,st. louis county,2017,unarmed,0
+Missouri,st. louis county,2019,armed,2
+Missouri,st. louis county,2019,unarmed,0
+Missouri,texas county,2019,armed,0.001664645
+Missouri,texas county,2019,unarmed,0
+Missouri,vernon county,2017,armed,0
+Missouri,vernon county,2017,unarmed,0
+Missouri,wright county,2019,armed,0.998335355
+Missouri,wright county,2019,unarmed,0
+Mississippi,copiah county,2019,armed,0.999775277
+Mississippi,copiah county,2019,unarmed,0
+Mississippi,desoto county,2017,armed,2
+Mississippi,desoto county,2017,unarmed,0
+Mississippi,desoto county,2019,armed,2
+Mississippi,desoto county,2019,unarmed,0
+Mississippi,forrest county,2017,armed,0.985483516
+Mississippi,forrest county,2017,unarmed,1
+Mississippi,forrest county,2019,armed,0
+Mississippi,forrest county,2019,unarmed,0
+Mississippi,hancock county,2019,armed,1.043482519
+Mississippi,hancock county,2019,unarmed,0
+Mississippi,harrison county,2017,armed,0
+Mississippi,harrison county,2017,unarmed,0
+Mississippi,hinds county,2017,armed,0
+Mississippi,hinds county,2017,unarmed,0
+Mississippi,hinds county,2019,armed,1
+Mississippi,hinds county,2019,unarmed,0
+Mississippi,jackson county,2019,armed,1
+Mississippi,jackson county,2019,unarmed,0
+Mississippi,jefferson county,2019,armed,0
+Mississippi,jefferson county,2019,unarmed,0
+Mississippi,lamar county,2017,armed,0.014516484
+Mississippi,lamar county,2017,unarmed,0
+Mississippi,lamar county,2019,armed,0.999820832
+Mississippi,lamar county,2019,unarmed,0
+Mississippi,lauderdale county,2017,armed,1
+Mississippi,lauderdale county,2017,unarmed,0
+Mississippi,lincoln county,2019,armed,0.000224723
+Mississippi,lincoln county,2019,unarmed,0
+Mississippi,lowndes county,2017,armed,2
+Mississippi,lowndes county,2017,unarmed,0
+Mississippi,madison county,2017,armed,0
+Mississippi,madison county,2017,unarmed,0
+Mississippi,monroe county,2019,armed,1
+Mississippi,monroe county,2019,unarmed,0
+Mississippi,neshoba county,2017,armed,1
+Mississippi,neshoba county,2017,unarmed,0
+Mississippi,neshoba county,2019,armed,0.117552966
+Mississippi,neshoba county,2019,unarmed,0
+Mississippi,pearl river county,2019,armed,1.000179168
+Mississippi,pearl river county,2019,unarmed,0
+Mississippi,pontotoc county,2019,armed,1
+Mississippi,pontotoc county,2019,unarmed,0
+Mississippi,rankin county,2017,armed,0
+Mississippi,rankin county,2017,unarmed,0
+Mississippi,rankin county,2019,armed,1.838964515
+Mississippi,rankin county,2019,unarmed,0
+Mississippi,simpson county,2019,armed,1
+Mississippi,simpson county,2019,unarmed,0
+Mississippi,stone county,2019,armed,1
+Mississippi,stone county,2019,unarmed,0
+Mississippi,tate county,2017,armed,1
+Mississippi,tate county,2017,unarmed,0
+Mississippi,washington county,2017,armed,1
+Mississippi,washington county,2017,unarmed,0
+Mississippi,washington county,2019,armed,0
+Mississippi,washington county,2019,unarmed,0
+Mississippi,yalobusha county,2017,armed,1
+Mississippi,yalobusha county,2017,unarmed,1
+Montana,cascade county,2017,armed,0
+Montana,cascade county,2017,unarmed,0
+Montana,cascade county,2019,armed,2
+Montana,cascade county,2019,unarmed,0
+Montana,gallatin county,2017,armed,1
+Montana,gallatin county,2017,unarmed,0
+Montana,gallatin county,2019,armed,1
+Montana,gallatin county,2019,unarmed,0
+Montana,missoula county,2019,armed,0
+Montana,missoula county,2019,unarmed,0
+Montana,toole county,2019,armed,1
+Montana,toole county,2019,unarmed,0
+Montana,yellowstone county,2017,armed,2
+Montana,yellowstone county,2017,unarmed,0
+Montana,yellowstone county,2019,armed,1
+Montana,yellowstone county,2019,unarmed,0
+North Carolina,bladen county,2019,armed,1
+North Carolina,bladen county,2019,unarmed,0
+North Carolina,brunswick county,2019,armed,0
+North Carolina,brunswick county,2019,unarmed,0
+North Carolina,burke county,2017,armed,3.31E-06
+North Carolina,burke county,2017,unarmed,0
+North Carolina,caldwell county,2017,armed,1
+North Carolina,caldwell county,2017,unarmed,0
+North Carolina,caldwell county,2019,armed,1
+North Carolina,caldwell county,2019,unarmed,0
+North Carolina,catawba county,2017,armed,0.999996692
+North Carolina,catawba county,2017,unarmed,0
+North Carolina,chatham county,2017,armed,0.000118144
+North Carolina,chatham county,2017,unarmed,0
+North Carolina,cleveland county,2017,armed,1.987697817
+North Carolina,cleveland county,2017,unarmed,0
+North Carolina,craven county,2019,armed,1
+North Carolina,craven county,2019,unarmed,0
+North Carolina,cumberland county,2017,armed,1
+North Carolina,cumberland county,2017,unarmed,0
+North Carolina,cumberland county,2019,armed,1
+North Carolina,cumberland county,2019,unarmed,0
+North Carolina,davidson county,2019,armed,1.002873066
+North Carolina,davidson county,2019,unarmed,0
+North Carolina,durham county,2017,armed,2
+North Carolina,durham county,2017,unarmed,0
+North Carolina,durham county,2019,armed,1
+North Carolina,durham county,2019,unarmed,0
+North Carolina,forsyth county,2019,armed,1
+North Carolina,forsyth county,2019,unarmed,0
+North Carolina,gaston county,2017,armed,0.012302183
+North Carolina,gaston county,2017,unarmed,0
+North Carolina,gaston county,2019,armed,0
+North Carolina,gaston county,2019,unarmed,0
+North Carolina,guilford county,2017,armed,1
+North Carolina,guilford county,2017,unarmed,0
+North Carolina,guilford county,2019,armed,1.997126934
+North Carolina,guilford county,2019,unarmed,0
+North Carolina,henderson county,2017,armed,1
+North Carolina,henderson county,2017,unarmed,0
+North Carolina,hertford county,2019,armed,1
+North Carolina,hertford county,2019,unarmed,0
+North Carolina,johnston county,2019,armed,0.044272049
+North Carolina,johnston county,2019,unarmed,0
+North Carolina,lee county,2019,armed,0
+North Carolina,lee county,2019,unarmed,0
+North Carolina,lincoln county,2019,armed,1
+North Carolina,lincoln county,2019,unarmed,0
+North Carolina,mecklenburg county,2017,armed,4
+North Carolina,mecklenburg county,2017,unarmed,0
+North Carolina,mecklenburg county,2019,armed,3
+North Carolina,mecklenburg county,2019,unarmed,0
+North Carolina,nash county,2019,armed,1
+North Carolina,nash county,2019,unarmed,0
+North Carolina,new hanover county,2019,armed,2
+North Carolina,new hanover county,2019,unarmed,0
+North Carolina,onslow county,2019,armed,1
+North Carolina,onslow county,2019,unarmed,0
+North Carolina,orange county,2017,armed,1
+North Carolina,orange county,2017,unarmed,0
+North Carolina,orange county,2019,armed,0
+North Carolina,orange county,2019,unarmed,0
+North Carolina,pitt county,2019,armed,2
+North Carolina,pitt county,2019,unarmed,0
+North Carolina,randolph county,2019,armed,0
+North Carolina,randolph county,2019,unarmed,0
+North Carolina,robeson county,2017,armed,2
+North Carolina,robeson county,2017,unarmed,0
+North Carolina,rowan county,2017,armed,1
+North Carolina,rowan county,2017,unarmed,0
+North Carolina,sampson county,2017,armed,1
+North Carolina,sampson county,2017,unarmed,0
+North Carolina,surry county,2017,armed,0
+North Carolina,surry county,2017,unarmed,0
+North Carolina,union county,2017,armed,0
+North Carolina,union county,2017,unarmed,0
+North Carolina,wake county,2017,armed,0.999881856
+North Carolina,wake county,2017,unarmed,0
+North Carolina,wake county,2019,armed,3
+North Carolina,wake county,2019,unarmed,0
+North Carolina,watauga county,2019,armed,0
+North Carolina,watauga county,2019,unarmed,1
+North Carolina,wilson county,2019,armed,0.955727951
+North Carolina,wilson county,2019,unarmed,0
+North Dakota,grand forks county,2017,armed,1
+North Dakota,grand forks county,2017,unarmed,0
+North Dakota,morton county,2017,armed,0
+North Dakota,morton county,2017,unarmed,0
+North Dakota,sioux county,2017,armed,0
+North Dakota,sioux county,2017,unarmed,0
+Nebraska,dakota county,2019,armed,1
+Nebraska,dakota county,2019,unarmed,0
+Nebraska,douglas county,2019,armed,2
+Nebraska,douglas county,2019,unarmed,0
+Nebraska,hall county,2019,armed,0
+Nebraska,hall county,2019,unarmed,0
+Nebraska,lancaster county,2019,armed,0
+Nebraska,lancaster county,2019,unarmed,0
+Nebraska,sheridan county,2019,armed,0
+Nebraska,sheridan county,2019,unarmed,0
+New Hampshire,belknap county,2019,armed,1
+New Hampshire,belknap county,2019,unarmed,0
+New Hampshire,grafton county,2017,armed,0
+New Hampshire,grafton county,2017,unarmed,0
+New Hampshire,hillsborough county,2019,armed,1
+New Hampshire,hillsborough county,2019,unarmed,0
+New Hampshire,rockingham county,2017,armed,2
+New Hampshire,rockingham county,2017,unarmed,0
+New Jersey,burlington county,2019,armed,0
+New Jersey,burlington county,2019,unarmed,0
+New Jersey,camden county,2017,armed,1
+New Jersey,camden county,2017,unarmed,0
+New Jersey,cumberland county,2017,armed,1
+New Jersey,cumberland county,2017,unarmed,0
+New Jersey,essex county,2017,armed,3
+New Jersey,essex county,2017,unarmed,0
+New Jersey,essex county,2019,armed,1
+New Jersey,essex county,2019,unarmed,1
+New Jersey,gloucester county,2019,armed,1
+New Jersey,gloucester county,2019,unarmed,0
+New Jersey,hudson county,2017,armed,0
+New Jersey,hudson county,2017,unarmed,0
+New Jersey,hudson county,2019,armed,3
+New Jersey,hudson county,2019,unarmed,0
+New Jersey,mercer county,2019,armed,0
+New Jersey,mercer county,2019,unarmed,0
+New Jersey,middlesex county,2017,armed,0
+New Jersey,middlesex county,2017,unarmed,0
+New Jersey,monmouth county,2019,armed,0
+New Jersey,monmouth county,2019,unarmed,0
+New Jersey,ocean county,2017,armed,1
+New Jersey,ocean county,2017,unarmed,1
+New Jersey,passaic county,2017,armed,1
+New Jersey,passaic county,2017,unarmed,0
+New Jersey,passaic county,2019,armed,1
+New Jersey,passaic county,2019,unarmed,0
+New Mexico,bernalillo county,2017,armed,3
+New Mexico,bernalillo county,2017,unarmed,2
+New Mexico,bernalillo county,2019,armed,3
+New Mexico,bernalillo county,2019,unarmed,0
+New Mexico,chaves county,2017,armed,1
+New Mexico,chaves county,2017,unarmed,0
+New Mexico,cibola county,2017,armed,0
+New Mexico,cibola county,2017,unarmed,1
+New Mexico,colfax county,2019,armed,0
+New Mexico,colfax county,2019,unarmed,0
+New Mexico,dona ana county,2017,armed,1
+New Mexico,dona ana county,2017,unarmed,0
+New Mexico,dona ana county,2019,armed,3
+New Mexico,dona ana county,2019,unarmed,0
+New Mexico,eddy county,2019,armed,2
+New Mexico,eddy county,2019,unarmed,0
+New Mexico,lea county,2019,armed,1
+New Mexico,lea county,2019,unarmed,0
+New Mexico,lincoln county,2017,armed,0
+New Mexico,lincoln county,2017,unarmed,0
+New Mexico,mckinley county,2017,armed,0
+New Mexico,mckinley county,2017,unarmed,0
+New Mexico,otero county,2019,armed,1
+New Mexico,otero county,2019,unarmed,0
+New Mexico,san juan county,2017,armed,1
+New Mexico,san juan county,2017,unarmed,1
+New Mexico,san juan county,2019,armed,1
+New Mexico,san juan county,2019,unarmed,0
+New Mexico,san miguel county,2017,armed,1
+New Mexico,san miguel county,2017,unarmed,0
+New Mexico,sandoval county,2019,armed,1
+New Mexico,sandoval county,2019,unarmed,0
+New Mexico,santa fe county,2017,armed,0
+New Mexico,santa fe county,2017,unarmed,0
+New Mexico,taos county,2017,armed,1
+New Mexico,taos county,2017,unarmed,0
+New Mexico,valencia county,2019,armed,1
+New Mexico,valencia county,2019,unarmed,0
+Nevada,carson city county,2019,armed,1
+Nevada,carson city county,2019,unarmed,0
+Nevada,clark county,2017,armed,5
+Nevada,clark county,2017,unarmed,0
+Nevada,clark county,2019,armed,6
+Nevada,clark county,2019,unarmed,1
+Nevada,lyon county,2019,armed,0
+Nevada,lyon county,2019,unarmed,0
+Nevada,nye county,2017,armed,1
+Nevada,nye county,2017,unarmed,0
+Nevada,nye county,2019,armed,0
+Nevada,nye county,2019,unarmed,0
+Nevada,washoe county,2017,armed,5
+Nevada,washoe county,2017,unarmed,0
+Nevada,washoe county,2019,armed,1
+Nevada,washoe county,2019,unarmed,0
+New York,bronx county,2017,armed,0.120214486
+New York,bronx county,2017,unarmed,0
+New York,bronx county,2019,armed,0.841501402
+New York,bronx county,2019,unarmed,0
+New York,broome county,2019,armed,1
+New York,broome county,2019,unarmed,0
+New York,chemung county,2017,armed,2
+New York,chemung county,2017,unarmed,0
+New York,erie county,2017,armed,1
+New York,erie county,2017,unarmed,0
+New York,greene county,2019,armed,0
+New York,greene county,2019,unarmed,0
+New York,hamilton county,2019,armed,0
+New York,hamilton county,2019,unarmed,0
+New York,kings county,2017,armed,2.393607717
+New York,kings county,2017,unarmed,0
+New York,kings county,2019,armed,2.755254016
+New York,kings county,2019,unarmed,0
+New York,nassau county,2019,armed,0
+New York,nassau county,2019,unarmed,0
+New York,new york county,2017,armed,0.157999822
+New York,new york county,2017,unarmed,0
+New York,new york county,2019,armed,1.105998752
+New York,new york county,2019,unarmed,0
+New York,oneida county,2017,armed,0.001708596
+New York,oneida county,2017,unarmed,0
+New York,oneida county,2019,armed,0.011960169
+New York,oneida county,2019,unarmed,0
+New York,onondaga county,2019,armed,1
+New York,onondaga county,2019,unarmed,0
+New York,ontario county,2017,armed,1
+New York,ontario county,2017,unarmed,0
+New York,orange county,2019,armed,0
+New York,orange county,2019,unarmed,1
+New York,queens county,2017,armed,0.312748434
+New York,queens county,2017,unarmed,0
+New York,queens county,2019,armed,3.189239036
+New York,queens county,2019,unarmed,0
+New York,richmond county,2017,armed,0.013720946
+New York,richmond county,2017,unarmed,0
+New York,richmond county,2019,armed,0.096046625
+New York,richmond county,2019,unarmed,0
+New York,schenectady county,2017,armed,0
+New York,schenectady county,2017,unarmed,0
+New York,suffolk county,2019,armed,2
+New York,suffolk county,2019,unarmed,0
+New York,tompkins county,2019,armed,0
+New York,tompkins county,2019,unarmed,0
+New York,westchester county,2017,armed,1
+New York,westchester county,2017,unarmed,0
+New York,westchester county,2019,armed,1
+New York,westchester county,2019,unarmed,0
+Ohio,allen county,2017,armed,0.996119449
+Ohio,allen county,2017,unarmed,0
+Ohio,ashtabula county,2017,armed,1
+Ohio,ashtabula county,2017,unarmed,1
+Ohio,ashtabula county,2019,armed,1
+Ohio,ashtabula county,2019,unarmed,0
+Ohio,butler county,2017,armed,2
+Ohio,butler county,2017,unarmed,0
+Ohio,clark county,2017,armed,1
+Ohio,clark county,2017,unarmed,0
+Ohio,clark county,2019,armed,0
+Ohio,clark county,2019,unarmed,0
+Ohio,clermont county,2017,armed,0
+Ohio,clermont county,2017,unarmed,0
+Ohio,cuyahoga county,2017,armed,2
+Ohio,cuyahoga county,2017,unarmed,0
+Ohio,cuyahoga county,2019,armed,3
+Ohio,cuyahoga county,2019,unarmed,0
+Ohio,defiance county,2019,armed,0
+Ohio,defiance county,2019,unarmed,0
+Ohio,delaware county,2017,armed,0.000172039
+Ohio,delaware county,2017,unarmed,0
+Ohio,delaware county,2019,armed,8.60E-05
+Ohio,delaware county,2019,unarmed,0
+Ohio,fairfield county,2017,armed,0.000306121
+Ohio,fairfield county,2017,unarmed,0
+Ohio,fairfield county,2019,armed,0.000153061
+Ohio,fairfield county,2019,unarmed,0
+Ohio,franklin county,2017,armed,1.993913627
+Ohio,franklin county,2017,unarmed,0
+Ohio,franklin county,2019,armed,0.996956813
+Ohio,franklin county,2019,unarmed,0
+Ohio,greene county,2017,armed,6.76E-05
+Ohio,greene county,2017,unarmed,0
+Ohio,hamilton county,2019,armed,1
+Ohio,hamilton county,2019,unarmed,0
+Ohio,hardin county,2017,armed,0
+Ohio,hardin county,2017,unarmed,0
+Ohio,jefferson county,2017,armed,1
+Ohio,jefferson county,2017,unarmed,0
+Ohio,lorain county,2019,armed,1
+Ohio,lorain county,2019,unarmed,0
+Ohio,lucas county,2017,armed,0
+Ohio,lucas county,2017,unarmed,0
+Ohio,mahoning county,2019,armed,1
+Ohio,mahoning county,2019,unarmed,3.60E-06
+Ohio,medina county,2017,armed,0
+Ohio,medina county,2017,unarmed,1
+Ohio,medina county,2019,armed,0
+Ohio,medina county,2019,unarmed,0
+Ohio,montgomery county,2017,armed,2.999932383
+Ohio,montgomery county,2017,unarmed,0
+Ohio,montgomery county,2019,armed,2
+Ohio,montgomery county,2019,unarmed,0
+Ohio,perry county,2017,armed,1
+Ohio,perry county,2017,unarmed,0
+Ohio,pickaway county,2019,armed,1
+Ohio,pickaway county,2019,unarmed,0
+Ohio,portage county,2017,armed,0
+Ohio,portage county,2017,unarmed,0
+Ohio,putnam county,2017,armed,0.005608213
+Ohio,putnam county,2017,unarmed,0
+Ohio,putnam county,2019,armed,0.002804107
+Ohio,putnam county,2019,unarmed,0
+Ohio,richland county,2019,armed,0
+Ohio,richland county,2019,unarmed,0
+Ohio,seneca county,2017,armed,1
+Ohio,seneca county,2017,unarmed,0
+Ohio,stark county,2017,armed,1.003880551
+Ohio,stark county,2017,unarmed,1
+Ohio,stark county,2019,armed,0
+Ohio,stark county,2019,unarmed,0.999996402
+Ohio,summit county,2017,armed,1
+Ohio,summit county,2017,unarmed,1
+Ohio,summit county,2019,armed,2
+Ohio,summit county,2019,unarmed,0
+Ohio,trumbull county,2017,armed,2
+Ohio,trumbull county,2017,unarmed,0
+Ohio,trumbull county,2019,armed,0
+Ohio,trumbull county,2019,unarmed,0
+Ohio,tuscarawas county,2019,armed,0
+Ohio,tuscarawas county,2019,unarmed,0
+Ohio,van wert county,2019,armed,0
+Ohio,van wert county,2019,unarmed,0
+Oklahoma,adair county,2017,armed,0
+Oklahoma,adair county,2017,unarmed,0
+Oklahoma,caddo county,2017,armed,0
+Oklahoma,caddo county,2017,unarmed,0
+Oklahoma,canadian county,2017,armed,0.017413383
+Oklahoma,canadian county,2017,unarmed,0.008706691
+Oklahoma,canadian county,2019,armed,0.052240149
+Oklahoma,canadian county,2019,unarmed,0
+Oklahoma,cherokee county,2019,armed,2
+Oklahoma,cherokee county,2019,unarmed,0
+Oklahoma,choctaw county,2017,armed,1
+Oklahoma,choctaw county,2017,unarmed,0
+Oklahoma,cleveland county,2017,armed,0.035591132
+Oklahoma,cleveland county,2017,unarmed,0.017795566
+Oklahoma,cleveland county,2019,armed,0.106773397
+Oklahoma,cleveland county,2019,unarmed,0
+Oklahoma,comanche county,2019,armed,2
+Oklahoma,comanche county,2019,unarmed,0
+Oklahoma,creek county,2019,armed,1
+Oklahoma,creek county,2019,unarmed,0
+Oklahoma,delaware county,2019,armed,1
+Oklahoma,delaware county,2019,unarmed,0
+Oklahoma,grady county,2019,armed,0
+Oklahoma,grady county,2019,unarmed,0
+Oklahoma,kay county,2019,armed,1
+Oklahoma,kay county,2019,unarmed,0
+Oklahoma,le flore county,2019,armed,0
+Oklahoma,le flore county,2019,unarmed,0
+Oklahoma,logan county,2017,armed,1
+Oklahoma,logan county,2017,unarmed,0
+Oklahoma,mayes county,2019,armed,0.093673897
+Oklahoma,mayes county,2019,unarmed,0
+Oklahoma,mcclain county,2017,armed,1
+Oklahoma,mcclain county,2017,unarmed,0
+Oklahoma,mccurtain county,2017,armed,1
+Oklahoma,mccurtain county,2017,unarmed,0
+Oklahoma,muskogee county,2019,armed,0
+Oklahoma,muskogee county,2019,unarmed,0
+Oklahoma,oklahoma county,2017,armed,2.946995485
+Oklahoma,oklahoma county,2017,unarmed,0.973497742
+Oklahoma,oklahoma county,2019,armed,6.840986454
+Oklahoma,oklahoma county,2019,unarmed,1
+Oklahoma,okmulgee county,2019,armed,0
+Oklahoma,okmulgee county,2019,unarmed,0
+Oklahoma,osage county,2017,armed,1.000773606
+Oklahoma,osage county,2017,unarmed,0
+Oklahoma,osage county,2019,armed,0.001636983
+Oklahoma,osage county,2019,unarmed,0
+Oklahoma,ottawa county,2017,armed,1
+Oklahoma,ottawa county,2017,unarmed,0
+Oklahoma,pittsburg county,2017,armed,1
+Oklahoma,pittsburg county,2017,unarmed,0
+Oklahoma,pittsburg county,2019,armed,2
+Oklahoma,pittsburg county,2019,unarmed,0
+Oklahoma,pontotoc county,2019,armed,1.906326103
+Oklahoma,pontotoc county,2019,unarmed,0
+Oklahoma,pottawatomie county,2017,armed,0
+Oklahoma,pottawatomie county,2017,unarmed,0
+Oklahoma,pottawatomie county,2019,armed,0
+Oklahoma,pottawatomie county,2019,unarmed,0
+Oklahoma,rogers county,2017,armed,0
+Oklahoma,rogers county,2017,unarmed,0
+Oklahoma,rogers county,2019,armed,0
+Oklahoma,rogers county,2019,unarmed,0
+Oklahoma,seminole county,2017,armed,0
+Oklahoma,seminole county,2017,unarmed,0
+Oklahoma,sequoyah county,2017,armed,2
+Oklahoma,sequoyah county,2017,unarmed,0
+Oklahoma,sequoyah county,2019,armed,0
+Oklahoma,sequoyah county,2019,unarmed,0
+Oklahoma,tulsa county,2017,armed,2.999226394
+Oklahoma,tulsa county,2017,unarmed,0
+Oklahoma,tulsa county,2019,armed,4.998363017
+Oklahoma,tulsa county,2019,unarmed,0
+Oklahoma,wagoner county,2017,armed,0
+Oklahoma,wagoner county,2017,unarmed,0
+Oklahoma,wagoner county,2019,armed,0
+Oklahoma,wagoner county,2019,unarmed,0
+Oklahoma,washington county,2019,armed,0
+Oklahoma,washington county,2019,unarmed,1
+Oklahoma,washita county,2019,armed,0
+Oklahoma,washita county,2019,unarmed,0
+Oregon,clackamas county,2017,armed,2
+Oregon,clackamas county,2017,unarmed,0
+Oregon,clackamas county,2019,armed,1.000001285
+Oregon,clackamas county,2019,unarmed,0
+Oregon,jackson county,2019,armed,1
+Oregon,jackson county,2019,unarmed,0
+Oregon,josephine county,2017,armed,0
+Oregon,josephine county,2017,unarmed,1
+Oregon,klamath county,2017,armed,1
+Oregon,klamath county,2017,unarmed,0
+Oregon,lane county,2017,armed,3
+Oregon,lane county,2017,unarmed,0
+Oregon,lane county,2019,armed,1
+Oregon,lane county,2019,unarmed,1
+Oregon,malheur county,2019,armed,1
+Oregon,malheur county,2019,unarmed,0
+Oregon,marion county,2019,armed,0.966510636
+Oregon,marion county,2019,unarmed,0
+Oregon,multnomah county,2017,armed,0
+Oregon,multnomah county,2017,unarmed,0
+Oregon,multnomah county,2019,armed,0.999990707
+Oregon,multnomah county,2019,unarmed,0
+Oregon,polk county,2017,armed,0
+Oregon,polk county,2017,unarmed,0
+Oregon,polk county,2019,armed,0.033489364
+Oregon,polk county,2019,unarmed,0
+Oregon,wasco county,2019,armed,1
+Oregon,wasco county,2019,unarmed,0
+Oregon,washington county,2017,armed,2
+Oregon,washington county,2017,unarmed,0
+Oregon,washington county,2019,armed,1.000008008
+Oregon,washington county,2019,unarmed,0
+Pennsylvania,adams county,2019,armed,0
+Pennsylvania,adams county,2019,unarmed,0
+Pennsylvania,allegheny county,2017,armed,1
+Pennsylvania,allegheny county,2017,unarmed,0
+Pennsylvania,allegheny county,2019,armed,4
+Pennsylvania,allegheny county,2019,unarmed,0
+Pennsylvania,beaver county,2019,armed,0
+Pennsylvania,beaver county,2019,unarmed,0
+Pennsylvania,berks county,2017,armed,1
+Pennsylvania,berks county,2017,unarmed,0
+Pennsylvania,carbon county,2019,armed,0
+Pennsylvania,carbon county,2019,unarmed,0
+Pennsylvania,centre county,2019,armed,0
+Pennsylvania,centre county,2019,unarmed,0
+Pennsylvania,dauphin county,2017,armed,1
+Pennsylvania,dauphin county,2017,unarmed,0
+Pennsylvania,delaware county,2017,armed,0
+Pennsylvania,delaware county,2017,unarmed,0
+Pennsylvania,erie county,2017,armed,0
+Pennsylvania,erie county,2017,unarmed,0
+Pennsylvania,fayette county,2017,armed,2
+Pennsylvania,fayette county,2017,unarmed,0
+Pennsylvania,huntingdon county,2019,armed,1
+Pennsylvania,huntingdon county,2019,unarmed,0
+Pennsylvania,lackawanna county,2017,armed,1
+Pennsylvania,lackawanna county,2017,unarmed,0
+Pennsylvania,lancaster county,2017,armed,1
+Pennsylvania,lancaster county,2017,unarmed,0
+Pennsylvania,lehigh county,2017,armed,1
+Pennsylvania,lehigh county,2017,unarmed,0
+Pennsylvania,lehigh county,2019,armed,1
+Pennsylvania,lehigh county,2019,unarmed,0
+Pennsylvania,mercer county,2017,armed,0
+Pennsylvania,mercer county,2017,unarmed,0
+Pennsylvania,mifflin county,2017,armed,1
+Pennsylvania,mifflin county,2017,unarmed,0
+Pennsylvania,monroe county,2019,armed,1
+Pennsylvania,monroe county,2019,unarmed,0
+Pennsylvania,montgomery county,2017,armed,0
+Pennsylvania,montgomery county,2017,unarmed,1
+Pennsylvania,northampton county,2017,armed,0
+Pennsylvania,northampton county,2017,unarmed,0
+Pennsylvania,philadelphia county,2017,armed,1
+Pennsylvania,philadelphia county,2017,unarmed,1
+Pennsylvania,tioga county,2019,armed,1
+Pennsylvania,tioga county,2019,unarmed,0
+Pennsylvania,warren county,2017,armed,1
+Pennsylvania,warren county,2017,unarmed,0
+Pennsylvania,washington county,2017,armed,1
+Pennsylvania,washington county,2017,unarmed,0
+Pennsylvania,westmoreland county,2019,armed,1
+Pennsylvania,westmoreland county,2019,unarmed,0
+Pennsylvania,york county,2017,armed,2
+Pennsylvania,york county,2017,unarmed,0
+Rhode Island,providence county,2017,armed,0
+Rhode Island,providence county,2017,unarmed,0
+South Carolina,anderson county,2017,armed,1
+South Carolina,anderson county,2017,unarmed,0
+South Carolina,anderson county,2019,armed,1.000005419
+South Carolina,anderson county,2019,unarmed,0
+South Carolina,beaufort county,2019,armed,1
+South Carolina,beaufort county,2019,unarmed,0
+South Carolina,berkeley county,2017,armed,0
+South Carolina,berkeley county,2017,unarmed,0
+South Carolina,berkeley county,2019,armed,1
+South Carolina,berkeley county,2019,unarmed,0
+South Carolina,charleston county,2017,armed,0.943633402
+South Carolina,charleston county,2017,unarmed,0
+South Carolina,chester county,2019,armed,0.792845023
+South Carolina,chester county,2019,unarmed,0
+South Carolina,chesterfield county,2019,armed,0.207154977
+South Carolina,chesterfield county,2019,unarmed,0
+South Carolina,colleton county,2019,armed,0
+South Carolina,colleton county,2019,unarmed,0
+South Carolina,darlington county,2019,armed,1
+South Carolina,darlington county,2019,unarmed,0
+South Carolina,dillon county,2017,armed,0
+South Carolina,dillon county,2017,unarmed,0
+South Carolina,dorchester county,2017,armed,0.056366598
+South Carolina,dorchester county,2017,unarmed,0
+South Carolina,georgetown county,2019,armed,0.999934647
+South Carolina,georgetown county,2019,unarmed,0
+South Carolina,greenville county,2017,armed,3.925282339
+South Carolina,greenville county,2017,unarmed,0
+South Carolina,greenville county,2019,armed,1
+South Carolina,greenville county,2019,unarmed,0
+South Carolina,horry county,2017,armed,1
+South Carolina,horry county,2017,unarmed,0
+South Carolina,horry county,2019,armed,2
+South Carolina,horry county,2019,unarmed,0
+South Carolina,jasper county,2017,armed,1
+South Carolina,jasper county,2017,unarmed,0
+South Carolina,laurens county,2017,armed,0.074717661
+South Carolina,laurens county,2017,unarmed,0
+South Carolina,laurens county,2019,armed,0
+South Carolina,laurens county,2019,unarmed,0
+South Carolina,lexington county,2017,armed,0
+South Carolina,lexington county,2017,unarmed,1
+South Carolina,lexington county,2019,armed,2
+South Carolina,lexington county,2019,unarmed,0
+South Carolina,orangeburg county,2019,armed,0
+South Carolina,orangeburg county,2019,unarmed,0
+South Carolina,pickens county,2019,armed,0.999994581
+South Carolina,pickens county,2019,unarmed,0
+South Carolina,spartanburg county,2019,armed,1
+South Carolina,spartanburg county,2019,unarmed,0
+South Carolina,union county,2019,armed,1
+South Carolina,union county,2019,unarmed,0
+South Carolina,williamsburg county,2019,armed,6.54E-05
+South Carolina,williamsburg county,2019,unarmed,0
+South Carolina,york county,2017,armed,0
+South Carolina,york county,2017,unarmed,0
+South Dakota,aurora county,2019,armed,1
+South Dakota,aurora county,2019,unarmed,0
+South Dakota,pennington county,2017,armed,2
+South Dakota,pennington county,2017,unarmed,0
+South Dakota,pennington county,2019,armed,1
+South Dakota,pennington county,2019,unarmed,0
+South Dakota,shannon county,2017,armed,1
+South Dakota,shannon county,2017,unarmed,0
+South Dakota,todd county,2019,armed,0
+South Dakota,todd county,2019,unarmed,0
+Tennessee,anderson county,2017,armed,1
+Tennessee,anderson county,2017,unarmed,0
+Tennessee,anderson county,2019,armed,1
+Tennessee,anderson county,2019,unarmed,0
+Tennessee,bradley county,2017,armed,0
+Tennessee,bradley county,2017,unarmed,0
+Tennessee,bradley county,2019,armed,0
+Tennessee,bradley county,2019,unarmed,0
+Tennessee,campbell county,2019,armed,1
+Tennessee,campbell county,2019,unarmed,0
+Tennessee,carter county,2017,armed,0.000421855
+Tennessee,carter county,2017,unarmed,0
+Tennessee,carter county,2019,armed,1
+Tennessee,carter county,2019,unarmed,0
+Tennessee,cheatham county,2019,armed,0
+Tennessee,cheatham county,2019,unarmed,0
+Tennessee,claiborne county,2019,armed,1
+Tennessee,claiborne county,2019,unarmed,0
+Tennessee,cocke county,2017,armed,0
+Tennessee,cocke county,2017,unarmed,0
+Tennessee,crockett county,2017,armed,0
+Tennessee,crockett county,2017,unarmed,0
+Tennessee,davidson county,2017,armed,1
+Tennessee,davidson county,2017,unarmed,0
+Tennessee,dyer county,2019,armed,1
+Tennessee,dyer county,2019,unarmed,0
+Tennessee,fayette county,2017,armed,0
+Tennessee,fayette county,2017,unarmed,0
+Tennessee,fayette county,2019,armed,0
+Tennessee,fayette county,2019,unarmed,0
+Tennessee,franklin county,2017,armed,0.003284746
+Tennessee,franklin county,2017,unarmed,0
+Tennessee,greene county,2019,armed,2
+Tennessee,greene county,2019,unarmed,0
+Tennessee,grundy county,2017,armed,0.73188257
+Tennessee,grundy county,2017,unarmed,0
+Tennessee,hamblen county,2019,armed,0
+Tennessee,hamblen county,2019,unarmed,0
+Tennessee,hamilton county,2017,armed,3
+Tennessee,hamilton county,2017,unarmed,0
+Tennessee,hamilton county,2019,armed,2
+Tennessee,hamilton county,2019,unarmed,0
+Tennessee,hawkins county,2019,armed,0
+Tennessee,hawkins county,2019,unarmed,0
+Tennessee,henderson county,2017,armed,0
+Tennessee,henderson county,2017,unarmed,1
+Tennessee,hickman county,2017,armed,0
+Tennessee,hickman county,2017,unarmed,0
+Tennessee,jefferson county,2019,armed,0
+Tennessee,jefferson county,2019,unarmed,0
+Tennessee,knox county,2017,armed,1
+Tennessee,knox county,2017,unarmed,0
+Tennessee,knox county,2019,armed,0
+Tennessee,knox county,2019,unarmed,1
+Tennessee,lewis county,2017,armed,1
+Tennessee,lewis county,2017,unarmed,0
+Tennessee,marion county,2017,armed,0.264832683
+Tennessee,marion county,2017,unarmed,0
+Tennessee,marshall county,2017,armed,1
+Tennessee,marshall county,2017,unarmed,0
+Tennessee,maury county,2017,armed,1
+Tennessee,maury county,2017,unarmed,0
+Tennessee,montgomery county,2017,armed,0
+Tennessee,montgomery county,2017,unarmed,0
+Tennessee,montgomery county,2019,armed,1
+Tennessee,montgomery county,2019,unarmed,0
+Tennessee,overton county,2017,armed,1
+Tennessee,overton county,2017,unarmed,0
+Tennessee,rutherford county,2019,armed,2
+Tennessee,rutherford county,2019,unarmed,0
+Tennessee,scott county,2017,armed,0
+Tennessee,scott county,2017,unarmed,0
+Tennessee,sevier county,2019,armed,0
+Tennessee,sevier county,2019,unarmed,0
+Tennessee,shelby county,2017,armed,0
+Tennessee,shelby county,2017,unarmed,0
+Tennessee,shelby county,2019,armed,3
+Tennessee,shelby county,2019,unarmed,0
+Tennessee,smith county,2019,armed,0
+Tennessee,smith county,2019,unarmed,0
+Tennessee,sullivan county,2017,armed,3.51E-05
+Tennessee,sullivan county,2017,unarmed,0
+Tennessee,sullivan county,2019,armed,3
+Tennessee,sullivan county,2019,unarmed,0
+Tennessee,warren county,2017,armed,1
+Tennessee,warren county,2017,unarmed,0
+Tennessee,washington county,2017,armed,0.999543013
+Tennessee,washington county,2017,unarmed,0
+Tennessee,weakley county,2017,armed,0
+Tennessee,weakley county,2017,unarmed,0
+Tennessee,williamson county,2017,armed,2
+Tennessee,williamson county,2017,unarmed,0
+Texas,anderson county,2019,armed,0
+Texas,anderson county,2019,unarmed,0
+Texas,angelina county,2017,armed,0
+Texas,angelina county,2017,unarmed,0
+Texas,aransas county,2017,armed,0
+Texas,aransas county,2017,unarmed,0
+Texas,aransas county,2019,armed,0
+Texas,aransas county,2019,unarmed,0
+Texas,atascosa county,2019,armed,0
+Texas,atascosa county,2019,unarmed,0
+Texas,bell county,2017,armed,1
+Texas,bell county,2017,unarmed,0
+Texas,bell county,2019,armed,1
+Texas,bell county,2019,unarmed,1
+Texas,bexar county,2017,armed,3
+Texas,bexar county,2017,unarmed,0.001924448
+Texas,bexar county,2019,armed,7
+Texas,bexar county,2019,unarmed,0
+Texas,bowie county,2019,armed,1
+Texas,bowie county,2019,unarmed,0
+Texas,brazoria county,2017,armed,1
+Texas,brazoria county,2017,unarmed,0
+Texas,brazoria county,2019,armed,2.997885969
+Texas,brazoria county,2019,unarmed,0
+Texas,burnet county,2019,armed,0
+Texas,burnet county,2019,unarmed,0
+Texas,caldwell county,2019,armed,0
+Texas,caldwell county,2019,unarmed,0
+Texas,cameron county,2017,armed,0
+Texas,cameron county,2017,unarmed,0
+Texas,cameron county,2019,armed,1
+Texas,cameron county,2019,unarmed,0
+Texas,carson county,2017,armed,1
+Texas,carson county,2017,unarmed,0
+Texas,chambers county,2019,armed,0
+Texas,chambers county,2019,unarmed,0
+Texas,cochran county,2019,armed,1
+Texas,cochran county,2019,unarmed,0
+Texas,collin county,2017,armed,2.000875916
+Texas,collin county,2017,unarmed,0.001728041
+Texas,collin county,2019,armed,0.008641381
+Texas,collin county,2019,unarmed,0
+Texas,comal county,2017,armed,0
+Texas,comal county,2017,unarmed,0.000844547
+Texas,comal county,2019,armed,0
+Texas,comal county,2019,unarmed,0
+Texas,dallam county,2019,armed,0.780125724
+Texas,dallam county,2019,unarmed,0
+Texas,dallas county,2017,armed,2.997719351
+Texas,dallas county,2017,unarmed,2.997719351
+Texas,dallas county,2019,armed,7.321736601
+Texas,dallas county,2019,unarmed,1
+Texas,denton county,2017,armed,0.001523117
+Texas,denton county,2017,unarmed,0.000552608
+Texas,denton county,2019,armed,3.66994511
+Texas,denton county,2019,unarmed,0.000118384
+Texas,eastland county,2017,armed,1
+Texas,eastland county,2017,unarmed,0
+Texas,ector county,2019,armed,3.998824707
+Texas,ector county,2019,unarmed,0
+Texas,el paso county,2017,armed,0
+Texas,el paso county,2017,unarmed,0
+Texas,el paso county,2019,armed,3
+Texas,el paso county,2019,unarmed,0
+Texas,ellis county,2017,armed,1
+Texas,ellis county,2017,unarmed,0
+Texas,ellis county,2019,armed,0.000150444
+Texas,ellis county,2019,unarmed,0
+Texas,fannin county,2017,armed,0
+Texas,fannin county,2017,unarmed,0
+Texas,foard county,2017,armed,0
+Texas,foard county,2017,unarmed,0
+Texas,fort bend county,2017,armed,0.233945563
+Texas,fort bend county,2017,unarmed,0
+Texas,fort bend county,2019,armed,1.926025921
+Texas,fort bend county,2019,unarmed,0.000334034
+Texas,freestone county,2019,armed,0
+Texas,freestone county,2019,unarmed,1
+Texas,gaines county,2019,armed,0
+Texas,gaines county,2019,unarmed,0
+Texas,galveston county,2017,armed,0
+Texas,galveston county,2017,unarmed,0
+Texas,galveston county,2019,armed,1.99963119
+Texas,galveston county,2019,unarmed,0.99963119
+Texas,gonzales county,2017,armed,1
+Texas,gonzales county,2017,unarmed,0
+Texas,grayson county,2017,armed,0
+Texas,grayson county,2017,unarmed,0
+Texas,gregg county,2019,armed,0.999440124
+Texas,gregg county,2019,unarmed,0.999440124
+Texas,guadalupe county,2017,armed,0
+Texas,guadalupe county,2017,unarmed,0.997231005
+Texas,guadalupe county,2019,armed,0
+Texas,guadalupe county,2019,unarmed,0
+Texas,hale county,2019,armed,1
+Texas,hale county,2019,unarmed,0
+Texas,hardeman county,2019,armed,0
+Texas,hardeman county,2019,unarmed,0
+Texas,hardin county,2019,armed,0
+Texas,hardin county,2019,unarmed,0
+Texas,harris county,2017,armed,8.076281329
+Texas,harris county,2017,unarmed,0
+Texas,harris county,2019,armed,11.38665971
+Texas,harris county,2019,unarmed,1.000030759
+Texas,harrison county,2019,armed,0.000559876
+Texas,harrison county,2019,unarmed,0.000559876
+Texas,hartley county,2019,armed,0.219874276
+Texas,hartley county,2019,unarmed,0
+Texas,hays county,2017,armed,1
+Texas,hays county,2017,unarmed,0
+Texas,hays county,2019,armed,0
+Texas,hays county,2019,unarmed,0
+Texas,hidalgo county,2017,armed,0.67957969
+Texas,hidalgo county,2017,unarmed,0
+Texas,hidalgo county,2019,armed,0.67957969
+Texas,hidalgo county,2019,unarmed,0
+Texas,hopkins county,2019,armed,0
+Texas,hopkins county,2019,unarmed,0
+Texas,hutchinson county,2017,armed,0.999984737
+Texas,hutchinson county,2017,unarmed,0
+Texas,jefferson county,2019,armed,0
+Texas,jefferson county,2019,unarmed,0
+Texas,jones county,2017,armed,0
+Texas,jones county,2017,unarmed,0
+Texas,kaufman county,2017,armed,0
+Texas,kaufman county,2017,unarmed,0
+Texas,kaufman county,2019,armed,0
+Texas,kaufman county,2019,unarmed,0
+Texas,kendall county,2019,armed,0
+Texas,kendall county,2019,unarmed,1
+Texas,kerr county,2019,armed,0
+Texas,kerr county,2019,unarmed,0
+Texas,kinney county,2019,armed,1
+Texas,kinney county,2019,unarmed,0
+Texas,kleberg county,2017,armed,0
+Texas,kleberg county,2017,unarmed,0
+Texas,kleberg county,2019,armed,0
+Texas,kleberg county,2019,unarmed,0
+Texas,lamb county,2017,armed,0
+Texas,lamb county,2017,unarmed,0
+Texas,martin county,2019,armed,0
+Texas,martin county,2019,unarmed,0
+Texas,matagorda county,2017,armed,1
+Texas,matagorda county,2017,unarmed,0
+Texas,mclennan county,2017,armed,0
+Texas,mclennan county,2017,unarmed,0
+Texas,mclennan county,2019,armed,0
+Texas,mclennan county,2019,unarmed,0
+Texas,medina county,2017,armed,0
+Texas,medina county,2017,unarmed,0
+Texas,medina county,2019,armed,0
+Texas,medina county,2019,unarmed,0
+Texas,midland county,2019,armed,0.001175293
+Texas,midland county,2019,unarmed,0
+Texas,montgomery county,2017,armed,1.000016068
+Texas,montgomery county,2017,unarmed,0
+Texas,montgomery county,2019,armed,4.02E-05
+Texas,montgomery county,2019,unarmed,4.02E-06
+Texas,moore county,2017,armed,1.53E-05
+Texas,moore county,2017,unarmed,0
+Texas,nacogdoches county,2019,armed,0
+Texas,nacogdoches county,2019,unarmed,0
+Texas,nolan county,2019,armed,1
+Texas,nolan county,2019,unarmed,0
+Texas,nueces county,2017,armed,0
+Texas,nueces county,2017,unarmed,1
+Texas,nueces county,2019,armed,0
+Texas,nueces county,2019,unarmed,0
+Texas,parker county,2017,armed,0
+Texas,parker county,2017,unarmed,0
+Texas,parker county,2019,armed,0
+Texas,parker county,2019,unarmed,0
+Texas,pecos county,2017,armed,1
+Texas,pecos county,2017,unarmed,0
+Texas,potter county,2017,armed,1.209992722
+Texas,potter county,2017,unarmed,0
+Texas,potter county,2019,armed,0.604996361
+Texas,potter county,2019,unarmed,0
+Texas,randall county,2017,armed,0.790007278
+Texas,randall county,2017,unarmed,0
+Texas,randall county,2019,armed,0.395003639
+Texas,randall county,2019,unarmed,0
+Texas,rockwall county,2017,armed,0
+Texas,rockwall county,2017,unarmed,0
+Texas,rockwall county,2019,armed,0
+Texas,rockwall county,2019,unarmed,0
+Texas,san patricio county,2017,armed,0
+Texas,san patricio county,2017,unarmed,0
+Texas,san patricio county,2019,armed,0
+Texas,san patricio county,2019,unarmed,0
+Texas,scurry county,2019,armed,0
+Texas,scurry county,2019,unarmed,1
+Texas,tarrant county,2017,armed,4.999881616
+Texas,tarrant county,2017,unarmed,0
+Texas,tarrant county,2019,armed,5.999526464
+Texas,tarrant county,2019,unarmed,1.999881616
+Texas,taylor county,2017,armed,0
+Texas,taylor county,2017,unarmed,0
+Texas,travis county,2017,armed,2.990269838
+Texas,travis county,2017,unarmed,0
+Texas,travis county,2019,armed,2.990269838
+Texas,travis county,2019,unarmed,0
+Texas,upshur county,2017,armed,1
+Texas,upshur county,2017,unarmed,0
+Texas,walker county,2019,armed,0
+Texas,walker county,2019,unarmed,0
+Texas,waller county,2017,armed,0.01017735
+Texas,waller county,2017,unarmed,0
+Texas,waller county,2019,armed,0.01017735
+Texas,waller county,2019,unarmed,0
+Texas,ward county,2019,armed,1
+Texas,ward county,2019,unarmed,0
+Texas,webb county,2017,armed,1
+Texas,webb county,2017,unarmed,0
+Texas,wichita county,2017,armed,1
+Texas,wichita county,2017,unarmed,0
+Texas,williamson county,2017,armed,0.009730162
+Texas,williamson county,2017,unarmed,0
+Texas,williamson county,2019,armed,0.009730162
+Texas,williamson county,2019,unarmed,0
+Texas,winkler county,2019,armed,0
+Texas,winkler county,2019,unarmed,0
+Texas,wise county,2017,armed,0
+Texas,wise county,2017,unarmed,0
+Texas,wise county,2019,armed,0
+Texas,wise county,2019,unarmed,0
+Utah,carbon county,2019,armed,0
+Utah,carbon county,2019,unarmed,0
+Utah,davis county,2017,armed,0
+Utah,davis county,2017,unarmed,0
+Utah,davis county,2019,armed,0
+Utah,davis county,2019,unarmed,0
+Utah,emery county,2019,armed,1
+Utah,emery county,2019,unarmed,0
+Utah,iron county,2019,armed,1
+Utah,iron county,2019,unarmed,0
+Utah,salt lake county,2017,armed,1
+Utah,salt lake county,2017,unarmed,0
+Utah,salt lake county,2019,armed,2
+Utah,salt lake county,2019,unarmed,1
+Utah,tooele county,2017,armed,1
+Utah,tooele county,2017,unarmed,0
+Utah,weber county,2017,armed,2
+Utah,weber county,2017,unarmed,0
+Utah,weber county,2019,armed,0
+Utah,weber county,2019,unarmed,0
+Virginia,alexandria city,2017,armed,1
+Virginia,alexandria city,2017,unarmed,0
+Virginia,arlington county,2017,armed,0
+Virginia,arlington county,2017,unarmed,0
+Virginia,caroline county,2017,armed,1
+Virginia,caroline county,2017,unarmed,0
+Virginia,charlottesville city,2017,armed,1
+Virginia,charlottesville city,2017,unarmed,0
+Virginia,chesterfield county,2017,armed,0.961559608
+Virginia,chesterfield county,2017,unarmed,0
+Virginia,culpeper county,2017,armed,1
+Virginia,culpeper county,2017,unarmed,0
+Virginia,cumberland county,2019,armed,0.004780478
+Virginia,cumberland county,2019,unarmed,0
+Virginia,fairfax city,2017,armed,0
+Virginia,fairfax city,2017,unarmed,0.652030545
+Virginia,fairfax county,2017,armed,0
+Virginia,fairfax county,2017,unarmed,0.347969455
+Virginia,giles county,2017,armed,0
+Virginia,giles county,2017,unarmed,0
+Virginia,grayson county,2017,armed,1
+Virginia,grayson county,2017,unarmed,0
+Virginia,hampton city,2017,armed,0
+Virginia,hampton city,2017,unarmed,0
+Virginia,henry county,2017,armed,1
+Virginia,henry county,2017,unarmed,0
+Virginia,lexington city,2017,armed,1
+Virginia,lexington city,2017,unarmed,0
+Virginia,lynchburg city,2017,armed,0
+Virginia,lynchburg city,2017,unarmed,0
+Virginia,newport news city,2017,armed,1
+Virginia,newport news city,2017,unarmed,0
+Virginia,newport news city,2019,armed,1
+Virginia,newport news city,2019,unarmed,0
+Virginia,norfolk city,2017,armed,2
+Virginia,norfolk city,2017,unarmed,0
+Virginia,prince edward county,2019,armed,0.995219522
+Virginia,prince edward county,2019,unarmed,0
+Virginia,prince william county,2017,armed,0
+Virginia,prince william county,2017,unarmed,0
+Virginia,pulaski county,2017,armed,1
+Virginia,pulaski county,2017,unarmed,0
+Virginia,rappahannock county,2017,armed,0.026946715
+Virginia,rappahannock county,2017,unarmed,0
+Virginia,richmond city,2017,armed,1
+Virginia,richmond city,2017,unarmed,0
+Virginia,richmond city,2019,armed,0
+Virginia,richmond city,2019,unarmed,0
+Virginia,roanoke city,2017,armed,1
+Virginia,roanoke city,2017,unarmed,0
+Virginia,roanoke city,2019,armed,1
+Virginia,roanoke city,2019,unarmed,0
+Virginia,rockingham county,2019,armed,1
+Virginia,rockingham county,2019,unarmed,0
+Virginia,scott county,2019,armed,1
+Virginia,scott county,2019,unarmed,0
+Virginia,virginia beach city,2019,armed,0
+Virginia,virginia beach city,2019,unarmed,0
+Virginia,warren county,2017,armed,0.011493677
+Virginia,warren county,2017,unarmed,0
+Virginia,washington county,2017,armed,0
+Virginia,washington county,2017,unarmed,0
+Virginia,wythe county,2019,armed,0
+Virginia,wythe county,2019,unarmed,0
+Vermont,orange county,2019,armed,1
+Vermont,orange county,2019,unarmed,0
+Vermont,rutland county,2017,armed,0
+Vermont,rutland county,2017,unarmed,0
+Vermont,rutland county,2019,armed,1
+Vermont,rutland county,2019,unarmed,0
+Vermont,washington county,2019,armed,0
+Vermont,washington county,2019,unarmed,0
+Washington,benton county,2017,armed,1
+Washington,benton county,2017,unarmed,0
+Washington,chelan county,2017,armed,0
+Washington,chelan county,2017,unarmed,0
+Washington,clark county,2017,armed,1
+Washington,clark county,2017,unarmed,0
+Washington,clark county,2019,armed,2
+Washington,clark county,2019,unarmed,0
+Washington,cowlitz county,2017,armed,1
+Washington,cowlitz county,2017,unarmed,0
+Washington,cowlitz county,2019,armed,1
+Washington,cowlitz county,2019,unarmed,0
+Washington,franklin county,2019,armed,1
+Washington,franklin county,2019,unarmed,0
+Washington,grays harbor county,2019,armed,1
+Washington,grays harbor county,2019,unarmed,0
+Washington,island county,2017,armed,1
+Washington,island county,2017,unarmed,0
+Washington,king county,2017,armed,5
+Washington,king county,2017,unarmed,0
+Washington,king county,2019,armed,3
+Washington,king county,2019,unarmed,1.986179694
+Washington,kitsap county,2017,armed,2
+Washington,kitsap county,2017,unarmed,0
+Washington,kitsap county,2019,armed,0
+Washington,kitsap county,2019,unarmed,0
+Washington,kittitas county,2019,armed,1
+Washington,kittitas county,2019,unarmed,0
+Washington,lewis county,2019,armed,0
+Washington,lewis county,2019,unarmed,0
+Washington,pierce county,2017,armed,2
+Washington,pierce county,2017,unarmed,0
+Washington,pierce county,2019,armed,2
+Washington,pierce county,2019,unarmed,0.013820306
+Washington,snohomish county,2017,armed,0
+Washington,snohomish county,2017,unarmed,0
+Washington,snohomish county,2019,armed,0
+Washington,snohomish county,2019,unarmed,0
+Washington,spokane county,2017,armed,3
+Washington,spokane county,2017,unarmed,0
+Washington,spokane county,2019,armed,2
+Washington,spokane county,2019,unarmed,1
+Washington,thurston county,2017,armed,1
+Washington,thurston county,2017,unarmed,0
+Washington,whatcom county,2017,armed,0
+Washington,whatcom county,2017,unarmed,0
+Washington,yakima county,2017,armed,2
+Washington,yakima county,2017,unarmed,0
+Washington,yakima county,2019,armed,0
+Washington,yakima county,2019,unarmed,0
+Wisconsin,ashland county,2017,armed,0
+Wisconsin,ashland county,2017,unarmed,0
+Wisconsin,ashland county,2019,armed,1
+Wisconsin,ashland county,2019,unarmed,0
+Wisconsin,bayfield county,2019,armed,0
+Wisconsin,bayfield county,2019,unarmed,0
+Wisconsin,calumet county,2017,armed,0.032993798
+Wisconsin,calumet county,2017,unarmed,0
+Wisconsin,calumet county,2019,armed,0.032993798
+Wisconsin,calumet county,2019,unarmed,0
+Wisconsin,chippewa county,2017,armed,0.000953706
+Wisconsin,chippewa county,2017,unarmed,0
+Wisconsin,clark county,2019,armed,1
+Wisconsin,clark county,2019,unarmed,0
+Wisconsin,columbia county,2017,armed,1
+Wisconsin,columbia county,2017,unarmed,0
+Wisconsin,dane county,2019,armed,1
+Wisconsin,dane county,2019,unarmed,0
+Wisconsin,eau claire county,2017,armed,0.999046294
+Wisconsin,eau claire county,2017,unarmed,0
+Wisconsin,eau claire county,2019,armed,0
+Wisconsin,eau claire county,2019,unarmed,1
+Wisconsin,forest county,2017,armed,0
+Wisconsin,forest county,2017,unarmed,1
+Wisconsin,grant county,2017,armed,0
+Wisconsin,grant county,2017,unarmed,0
+Wisconsin,jackson county,2017,armed,2
+Wisconsin,jackson county,2017,unarmed,0
+Wisconsin,kewaunee county,2019,armed,1
+Wisconsin,kewaunee county,2019,unarmed,0
+Wisconsin,la crosse county,2017,armed,1
+Wisconsin,la crosse county,2017,unarmed,0
+Wisconsin,lincoln county,2017,armed,1
+Wisconsin,lincoln county,2017,unarmed,0
+Wisconsin,manitowoc county,2019,armed,1
+Wisconsin,manitowoc county,2019,unarmed,0
+Wisconsin,marathon county,2017,armed,2
+Wisconsin,marathon county,2017,unarmed,0
+Wisconsin,marinette county,2017,armed,1
+Wisconsin,marinette county,2017,unarmed,0
+Wisconsin,milwaukee county,2017,armed,4
+Wisconsin,milwaukee county,2017,unarmed,0
+Wisconsin,milwaukee county,2019,armed,2
+Wisconsin,milwaukee county,2019,unarmed,0
+Wisconsin,monroe county,2019,armed,1
+Wisconsin,monroe county,2019,unarmed,0
+Wisconsin,outagamie county,2017,armed,0.966397327
+Wisconsin,outagamie county,2017,unarmed,0
+Wisconsin,outagamie county,2019,armed,0.966397327
+Wisconsin,outagamie county,2019,unarmed,0
+Wisconsin,racine county,2019,armed,0
+Wisconsin,racine county,2019,unarmed,0
+Wisconsin,rock county,2019,armed,1
+Wisconsin,rock county,2019,unarmed,0
+Wisconsin,walworth county,2017,armed,0
+Wisconsin,walworth county,2017,unarmed,0
+Wisconsin,washington county,2017,armed,0
+Wisconsin,washington county,2017,unarmed,0
+Wisconsin,washington county,2019,armed,0
+Wisconsin,washington county,2019,unarmed,0
+Wisconsin,waukesha county,2017,armed,1
+Wisconsin,waukesha county,2017,unarmed,0
+Wisconsin,waukesha county,2019,armed,0
+Wisconsin,waukesha county,2019,unarmed,0
+Wisconsin,winnebago county,2017,armed,0.000608875
+Wisconsin,winnebago county,2017,unarmed,1
+Wisconsin,winnebago county,2019,armed,1.000608875
+Wisconsin,winnebago county,2019,unarmed,0
+Wisconsin,wood county,2019,armed,0
+Wisconsin,wood county,2019,unarmed,0
+West Virginia,berkeley county,2017,armed,1
+West Virginia,berkeley county,2017,unarmed,0
+West Virginia,braxton county,2017,armed,0
+West Virginia,braxton county,2017,unarmed,0
+West Virginia,cabell county,2019,armed,1.992509149
+West Virginia,cabell county,2019,unarmed,0
+West Virginia,fayette county,2019,armed,0
+West Virginia,fayette county,2019,unarmed,0.677590361
+West Virginia,harrison county,2017,armed,1
+West Virginia,harrison county,2017,unarmed,0
+West Virginia,harrison county,2019,armed,1
+West Virginia,harrison county,2019,unarmed,0
+West Virginia,kanawha county,2017,armed,2
+West Virginia,kanawha county,2017,unarmed,0
+West Virginia,kanawha county,2019,armed,2
+West Virginia,kanawha county,2019,unarmed,0.322409639
+West Virginia,marion county,2017,armed,0
+West Virginia,marion county,2017,unarmed,0
+West Virginia,mcdowell county,2019,armed,0
+West Virginia,mcdowell county,2019,unarmed,0
+West Virginia,mercer county,2017,armed,0
+West Virginia,mercer county,2017,unarmed,0
+West Virginia,monongalia county,2019,armed,1
+West Virginia,monongalia county,2019,unarmed,0
+West Virginia,nicholas county,2019,armed,1
+West Virginia,nicholas county,2019,unarmed,0
+West Virginia,pendleton county,2017,armed,0
+West Virginia,pendleton county,2017,unarmed,0
+West Virginia,pocahontas county,2019,armed,1
+West Virginia,pocahontas county,2019,unarmed,0
+West Virginia,putnam county,2019,armed,1
+West Virginia,putnam county,2019,unarmed,0
+West Virginia,randolph county,2017,armed,0
+West Virginia,randolph county,2017,unarmed,0
+West Virginia,roane county,2019,armed,1
+West Virginia,roane county,2019,unarmed,0
+West Virginia,taylor county,2017,armed,1
+West Virginia,taylor county,2017,unarmed,0
+West Virginia,wayne county,2019,armed,0.007490851
+West Virginia,wayne county,2019,unarmed,0
+Wyoming,fremont county,2019,armed,0
+Wyoming,fremont county,2019,unarmed,0
+Wyoming,laramie county,2017,armed,1
+Wyoming,laramie county,2017,unarmed,0
